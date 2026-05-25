@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <title>My Little Baby Notebook - Logo (Notebook + Heart)</title>
+  
+  <rect x="0" y="0" width="1024" height="1024" rx="229" fill="#5FA584" fill-opacity="0.08"></rect>
+  <rect x="0" y="0" width="1024" height="1024" rx="229" fill="none" stroke="#5FA584" stroke-width="4" stroke-opacity="0.25"></rect>
+
+  <g transform="translate(512, 512)" fill="none" stroke="#5FA584" stroke-linecap="round" stroke-linejoin="round">
+    
+    <rect x="-246" y="-266" width="492" height="532" rx="15" stroke-width="22"></rect>
+    
+    <line x1="-246" y1="-245" x2="-246" y2="245" stroke-width="38"></line>
+    
+    <circle cx="-246" cy="-210" r="14" fill="#FFFFFF" stroke="none"></circle>
+    <circle cx="-246" cy="-128" r="14" fill="#FFFFFF" stroke="none"></circle>
+    <circle cx="-246" cy="-47" r="14" fill="#FFFFFF" stroke="none"></circle>
+    <circle cx="-246" cy="35" r="14" fill="#FFFFFF" stroke="none"></circle>
+    <circle cx="-246" cy="117" r="14" fill="#FFFFFF" stroke="none"></circle>
+    <circle cx="-246" cy="198" r="14" fill="#FFFFFF" stroke="none"></circle>
+  </g>
+
+  
+  <g transform="translate(572, 492)">
+    <path d="M 0 110&#xA;             C -100 50, -170 -25, -170 -85&#xA;             C -170 -130, -135 -155, -90 -155&#xA;             C -50 -155, -20 -130, 0 -100&#xA;             C 20 -130, 50 -155, 90 -155&#xA;             C 135 -155, 170 -130, 170 -85&#xA;             C 170 -25, 100 50, 0 110 Z" fill="#5FA584"></path>
+  </g>
+</svg>
