@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240">
+  <title>Büyüme - Tartı ve boy cetveli</title>
+  <desc>My Little Baby Notebook - Büyüme menü ikonu</desc>
+
+  <g transform="translate(120, 120)">
+    
+    <path d="M -80 -75 L -78 -70 L -73 -72 L -78 -69 L -80 -64 L -82 -69 L -87 -72 L -82 -70 Z" fill="#FFE9A0"></path>
+    <path d="M 82 55 L 84 60 L 89 58 L 84 61 L 82 66 L 80 61 L 75 58 L 80 60 Z" fill="#FFE9A0"></path>
+    <circle cx="78" cy="-55" r="3" fill="#FFFFFF" opacity="0.85"></circle>
+    <circle cx="-72" cy="50" r="2.5" fill="#FFFFFF" opacity="0.85"></circle>
+    <circle cx="-85" cy="5" r="2" fill="#FFFFFF" opacity="0.7"></circle>
+
+    
+    <g transform="translate(-42, -10)">
+      
+      <ellipse cx="0" cy="72" rx="14" ry="3" fill="#3E2A1F" opacity="0.1"></ellipse>
+
+      
+      <rect x="-13" y="-75" width="26" height="144" rx="6" fill="#FFD4E0"></rect>
+      <rect x="-13" y="-75" width="26" height="144" rx="6" fill="none" stroke="#ED93B1" stroke-width="1"></rect>
+
+      
+      <rect x="-13" y="-75" width="26" height="14" rx="6" fill="#F4C0D1"></rect>
+
+      
+      <line x1="-13" y1="-55" x2="0" y2="-55" stroke="#ED93B1" stroke-width="1.2"></line>
+      <line x1="-13" y1="-40" x2="4" y2="-40" stroke="#ED93B1" stroke-width="0.8"></line>
+      <line x1="-13" y1="-25" x2="0" y2="-25" stroke="#ED93B1" stroke-width="1.2"></line>
+      <line x1="-13" y1="-10" x2="4" y2="-10" stroke="#ED93B1" stroke-width="0.8"></line>
+      <line x1="-13" y1="5" x2="0" y2="5" stroke="#ED93B1" stroke-width="1.2"></line>
+      <line x1="-13" y1="20" x2="4" y2="20" stroke="#ED93B1" stroke-width="0.8"></line>
+      <line x1="-13" y1="35" x2="0" y2="35" stroke="#ED93B1" stroke-width="1.2"></line>
+      <line x1="-13" y1="50" x2="4" y2="50" stroke="#ED93B1" stroke-width="0.8"></line>
+
+      
+      <path d="M 5 -60 L 6 -57 L 9 -58 L 6 -56 L 5 -53 L 4 -56 L 1 -58 L 4 -57 Z" fill="#F9D48B"></path>
+      <path d="M 5 -30 L 6 -27 L 9 -28 L 6 -26 L 5 -23 L 4 -26 L 1 -28 L 4 -27 Z" fill="#F9D48B"></path>
+      <path d="M 5 5   L 6 8   L 9 7   L 6 9   L 5 12  L 4 9   L 1 7   L 4 8  Z" fill="#F9D48B"></path>
+    </g>
+
+    
+    <g transform="translate(20, 15)">
+      
+      <ellipse cx="0" cy="58" rx="44" ry="6" fill="#3E2A1F" opacity="0.12"></ellipse>
+
+      
+      <path d="M -44 42 Q -44 55 -32 58 L 32 58 Q 44 55 44 42 L 44 32 L -44 32 Z" fill="#B8DDC9"></path>
+      <path d="M -44 32 L 44 32 L 44 36 L -44 36 Z" fill="#D4E8B8"></path>
+
+      
+      <rect x="-44" y="-22" width="88" height="56" rx="8" fill="#FFFFFF"></rect>
+      <rect x="-44" y="-22" width="88" height="56" rx="8" fill="none" stroke="#B8DDC9" stroke-width="1.2"></rect>
+
+      
+      <rect x="-44" y="-22" width="88" height="16" rx="8" fill="#E0F0E5"></rect>
+
+      
+      <rect x="-26" y="4" width="52" height="20" rx="5" fill="#D4EAF5"></rect>
+      <rect x="-26" y="4" width="52" height="20" rx="5" fill="none" stroke="#B8DDF0" stroke-width="0.8"></rect>
+
+      
+      <text x="0" y="18" text-anchor="middle" font-family="-apple-system, &#39;Helvetica Neue&#39;, sans-serif" font-size="10" font-weight="700" fill="#5FA584">6.2</text>
+      <text x="22" y="18" text-anchor="middle" font-family="-apple-system, &#39;Helvetica Neue&#39;, sans-serif" font-size="6" fill="#7DB89A">kg</text>
+
+      
+      <g transform="translate(0, -10)">
+        
+        <path d="M -9 0 Q -6 -3 -3 0" stroke="#3E2A1F" stroke-width="1.6" fill="none" stroke-linecap="round"></path>
+        <path d="M 3 0 Q 6 -3 9 0" stroke="#3E2A1F" stroke-width="1.6" fill="none" stroke-linecap="round"></path>
+        
+        <ellipse cx="-12" cy="5" rx="3.5" ry="2.5" fill="#F8B4C4" opacity="0.7"></ellipse>
+        <ellipse cx="12" cy="5" rx="3.5" ry="2.5" fill="#F8B4C4" opacity="0.7"></ellipse>
+        
+        <path d="M -4 5 Q 0 9 4 5" stroke="#3E2A1F" stroke-width="1.4" fill="none" stroke-linecap="round"></path>
+      </g>
+
+      
+      <circle cx="-12" cy="46" r="4" fill="#FFFFFF"></circle>
+      <circle cx="-12" cy="46" r="2.5" fill="#F4C0D1"></circle>
+      <circle cx="0" cy="46" r="4" fill="#FFFFFF"></circle>
+      <circle cx="0" cy="46" r="2.5" fill="#B8DDC9"></circle>
+      <circle cx="12" cy="46" r="4" fill="#FFFFFF"></circle>
+      <circle cx="12" cy="46" r="2.5" fill="#B8DDF0"></circle>
+
+      
+      <path d="M 28 -10 Q 28 -13 30 -13 Q 32 -13 32 -10 Q 32 -7 28 -5 Q 24 -7 24 -10 Q 24 -13 26 -13 Q 28 -13 28 -10 Z" fill="#ED93B1" opacity="0.8"></path>
+    </g>
+
+    
+    <g transform="translate(-20, 68)">
+      <circle cx="0" cy="0" r="4" fill="#FFE9A0"></circle>
+      <circle cx="0" cy="-6" r="3" fill="#FFD4E0"></circle>
+      <circle cx="0" cy="6" r="3" fill="#FFD4E0"></circle>
+      <circle cx="-6" cy="0" r="3" fill="#FFD4E0"></circle>
+      <circle cx="6" cy="0" r="3" fill="#FFD4E0"></circle>
+    </g>
+  </g>
+</svg>
