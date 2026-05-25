@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service — My Little Baby Notebook</title>
+  <meta name="description" content="Terms of Service for My Little Baby Notebook app.">
+  <link rel="canonical" href="https://mylittlebabynotebook.app/terms.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,500;0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1F3D2E; background: #fff; }
+    .site-nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid #DCE9E3; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between; height: 60px;
+    }
+    .nav-logo { font-size: 15px; font-weight: 800; color: #1F3D2E; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+    .nav-logo span { font-size: 20px; }
+    .nav-back { background: #F6FAF5; border: 1px solid #DCE9E3; color: #1F3D2E; padding: 8px 16px; border-radius: 10px; font-size: 13px; font-weight: 700; text-decoration: none; }
+    .page-wrap { max-width: 760px; margin: 0 auto; padding: 56px 24px 80px; }
+    .legal-header { margin-bottom: 48px; }
+    .legal-header h1 { font-size: clamp(24px, 4vw, 36px); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px; }
+    .legal-meta { color: #7C8B82; font-size: 14px; font-weight: 500; }
+    .lang-toggle { display: flex; background: #F6FAF5; border: 1px solid #DCE9E3; border-radius: 50px; padding: 3px; gap: 2px; margin-bottom: 40px; width: fit-content; }
+    .lang-btn { background: transparent; border: none; cursor: pointer; font-family: inherit; font-size: 12px; font-weight: 700; color: #7C8B82; padding: 5px 14px; border-radius: 50px; transition: background .15s, color .15s; }
+    .lang-btn.active { background: #1F3D2E; color: #fff; }
+    .lang-section { display: none; }
+    .lang-section.visible { display: block; }
+    h2 { font-size: 19px; font-weight: 800; margin: 40px 0 12px; color: #1F3D2E; letter-spacing: -0.01em; }
+    h3 { font-size: 15px; font-weight: 800; margin: 24px 0 8px; color: #1F3D2E; }
+    p { font-size: 14.5px; color: #374740; line-height: 1.75; margin-bottom: 12px; }
+    ul, ol { padding-left: 20px; margin-bottom: 12px; }
+    li { font-size: 14.5px; color: #374740; line-height: 1.75; margin-bottom: 4px; }
+    strong { color: #1F3D2E; }
+    a { color: #5FA584; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0 20px; font-size: 13px; }
+    th { background: #F6FAF5; color: #1F3D2E; font-weight: 800; padding: 10px 12px; text-align: left; border: 1px solid #DCE9E3; }
+    td { padding: 9px 12px; border: 1px solid #DCE9E3; color: #374740; vertical-align: top; }
+    blockquote { background: #FFF8E7; border-left: 3px solid #ECC76B; padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 12px 0 20px; }
+    blockquote p { margin: 0; font-size: 13.5px; }
+    .disclaimer { background: #FFF3F3; border-left: 3px solid #E9A8B4; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 20px 0; }
+    .disclaimer p { margin: 0; font-size: 13.5px; }
+    hr { border: none; border-top: 1px solid #DCE9E3; margin: 40px 0; }
+    .site-footer { border-top: 1px solid #DCE9E3; padding: 32px 24px; text-align: center; color: #7C8B82; font-size: 13px; font-weight: 500; }
+    .site-footer a { color: #5FA584; text-decoration: none; font-weight: 700; }
+    .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 16px; flex-wrap: wrap; }
+    @media (max-width: 600px) { table { display: block; overflow-x: auto; } }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="nav-logo" href="/"><span>🌿</span> My Little Baby Notebook</a>
+  <a class="nav-back" href="/">← Back</a>
+</nav>
+
+<div class="page-wrap">
+  <div class="legal-header">
+    <h1 id="page-title">Terms of Service</h1>
+    <p class="legal-meta" id="page-meta">Last updated: May 24, 2026 · Effective: May 24, 2026</p>
+  </div>
+
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" id="btn-tr" onclick="setLang('tr')">TR</button>
+  </div>
+
+  <!-- ── ENGLISH ── -->
+  <div id="lang-en" class="lang-section visible">
+
+    <h2>1. Agreement Overview</h2>
+    <p>These Terms of Service ("Terms") govern your use of the <strong>My Little Baby Notebook</strong> mobile application ("App") developed by <strong>Busra Temur (Jalo.co)</strong> ("developer", "I", "me"). By downloading or using the App, you agree to these Terms.</p>
+
+    <hr>
+
+    <h2>2. Geographic Scope</h2>
+    <p><strong>This application is not directed at or marketed to residents of the European Union or European Economic Area (EU/EEA).</strong> If you reside in the EU/EEA, please do not use this application.</p>
+
+    <hr>
+
+    <h2>3. Eligibility</h2>
+    <p>You must be at least <strong>18 years old</strong> to create an account. The App is designed for parents and legal guardians to track information about their babies and young children. Children must not create accounts or directly enter their own data.</p>
+
+    <hr>
+
+    <h2>4. License Grant</h2>
+    <p>Subject to these Terms, I grant you a limited, non-exclusive, non-transferable, revocable license to install and use the App on devices you own or control, for personal, non-commercial purposes only.</p>
+
+    <hr>
+
+    <h2>5. Service Description</h2>
+    <p>My Little Baby Notebook is a personal digital baby journal. Features vary by subscription tier:</p>
+
+    <h3>Free Tier (up to 5 baby profiles)</h3>
+    <ul>
+      <li>Memory Moments: photos and notes with 30+ category templates</li>
+      <li>Baby Milestones: photo-backed milestone records</li>
+      <li>Growth Tracking: weight, height, head circumference with WHO percentile charts</li>
+      <li>Feeding Tracker: breastfeeding (left/right, duration), pumping, bottle, solids</li>
+      <li>Diaper Log: wet/dirty/mixed with timestamps and notes</li>
+      <li>Health Schedule: age-based vaccine and checkup calendar with reminders</li>
+      <li>Vitamin Tracker: daily, specific weekday, or every-N-day reminders</li>
+      <li>Tooth Map: visual FDI dental notation jaw map</li>
+      <li>Baby Diary: 8-category rich text journal with photos and PDF export</li>
+      <li>PDF Baby Book: 4 formats (A5, A4, 25×25 cm), 12 color themes (watermarked in free tier)</li>
+      <li>Sleep Sounds: white, pink, brown noise and nature sounds</li>
+      <li>Co-Parenting: invite 1 co-parent per baby via email</li>
+      <li>In-App Photo Editor: crop (1:1, 4:3, 9:16) and rotate</li>
+      <li>Notification Center: all vitamin, vaccine, checkup, and system alerts in one feed</li>
+      <li>In-app advertisements via Google AdMob</li>
+    </ul>
+
+    <h3>Plus Subscription (additional features)</h3>
+    <ul>
+      <li>Unlimited baby profiles (free: up to 5)</li>
+      <li>Bulk photo upload up to 10 at once (free: single upload)</li>
+      <li>2 co-parents per baby (free: 1)</li>
+      <li>Date and category filters for PDF books</li>
+      <li>Watermark-free PDF and photo sharing</li>
+      <li>Premium sleep sounds collection</li>
+      <li><strong>Ad-free experience</strong> (AdMob SDK disabled)</li>
+    </ul>
+
+    <hr>
+
+    <h2>6. User Responsibilities</h2>
+    <p>You agree to provide accurate account information, keep your credentials secure, and use the App only for its intended personal purpose.</p>
+    <p>You agree <strong>not</strong> to:</p>
+    <ul>
+      <li>Reverse engineer, decompile, or disassemble the App</li>
+      <li>Use automated tools to access the App</li>
+      <li>Attempt unauthorized access to any part of the service</li>
+      <li>Resell or commercially exploit the App</li>
+      <li>Use ad-blocking tools to circumvent advertisements on the free tier (only Plus membership grants ad-free use)</li>
+    </ul>
+
+    <hr>
+
+    <h2>7. Intellectual Property</h2>
+    <p>The App and all its content (code, design, graphics, text, logos) is owned by Busra Temur and protected by copyright law. You retain full ownership of all content you create and upload. I use your content solely to operate the service (storage, sync, PDF generation).</p>
+
+    <hr>
+
+    <h2>8. Advertising</h2>
+    <p>The free tier displays advertisements served by <strong>Google AdMob.</strong> By using the free tier, you agree that AdMob may process your device's advertising identifier and general device information for ad serving purposes. See our <a href="/privacy.html">Privacy Policy</a> for details.</p>
+    <p><strong>Plus subscribers</strong> do not receive advertisements; AdMob SDK is not activated on Plus accounts. Advertisements are not directed at children.</p>
+
+    <hr>
+
+    <h2>9. Plus Subscription</h2>
+
+    <h3>9.1 Billing</h3>
+    <p>Plus membership is available as an auto-renewing in-app subscription via Apple App Store or Google Play. Your account is charged at purchase confirmation and upon each renewal. Renewal charges occur at least 24 hours before the end of the current period.</p>
+
+    <h3>9.2 Cancellation</h3>
+    <p>Cancel anytime via your platform's account settings:</p>
+    <ul>
+      <li><strong>Apple:</strong> App Store → Account → Subscriptions</li>
+      <li><strong>Google:</strong> Play Store → Subscriptions</li>
+    </ul>
+    <p>Cancellation takes effect at the end of the current billing period. Plus features remain accessible until period end. No partial refunds are issued for unused time.</p>
+
+    <h3>9.3 Refunds</h3>
+    <p>Refund requests are handled per the applicable platform's refund policy (Apple or Google Play).</p>
+
+    <h3>9.4 Price Changes</h3>
+    <p>Subscribers will be notified at least <strong>30 days</strong> before any price increase.</p>
+
+    <hr>
+
+    <h2>10. Free Tier Limits</h2>
+    <p>Free accounts may: create up to <strong>5 baby profiles</strong>, upload photos one at a time, add <strong>1 co-parent</strong> per baby, export PDFs and photos with a watermark, access the standard sleep sounds library, and view in-app advertisements.</p>
+    <p>The developer reserves the right to modify free tier features and limits with prior notice.</p>
+
+    <hr>
+
+    <h2>11. Health Disclaimer</h2>
+    <div class="disclaimer">
+      <p><strong>My Little Baby Notebook is not a medical application.</strong> No content in this App — including growth charts, reminders, vaccination schedules, CDC developmental milestone references, or WHO percentile curves — constitutes medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional for any health concerns about your child.</p>
+    </div>
+
+    <hr>
+
+    <h2>12. Disclaimers and Limitation of Liability</h2>
+    <p>THE APP IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW:</p>
+    <ul>
+      <li>The developer does not warrant that the App will be uninterrupted or error-free.</li>
+      <li>The developer is not responsible for the accuracy of user-entered data.</li>
+      <li>The developer is not responsible for the completeness or accuracy of informational reference content.</li>
+      <li>The developer's total liability shall not exceed the subscription fees you paid in the twelve months preceding the claim.</li>
+      <li>The developer shall not be liable for indirect, incidental, special, or consequential damages.</li>
+    </ul>
+
+    <hr>
+
+    <h2>13. Account Termination</h2>
+    <p>You may delete your account at any time via <strong>Settings → Account → Delete Account.</strong> All data will be permanently deleted from servers within 30 days. This action is irreversible.</p>
+    <p>Accounts may be suspended or terminated for violations of these Terms, fraudulent activity, legal obligation, or inactivity exceeding 24 months (with prior email notice).</p>
+
+    <hr>
+
+    <h2>14. Apple App Store Additional Terms</h2>
+    <ul>
+      <li>Apple is not a party to this agreement and has no obligation to provide maintenance or support</li>
+      <li>Apple and its subsidiaries are third-party beneficiaries of these Terms</li>
+      <li>The user confirms they are not located in a US-embargoed country per App Store Terms</li>
+    </ul>
+
+    <hr>
+
+    <h2>15. Governing Law</h2>
+    <p>These Terms are governed by the laws of the <strong>Republic of Turkey.</strong> Any disputes will be resolved in Istanbul courts.</p>
+
+    <hr>
+
+    <h2>16. Changes to These Terms</h2>
+    <p>I may update these Terms. For material changes, notice will be given via in-app notification and/or email. Continued use after the effective date constitutes acceptance.</p>
+
+    <hr>
+
+    <h2>17. Contact</h2>
+    <p><strong>Busra Temur (Jalo.co)</strong><br>
+    Email: <a href="mailto:mylittlebabynotebook@gmail.com">mylittlebabynotebook@gmail.com</a><br>
+    Website: <a href="https://mylittlebabynotebook.app/terms.html">https://mylittlebabynotebook.app/terms.html</a></p>
+
+  </div>
+
+  <!-- ── TÜRKÇE ── -->
+  <div id="lang-tr" class="lang-section">
+
+    <h2>1. Taraflar ve Kapsam</h2>
+    <p>Bu Kullanım Koşulları ("Sözleşme"), <strong>Busra Temur (Jalo.co)</strong> ("geliştirici", "ben") ile <strong>My Little Baby Notebook</strong> uygulamasını indiren veya kullanan gerçek kişi ("Kullanıcı", "siz") arasında akdedilmiştir. Uygulamayı indirerek veya kullanmaya başlayarak bu Sözleşme'yi kabul etmiş sayılırsınız.</p>
+
+    <hr>
+
+    <h2>2. Coğrafi Kapsam</h2>
+    <p>Bu Uygulama <strong>Avrupa Birliği veya Avrupa Ekonomik Alanı (AB/AEA) sakinlerine yönelik sunulmamaktadır.</strong> AB/AEA'da ikamet ediyorsanız lütfen bu Uygulamayı kullanmayınız.</p>
+
+    <hr>
+
+    <h2>3. Kayıt Koşulları</h2>
+    <p>Hesap açabilmek için <strong>18 yaşında veya daha büyük</strong> olmanız gerekmektedir. 13 yaşın altındaki bireylerin bilgileri yalnızca ebeveyn veya yasal vasi tarafından girilebilir.</p>
+
+    <hr>
+
+    <h2>4. Hizmetin Tanımı</h2>
+    <p>My Little Baby Notebook, ebeveynlerin bebekleri ve küçük çocuklarına ait verileri güvenle kaydetmelerine ve takip etmelerine imkân tanıyan kişisel bir dijital günlük uygulamasıdır.</p>
+
+    <h3>Tüm kullanıcılar (ücretsiz katman — 5 bebek profiline kadar)</h3>
+    <ul>
+      <li>Anılar: fotoğraf ve kısa notlar, 30'dan fazla hazır şablonla kategorilendirme</li>
+      <li>İlk Adımlar: fotoğraflı kilometre taşı kaydı</li>
+      <li>Büyüme Takibi: kilo, boy, baş çevresi, WHO persentil grafikleri</li>
+      <li>Beslenme Kaydı: emzirme (sol/sağ, süre), pompalama, biberon, katı gıda</li>
+      <li>Bez Kaydı: ıslak, kirli veya karma; zaman damgası ve not</li>
+      <li>Sağlık Takvimi: yaşa göre otomatik aşı ve kontrol takvimi</li>
+      <li>Vitamin Takibi: günlük, belirli hafta günleri veya her N günde bir hatırlatma</li>
+      <li>Diş Haritası: FDI numaralandırması ile görsel üst/alt çene haritası</li>
+      <li>Bebek Günlüğü: 8 kategorili zengin metin günlüğü, PDF dışa aktarma</li>
+      <li>PDF Bebek Kitabı: 4 format, 12 renk teması (ücretsizde filigranla)</li>
+      <li>Uyku Sesleri: beyaz, pembe, kahverengi gürültü ve doğa sesleri</li>
+      <li>Ebeveyn Paylaşımı: e-posta ile davet; bebek başına 1 ortak ebeveyn</li>
+      <li>Fotoğraf Editörü: kırpma (1:1, 4:3, 9:16) ve döndürme</li>
+      <li>Bildirim Merkezi: tüm bildirimleri tek merkezde yönetme</li>
+      <li>Google AdMob reklam gösterimi</li>
+    </ul>
+
+    <h3>Plus Üyeliği (ek özellikler)</h3>
+    <ul>
+      <li>Sınırsız bebek profili (ücretsizde 5'e kadar)</li>
+      <li>Tek seferde 10'a kadar toplu fotoğraf yükleme</li>
+      <li>Bebek başına 2 ortak ebeveyn (ücretsizde 1)</li>
+      <li>PDF kitapta tarih ve kategori filtresi</li>
+      <li>Filigransız PDF ve fotoğraf paylaşımı</li>
+      <li>Premium uyku sesleri koleksiyonu</li>
+      <li><strong>Reklamsız deneyim</strong> (AdMob SDK devre dışı)</li>
+    </ul>
+
+    <hr>
+
+    <h2>5. Kullanıcı Yükümlülükleri</h2>
+    <p><strong>Yapabilecekleriniz:</strong> Kendi bebeğinizin verilerini kaydetmek, oluşturduğunuz içerikleri kişisel kullanım amacıyla dışa aktarmak, ebeveyn paylaşımı özelliğiyle partnerinizle profil paylaşmak.</p>
+    <p><strong>Yapamayacaklarınız:</strong></p>
+    <ul>
+      <li>Uygulamayı tersine mühendislik veya kaynak koda erişim amacıyla kullanmak</li>
+      <li>Otomatik araçlarla (bot, scraper) Uygulamaya erişmek</li>
+      <li>Başkasının verisine izinsiz erişmeye çalışmak</li>
+      <li>Uygulamayı ticari amaçla yeniden satmak veya dağıtmak</li>
+      <li>Reklam engelleyici araçlar kullanarak ücretsiz katmandaki reklamları engellemeye çalışmak</li>
+    </ul>
+
+    <hr>
+
+    <h2>6. Fikri Mülkiyet</h2>
+    <p>Uygulama ve içeriği Busra Temur'a aittir ve 5846 sayılı Fikir ve Sanat Eserleri Kanunu ile uluslararası telif hukuku kapsamında korunmaktadır. Uygulamaya yüklediğiniz tüm içerikler <strong>size aittir.</strong> Geliştirici bu içerikler üzerinde herhangi bir mülkiyet hakkı talep etmez.</p>
+
+    <hr>
+
+    <h2>7. Reklamlar</h2>
+    <p>Ücretsiz katmanda <strong>Google AdMob</strong> tarafından sunulan reklamlar gösterilmektedir. Ayrıntılar için <a href="/privacy.html">Gizlilik Politikası</a>'nı inceleyiniz. <strong>Plus üyeliği</strong> satın alarak reklam gösterimini tamamen devre dışı bırakabilirsiniz.</p>
+
+    <hr>
+
+    <h2>8. Plus Üyeliği ve Ödemeler</h2>
+
+    <h3>8.1 Abonelik</h3>
+    <p>Plus üyeliği, Apple App Store veya Google Play üzerinden uygulama içi satın alma (IAP) yoluyla sunulmaktadır. Ödeme, satın alma onayında platform hesabınızdan tahsil edilir. Abonelikler iptal edilmediği sürece mevcut dönem sonunda <strong>otomatik olarak yenilenir.</strong></p>
+
+    <h3>8.2 İptal</h3>
+    <p>Aboneliğinizi platform hesap ayarlarından istediğiniz zaman iptal edebilirsiniz:</p>
+    <ul>
+      <li><strong>Apple:</strong> App Store → Hesap → Abonelikler</li>
+      <li><strong>Google:</strong> Play Store → Abonelikler</li>
+    </ul>
+    <p>İptal, mevcut ödeme döneminin sonunda geçerli olur. Kalan süre için ücret iadesi yapılmaz (platform iade politikaları saklıdır).</p>
+
+    <h3>8.3 İade</h3>
+    <p>İade talepleri, satın almanın gerçekleştiği platform mağazanın politikalarına tabidir.</p>
+
+    <h3>8.4 Fiyat Değişiklikleri</h3>
+    <p>Abonelik fiyatları değiştiğinde mevcut aboneler en az <strong>30 gün</strong> öncesinden bildirilecektir.</p>
+
+    <hr>
+
+    <h2>9. Sağlık Uyarısı ve Sorumluluk Reddi</h2>
+    <div class="disclaimer">
+      <p>⚠️ <strong>My Little Baby Notebook bir tıbbi uygulama değildir.</strong> Uygulama içinde yer alan hiçbir içerik — büyüme grafikleri, hatırlatıcılar, aşı takvimleri, CDC gelişim referansları veya WHO persentil grafikleri dahil — tıbbi tavsiye, tanı veya tedavi niteliği taşımaz. Her zaman çocuğunuzun hekimine danışınız.</p>
+    </div>
+
+    <hr>
+
+    <h2>10. Sorumluluğun Sınırlandırılması</h2>
+    <p>Yürürlükteki hukukun izin verdiği azami ölçüde:</p>
+    <ul>
+      <li>Geliştirici, Uygulamanın kesintisiz veya hatasız çalışacağını garanti etmez.</li>
+      <li>Geliştirici, kullanıcı tarafından girilen verilerin doğruluğundan sorumlu değildir.</li>
+      <li>Geliştirici, Google AdMob tarafından gösterilen reklam içeriklerinden sorumlu değildir.</li>
+      <li>Geliştiricinin toplam sorumluluğu, hasar doğuran olaydan önceki 12 ay içinde ödediğiniz abonelik ücretiyle sınırlıdır.</li>
+      <li>Geliştirici, dolaylı, arızi, özel veya cezai zararlardan sorumlu tutulamaz.</li>
+    </ul>
+
+    <hr>
+
+    <h2>11. Hesap Kapatma ve Veri Silme</h2>
+    <p>Hesabınızı <strong>Ayarlar → Hesap → Hesabı Sil</strong> yoluyla istediğiniz zaman silebilirsiniz. İşlem geri alınamaz; tüm verileriniz 30 gün içinde sistemlerimizden kalıcı olarak silinir.</p>
+    <p>Geliştirici; bu Sözleşme'nin ihlali, dolandırıcılık veya 24 ayı aşan hesap hareketsizliği (önceden e-posta ile bildirim yapılır) durumlarında hesabı askıya alabilir veya kapatabilir.</p>
+
+    <hr>
+
+    <h2>12. Apple ve Google'a Özgü Hükümler</h2>
+    <ul>
+      <li>Apple bu Sözleşme'ye taraf değildir; bakım, destek, garanti veya uyuşmazlık çözümü yükümlülüğü taşımaz.</li>
+      <li>Apple bu sözleşmenin üçüncü taraf yararlanıcısıdır ve sözleşmeyi kullanıcıya karşı doğrudan uygulama hakkına sahiptir.</li>
+      <li>Kullanıcı, ABD ihracat kısıtlamalarına tabi ülkelerde bulunmadığını beyan eder.</li>
+    </ul>
+
+    <hr>
+
+    <h2>13. Uygulanacak Hukuk ve Uyuşmazlık Çözümü</h2>
+    <p>Bu Sözleşme <strong>Türkiye Cumhuriyeti</strong> hukukuna tabidir. Taraflar arasında doğabilecek uyuşmazlıklarda öncelikle dostane çözüm yolu denenir. Çözüme kavuşulamazsa İstanbul Mahkemeleri ve İcra Daireleri yetkilidir.</p>
+
+    <hr>
+
+    <h2>14. Sözleşme Değişiklikleri</h2>
+    <p>Bu Sözleşme'yi değiştirme hakkı saklıdır. Önemli değişiklikler için uygulama içi bildirim ve/veya e-posta gönderilir. Değişiklik tarihinden sonra Uygulamayı kullanmaya devam etmeniz yeni koşulları kabul ettiğiniz anlamına gelir.</p>
+
+    <hr>
+
+    <h2>15. İletişim</h2>
+    <p><strong>Busra Temur (Jalo.co)</strong><br>
+    E-posta: <a href="mailto:mylittlebabynotebook@gmail.com">mylittlebabynotebook@gmail.com</a><br>
+    Web: <a href="https://mylittlebabynotebook.app/terms.html">https://mylittlebabynotebook.app/terms.html</a></p>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-links">
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Service</a>
+    <a href="mailto:mylittlebabynotebook@gmail.com">Contact</a>
+  </div>
+  <div>© 2025 My Little Baby Notebook · Made with 🌿 by <a href="https://jalocotech.com">JaLo Tech</a></div>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.getElementById('lang-en').classList.toggle('visible', lang === 'en');
+    document.getElementById('lang-tr').classList.toggle('visible', lang === 'tr');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
+    document.documentElement.lang = lang;
+    localStorage.setItem('mlbn-lang', lang);
+    document.getElementById('page-title').textContent = lang === 'tr' ? 'Kullanım Koşulları' : 'Terms of Service';
+    document.getElementById('page-meta').textContent = lang === 'tr'
+      ? 'Son güncelleme: 24 Mayıs 2026 · Yürürlük: 24 Mayıs 2026'
+      : 'Last updated: May 24, 2026 · Effective: May 24, 2026';
+  }
+  (function() {
+    const saved = localStorage.getItem('mlbn-lang');
+    if (saved === 'tr' || saved === 'en') { setLang(saved); return; }
+    if ((navigator.language || '').startsWith('tr')) { setLang('tr'); }
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Little Baby Notebook — Every moment, lovingly kept.</title>
+  <meta name="description" content="Track your baby's milestones, growth, health and memories in one beautiful app. Available on iOS and Android.">
+  <meta property="og:title" content="My Little Baby Notebook">
+  <meta property="og:description" content="Every moment, lovingly kept. Track milestones, growth, feeding, health and memories.">
+  <meta property="og:image" content="https://mylittlebabynotebook.app/og-image.png">
+  <meta property="og:url" content="https://mylittlebabynotebook.app">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://mylittlebabynotebook.app">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,500;0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #1F3D2E;
+      background: #fff;
+    }
+
+    /* ── NAV ── */
+    .site-nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid #DCE9E3;
+      padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+    }
+    .nav-logo {
+      font-size: 15px; font-weight: 800; color: #1F3D2E;
+      text-decoration: none; display: flex; align-items: center; gap: 8px;
+    }
+    .nav-logo span { font-size: 20px; }
+    .nav-actions { display: flex; align-items: center; gap: 12px; }
+
+    /* Language toggle */
+    .lang-toggle {
+      display: flex; background: #F6FAF5; border: 1px solid #DCE9E3;
+      border-radius: 50px; padding: 3px; gap: 2px;
+    }
+    .lang-btn {
+      background: transparent; border: none; cursor: pointer;
+      font-family: inherit; font-size: 12px; font-weight: 700;
+      color: #7C8B82; padding: 5px 14px; border-radius: 50px;
+      transition: background .15s, color .15s;
+    }
+    .lang-btn.active {
+      background: #1F3D2E; color: #fff;
+    }
+
+    .nav-cta {
+      background: #1F3D2E; color: #fff;
+      padding: 8px 18px; border-radius: 10px;
+      font-size: 13px; font-weight: 700; text-decoration: none;
+      transition: background .2s;
+    }
+    .nav-cta:hover { background: #2d5740; }
+    @media (max-width: 480px) { .nav-cta { display: none; } }
+
+    /* ── MAIN CONTENT ── */
+    .page-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* Language sections */
+    .lang-section { display: none; }
+    .lang-section.visible { display: block; }
+
+    /* ── HERO ── */
+    .mlbn-hero {
+      background: radial-gradient(120% 80% at 50% 0%, #B7DCC4 0%, #6FAB89 55%, #4E8E70 100%);
+      text-align: center;
+      padding: 80px 24px 72px;
+      border-radius: 24px;
+      margin-bottom: 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .mlbn-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 40% at 80% 20%, rgba(255,255,255,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .mlbn-hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.22); border: 1px solid rgba(255,255,255,0.35);
+      color: #fff; font-size: 13px; font-weight: 700;
+      letter-spacing: .06em; text-transform: uppercase;
+      padding: 6px 18px; border-radius: 50px; margin-bottom: 24px;
+    }
+    .mlbn-hero h1 {
+      font-size: clamp(32px, 5vw, 56px); font-weight: 800;
+      margin: 0 0 6px; color: #fff; line-height: 1.05; letter-spacing: -0.03em;
+    }
+    .mlbn-hero h1 em { font-style: italic; font-weight: 700; opacity: 0.9; }
+    .mlbn-hero-sub {
+      font-size: clamp(15px, 2.5vw, 20px); color: rgba(255,255,255,0.88);
+      margin: 16px auto 40px; max-width: 480px; line-height: 1.55; font-weight: 500;
+    }
+    .mlbn-btn-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .mlbn-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #1F3D2E; color: #fff;
+      padding: 14px 26px; border-radius: 14px;
+      font-size: 14px; font-weight: 700; text-decoration: none;
+      transition: background .2s, transform .15s; font-family: inherit;
+    }
+    .mlbn-btn:hover { background: #2d5740; transform: translateY(-1px); }
+    .mlbn-btn-white { background: rgba(255,255,255,0.95); color: #1F3D2E; }
+    .mlbn-btn-white:hover { background: #fff; }
+
+    /* ── PHONE SHOWCASE ── */
+    .mlbn-phones-section { margin-bottom: 72px; text-align: center; }
+    .mlbn-phones-label {
+      font-size: 12px; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: #7C8B82; margin-bottom: 28px;
+    }
+    .mlbn-phones-strip {
+      display: flex; gap: 20px; justify-content: center; flex-wrap: nowrap;
+      overflow-x: auto; padding: 12px 8px 24px;
+      -webkit-overflow-scrolling: touch; scrollbar-width: none;
+    }
+    .mlbn-phones-strip::-webkit-scrollbar { display: none; }
+    .mlbn-phone-wrap { flex: 0 0 152px; }
+    .mlbn-phone-wrap.featured { flex: 0 0 172px; margin-top: -12px; }
+    .mlbn-phone-frame {
+      width: 100%; aspect-ratio: 390 / 844;
+      background: #111; border-radius: 28px; padding: 6px;
+      box-shadow: 0 24px 56px rgba(20,40,30,0.28), 0 0 0 1.5px rgba(0,0,0,0.45);
+    }
+    .mlbn-phone-screen {
+      width: 100%; height: 100%; border-radius: 22px; overflow: hidden;
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .mlbn-phone-sb {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      padding: 8px 14px 4px; font-size: 7.5px; font-weight: 700; color: #fff; flex-shrink: 0;
+    }
+    .mlbn-phone-body {
+      flex: 1; display: flex; flex-direction: column; align-items: center;
+      justify-content: space-between; padding: 10px 12px 20px;
+      text-align: center; color: #fff; width: 100%;
+    }
+    .mlbn-phone-copy { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .mlbn-phone-tag-pill {
+      background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.28);
+      border-radius: 20px; padding: 2px 9px; font-size: 7px; font-weight: 700;
+      letter-spacing: .07em; text-transform: uppercase; color: #fff;
+      margin-bottom: 8px; display: inline-block;
+    }
+    .mlbn-phone-hl {
+      font-size: 17px; font-weight: 800; line-height: 1.08;
+      letter-spacing: -0.025em; margin: 0 0 6px; color: #fff;
+    }
+    .mlbn-phone-hl em { font-style: italic; font-weight: 700; opacity: 0.92; }
+    .mlbn-phone-desc { font-size: 8.5px; line-height: 1.4; opacity: 0.82; font-weight: 500; }
+    .mlbn-phone-icon-big { font-size: 52px; line-height: 1; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2)); }
+    .mlbn-featured-phone .mlbn-phone-hl { font-size: 19px; }
+    .mlbn-featured-phone .mlbn-phone-icon-big { font-size: 60px; }
+    .mlbn-ps-s1 { background: radial-gradient(120% 80% at 50% 0%, #B7DCC4, #6FAB89 55%, #4E8E70); }
+    .mlbn-ps-s2 { background: radial-gradient(120% 80% at 50% 0%, #F8D7DD, #E9A8B4 60%, #C97889); }
+    .mlbn-ps-s4 { background: radial-gradient(120% 80% at 50% 0%, #FFE2C2, #F1B27A 55%, #C9844C); }
+    .mlbn-ps-s5 { background: radial-gradient(120% 80% at 50% 0%, #D8E9F5, #98BFDF 55%, #5F8FB5); }
+    .mlbn-ps-s8 { background: radial-gradient(120% 80% at 50% 0%, #FFF1C7, #ECC76B 50%, #B59137); }
+
+    /* ── SECTION TITLES ── */
+    .mlbn-section-title {
+      text-align: center; font-size: clamp(22px, 3.5vw, 34px); font-weight: 800;
+      color: #1F3D2E; margin: 0 0 8px; letter-spacing: -0.02em;
+    }
+    .mlbn-section-sub {
+      text-align: center; color: #7C8B82; font-size: 16px; font-weight: 500;
+      margin: 0 auto 44px; max-width: 520px; line-height: 1.6;
+    }
+
+    /* ── FEATURE CARDS ── */
+    .mlbn-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 20px; margin-bottom: 72px;
+    }
+    @media (max-width: 768px) { .mlbn-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .mlbn-grid { grid-template-columns: 1fr; } }
+    .mlbn-card {
+      background: #fff; border: 1px solid #DCE9E3; border-radius: 18px;
+      padding: 28px 24px; transition: transform .2s, box-shadow .2s;
+    }
+    .mlbn-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(95,165,132,.14); }
+    .mlbn-card-icon { font-size: 36px; margin-bottom: 14px; display: block; line-height: 1; }
+    .mlbn-card h3 { font-size: 15px; font-weight: 800; color: #1F3D2E; margin: 0 0 8px; letter-spacing: -0.01em; }
+    .mlbn-card p { font-size: 13.5px; color: #7C8B82; margin: 0; line-height: 1.65; }
+    .mlbn-card-new {
+      display: inline-block; background: #5FA584; color: #fff;
+      font-size: 9px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase;
+      padding: 2px 9px; border-radius: 50px; margin-bottom: 10px;
+    }
+
+    /* ── PLUS BOX ── */
+    .mlbn-plus-box {
+      background: radial-gradient(120% 80% at 10% 0%, #2a5c40 0%, #1F3D2E 100%);
+      border-radius: 24px; padding: 52px 44px; color: #fff; margin-bottom: 72px;
+    }
+    @media (max-width: 600px) { .mlbn-plus-box { padding: 36px 24px; } }
+    .mlbn-plus-box h2 { font-size: 28px; font-weight: 800; margin: 0 0 8px; letter-spacing: -0.02em; }
+    .mlbn-plus-box > p { color: #B8DDC9; font-size: 15px; font-weight: 500; margin: 0 0 32px; max-width: 480px; }
+    .mlbn-plus-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 32px; }
+    @media (max-width: 600px) { .mlbn-plus-grid { grid-template-columns: 1fr; } }
+    .mlbn-plus-item {
+      background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.12); border-radius: 12px;
+      padding: 14px 16px; font-size: 13.5px; font-weight: 500;
+      display: flex; align-items: flex-start; gap: 10px;
+    }
+    .mlbn-plus-item span { color: #B8DDC9; font-size: 18px; flex-shrink: 0; }
+
+    /* ── LANGUAGE CHIPS ── */
+    .mlbn-lang-row { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 72px; }
+    .mlbn-lang-chip {
+      background: #F6FAF5; border: 1px solid #DCE9E3;
+      color: #1F3D2E; font-size: 13px; font-weight: 700; padding: 7px 18px; border-radius: 50px;
+    }
+
+    /* ── CTA ── */
+    .mlbn-cta {
+      background: #F6FAF5; border-radius: 24px; text-align: center;
+      padding: 64px 24px; margin-bottom: 32px; border: 1px solid #DCE9E3;
+    }
+    .mlbn-cta h2 { font-size: 28px; font-weight: 800; color: #1F3D2E; margin: 0 0 12px; letter-spacing: -0.02em; }
+    .mlbn-cta p { color: #7C8B82; margin: 0 0 32px; font-size: 15px; font-weight: 500; }
+    .mlbn-btn-green { background: #5FA584; }
+    .mlbn-btn-green:hover { background: #4a8a6a; }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      border-top: 1px solid #DCE9E3; padding: 32px 24px;
+      text-align: center; color: #7C8B82; font-size: 13px; font-weight: 500;
+    }
+    .site-footer a { color: #5FA584; text-decoration: none; font-weight: 700; }
+    .site-footer a:hover { text-decoration: underline; }
+    .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 16px; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="site-nav">
+    <a class="nav-logo" href="/"><span>🌿</span> My Little Baby Notebook</a>
+    <div class="nav-actions">
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" id="btn-tr" onclick="setLang('tr')">TR</button>
+      </div>
+      <a class="nav-cta" href="https://apps.apple.com/app/my-little-baby-notebook/id6741442905" id="nav-dl-link">Download</a>
+    </div>
+  </nav>
+
+  <!-- ── ENGLISH ── -->
+  <div id="lang-en" class="lang-section visible">
+    <div class="page-wrap">
+
+      <div class="mlbn-hero">
+        <span class="mlbn-hero-badge">📱 iOS &amp; Android</span>
+        <h1>Every moment,<br><em>lovingly kept.</em></h1>
+        <p class="mlbn-hero-sub">Your baby's journey — milestones, growth, health and memories — beautifully organized in one little notebook.</p>
+        <div class="mlbn-btn-row">
+          <a href="https://apps.apple.com/app/my-little-baby-notebook/id6741442905" class="mlbn-btn mlbn-btn-white">🍎 Download on App Store</a>
+          <a href="https://play.google.com/store/apps/details?id=com.busratemur.mylittlebabynotebook" class="mlbn-btn" style="background:rgba(255,255,255,0.18);border:1.5px solid rgba(255,255,255,0.5);">▶ Get it on Google Play</a>
+        </div>
+      </div>
+
+      <div class="mlbn-phones-section">
+        <p class="mlbn-phones-label">See it in action</p>
+        <div class="mlbn-phones-strip">
+          <div class="mlbn-phone-wrap">
+            <div class="mlbn-phone-frame"><div class="mlbn-phone-screen mlbn-ps-s1">
+              <div class="mlbn-phone-sb"><span>9:41</span><span>▪▪▪ 5G 🔋</span></div>
+              <div class="mlbn-phone-body"><div class="mlbn-phone-copy">
+                <span class="mlbn-phone-tag-pill">Welcome</span>
+                <h3 class="mlbn-phone-hl">Every moment,<br>lovingly kept.</h3>
+                <p class="mlbn-phone-desc">Your baby's journey,<br>in one little notebook.</p>
+              </div><div class="mlbn-phone-icon-big">🌿</div></div>
+            </div></div>
+          </div>
+          <div class="mlbn-phone-wrap">
+            <div class="mlbn-phone-frame"><div class="mlbn-phone-screen mlbn-ps-s2">
+              <div class="mlbn-phone-sb"><span>9:41</span><span>▪▪▪ 5G 🔋</span></div>
+              <div class="mlbn-phone-body"><div class="mlbn-phone-copy">
+                <span class="mlbn-phone-tag-pill">Diary</span>
+                <h3 class="mlbn-phone-hl">A diary that grows<br>with them.</h3>
+                <p class="mlbn-phone-desc">Write down thoughts as they<br>discover the world.</p>
+              </div><div class="mlbn-phone-icon-big">📔</div></div>
+            </div></div>
+          </div>
+          <div class="mlbn-phone-wrap featured mlbn-featured-phone">
+            <div class="mlbn-phone-frame"><div class="mlbn-phone-screen mlbn-ps-s5">
+              <div class="mlbn-phone-sb"><span>9:41</span><span>▪▪▪ 5G 🔋</span></div>
+              <div class="mlbn-phone-body"><div class="mlbn-phone-copy">
+                <span class="mlbn-phone-tag-pill">Growth</span>
+                <h3 class="mlbn-phone-hl">Watch them<br>grow up.</h3>
+                <p class="mlbn-phone-desc">Weight and height, charted<br>with love.</p>
+              </div><div class="mlbn-phone-icon-big">📏</div></div>
+            </div></div>
+          </div>
+          <div class="mlbn-phone-wrap">
+            <div class="mlbn-phone-frame"><div class="mlbn-phone-screen mlbn-ps-s4">
+              <div class="mlbn-phone-sb"><span>9:41</span><span>▪▪▪ 5G 🔋</span></div>
+              <div class="mlbn-phone-body"><div class="mlbn-phone-copy">
+                <span class="mlbn-phone-tag-pill">Feeding</span>
+                <h3 class="mlbn-phone-hl">Track every feed,<br>every drop.</h3>
+                <p class="mlbn-phone-desc">Breastfeeding, pumping<br>and bottles.</p>
+              </div><div class="mlbn-phone-icon-big">🍼</div></div>
+            </div></div>
+          </div>
+          <div class="mlbn-phone-wrap">
+            <div class="mlbn-phone-frame"><div class="mlbn-phone-screen mlbn-ps-s8">
+              <div class="mlbn-phone-sb"><span>9:41</span><span>▪▪▪ 5G 🔋</span></div>
+              <div class="mlbn-phone-body"><div class="mlbn-phone-copy">
+                <span class="mlbn-phone-tag-pill">Memory Book</span>
+                <h3 class="mlbn-phone-hl">Print your<br>memory book.</h3>
+                <p class="mlbn-phone-desc">A keepsake PDF you'll<br>love forever.</p>
+              </div><div class="mlbn-phone-icon-big">📚</div></div>
+            </div></div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="mlbn-section-title">Everything in one app</h2>
+      <p class="mlbn-section-sub">From feeding to growth charts, vaccines to keepsake books — everything about your baby, beautifully organized.</p>
+
+      <div class="mlbn-grid">
+        <div class="mlbn-card"><span class="mlbn-card-icon">📸</span><h3>Memory Moments</h3><p>Capture photos and short notes in seconds. Organize with 30+ ready-made templates across categories.</p></div>
+        <div class="mlbn-card"><span class="mlbn-card-icon">👣</span><h3>Baby Milestones</h3><p>From first smile to first steps — document every milestone with photos and dates, beautifully preserved.</p></div>
+        <div class="mlbn-card"><span class="mlbn-card-icon">📏</span><h3>Growth Tracking</h3><p>Log weight, height and head circumference. Visualize progress with charts and WHO percentile curves.</p></div>
+        <div class="mlbn-card"><span class="mlbn-card-icon">🍼</span><h3>Feeding Tracker</h3><p>Track breastfeeding (left/right, duration), pumping, bottle feeding and solid food — with full history.</p></div>
+        <div class="mlbn-card"><span class="mlbn-card-icon">🩹</span><h3>Diaper Log</h3><p>Log wet, dirty or mixed diaper changes with timestamps and optional notes. Filter history by day.</p></div>
+        <div class="mlbn-card"><span class="mlbn-card-icon">🩺</span><h3>Health Schedule</h3><p>Auto-generated vaccine and checkup calendar by baby's age. Appointment reminders and photo attachments.</p></div>
+        <div class="mlbn-card"><span class="mlbn-card-icon">💊</span><h3>Vitamin Tracker</h3><p>Set daily, specific weekday or every-N-day vitamin reminders. Track taken and skipped doses easily.</p></div>
+        <div class="mlbn-card"><span class="mlbn-card-icon">🦷</span><h3>Tooth Map</h3><p>Visual upper and lower jaw diagram using FDI dental notation. Record each tooth's eruption date.</p></div>
+        <div class="mlbn-card"><span class="mlbn-card-icon">📔</span><h3>Baby Diary</h3><p>Rich text journal with 8 categories (Birth, Development, Routine…). Attach photos and export as PDF.</p></div>
+        <div class="mlbn-card"><span class="mlbn-card-icon">📚</span><h3>PDF Baby Book</h3><p>Create a print-ready keepsake book in 4 formats (A5, A4, 25×25 cm) with 12 color themes.</p></div>
+        <div class="mlbn-card"><span class="mlbn-card-icon">🎵</span><h3>Sleep Sounds</h3><p>Soothe your baby with white, pink and brown noise or nature sounds. Plays in background with lock screen support.</p></div>
+        <div class="mlbn-card"><span class="mlbn-card-icon">👥</span><h3>Co-Parenting</h3><p>Invite your partner via email. Both parents track together on the same baby profile, in real time.</p></div>
+        <div class="mlbn-card"><span class="mlbn-card-icon">✂️</span><span class="mlbn-card-new">New</span><h3>In-App Photo Editor</h3><p>Crop (1:1, 4:3, 9:16) and rotate photos right inside the app — no external editor needed.</p></div>
+        <div class="mlbn-card"><span class="mlbn-card-icon">🔔</span><h3>Notification Center</h3><p>All vitamin, vaccine, checkup and system alerts in one feed. Mark as read or dismiss individually.</p></div>
+      </div>
+
+      <div class="mlbn-plus-box">
+        <h2>⭐ More with Plus</h2>
+        <p>Unlimited profiles, bulk photo uploads, ad-free experience and premium features.</p>
+        <div class="mlbn-plus-grid">
+          <div class="mlbn-plus-item"><span>👶</span><div>Unlimited baby profiles (free: up to 5)</div></div>
+          <div class="mlbn-plus-item"><span>📷</span><div>Bulk upload up to 10 photos at once</div></div>
+          <div class="mlbn-plus-item"><span>👫</span><div>2 co-parents per baby (free: 1)</div></div>
+          <div class="mlbn-plus-item"><span>📚</span><div>Date &amp; category filters for PDF books</div></div>
+          <div class="mlbn-plus-item"><span>🚫</span><div>Watermark-free PDF &amp; photo sharing</div></div>
+          <div class="mlbn-plus-item"><span>🎵</span><div>Premium sleep sounds collection</div></div>
+        </div>
+        <div class="mlbn-btn-row">
+          <a href="https://apps.apple.com/app/my-little-baby-notebook/id6741442905" class="mlbn-btn" style="background:#5FA584;">Upgrade to Plus →</a>
+        </div>
+      </div>
+
+      <h2 class="mlbn-section-title">Available in 5 languages</h2>
+      <p class="mlbn-section-sub">Turkish, English, German, Spanish and Italian — use it in your language.</p>
+      <div class="mlbn-lang-row">
+        <span class="mlbn-lang-chip">🇹🇷 Türkçe</span>
+        <span class="mlbn-lang-chip">🇬🇧 English</span>
+        <span class="mlbn-lang-chip">🇩🇪 Deutsch</span>
+        <span class="mlbn-lang-chip">🇪🇸 Español</span>
+        <span class="mlbn-lang-chip">🇮🇹 Italiano</span>
+      </div>
+
+      <div class="mlbn-cta">
+        <h2>Start today — never miss a moment 🌿</h2>
+        <p>Free to download. Your baby's memories, safe and beautifully organized.</p>
+        <div class="mlbn-btn-row">
+          <a href="https://apps.apple.com/app/my-little-baby-notebook/id6741442905" class="mlbn-btn mlbn-btn-green">🍎 App Store</a>
+          <a href="https://play.google.com/store/apps/details?id=com.busratemur.mylittlebabynotebook" class="mlbn-btn" style="background:#1F3D2E;">▶ Google Play</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── TÜRKÇE ── -->
+  <div id="lang-tr" class="lang-section">
+    <div class="page-wrap">
+
+      <div class="mlbn-hero">
+        <span class="mlbn-hero-badge">📱 iOS &amp; Android</span>
+        <h1>Her anı,<br><em>özenle saklayın.</em></h1>
+        <p class="mlbn-hero-sub">Bebeğinizin tüm hikâyesi — kilometre taşları, büyüme, sağlık ve anılar — tek bir defterde güzelce düzenlenmiş.</p>
+        <div class="mlbn-btn-row">
+          <a href="https://apps.apple.com/app/my-little-baby-notebook/id6741442905" class="mlbn-btn mlbn-btn-white">🍎 App Store'dan İndir</a>
+          <a href="https://play.google.com/store/apps/details?id=com.busratemur.mylittlebabynotebook" class="mlbn-btn" style="background:rgba(255,255,255,0.18);border:1.5px solid rgba(255,255,255,0.5);">▶ Google Play'den İndir</a>
+        </div>
+      </div>
+
+      <div class="mlbn-phones-section">
+        <p class="mlbn-phones-label">Uygulamayı keşfedin</p>
+        <div class="mlbn-phones-strip">
+          <div class="mlbn-phone-wrap">
+            <div class="mlbn-phone-frame"><div class="mlbn-phone-screen mlbn-ps-s1">
+              <div class="mlbn-phone-sb"><span>9:41</span><span>▪▪▪ 5G 🔋</span></div>
+              <div class="mlbn-phone-body"><div class="mlbn-phone-copy">
+                <span class="mlbn-phone-tag-pill">Hoş Geldiniz</span>
+                <h3 class="mlbn-phone-hl">Her anı,<br>özenle saklayın.</h3>
+                <p class="mlbn-phone-desc">Bebeğinizin tüm hikâyesi,<br>tek bir defterde.</p>
+              </div><div class="mlbn-phone-icon-big">🌿</div></div>
+            </div></div>
+          </div>
+          <div class="mlbn-phone-wrap">
+            <div class="mlbn-phone-frame"><div class="mlbn-phone-screen mlbn-ps-s2">
+              <div class="mlbn-phone-sb"><span>9:41</span><span>▪▪▪ 5G 🔋</span></div>
+              <div class="mlbn-phone-body"><div class="mlbn-phone-copy">
+                <span class="mlbn-phone-tag-pill">Günlük</span>
+                <h3 class="mlbn-phone-hl">Onunla büyüyen<br>bir günlük.</h3>
+                <p class="mlbn-phone-desc">Dünyayı keşfederken<br>düşüncelerinizi yazın.</p>
+              </div><div class="mlbn-phone-icon-big">📔</div></div>
+            </div></div>
+          </div>
+          <div class="mlbn-phone-wrap featured mlbn-featured-phone">
+            <div class="mlbn-phone-frame"><div class="mlbn-phone-screen mlbn-ps-s5">
+              <div class="mlbn-phone-sb"><span>9:41</span><span>▪▪▪ 5G 🔋</span></div>
+              <div class="mlbn-phone-body"><div class="mlbn-phone-copy">
+                <span class="mlbn-phone-tag-pill">Büyüme</span>
+                <h3 class="mlbn-phone-hl">Büyümesini<br>birlikte izleyin.</h3>
+                <p class="mlbn-phone-desc">Kilo ve boyu sevgiyle<br>kayıt altına alın.</p>
+              </div><div class="mlbn-phone-icon-big">📏</div></div>
+            </div></div>
+          </div>
+          <div class="mlbn-phone-wrap">
+            <div class="mlbn-phone-frame"><div class="mlbn-phone-screen mlbn-ps-s4">
+              <div class="mlbn-phone-sb"><span>9:41</span><span>▪▪▪ 5G 🔋</span></div>
+              <div class="mlbn-phone-body"><div class="mlbn-phone-copy">
+                <span class="mlbn-phone-tag-pill">Beslenme</span>
+                <h3 class="mlbn-phone-hl">Her beslenmeyi<br>kaydedin.</h3>
+                <p class="mlbn-phone-desc">Emzirme, pompalama<br>ve biberon.</p>
+              </div><div class="mlbn-phone-icon-big">🍼</div></div>
+            </div></div>
+          </div>
+          <div class="mlbn-phone-wrap">
+            <div class="mlbn-phone-frame"><div class="mlbn-phone-screen mlbn-ps-s8">
+              <div class="mlbn-phone-sb"><span>9:41</span><span>▪▪▪ 5G 🔋</span></div>
+              <div class="mlbn-phone-body"><div class="mlbn-phone-copy">
+                <span class="mlbn-phone-tag-pill">Hatıra Kitabı</span>
+                <h3 class="mlbn-phone-hl">Kendi hatıra<br>kitabınız.</h3>
+                <p class="mlbn-phone-desc">Sonsuza dek saklayacağınız<br>özel bir PDF.</p>
+              </div><div class="mlbn-phone-icon-big">📚</div></div>
+            </div></div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="mlbn-section-title">Her şey tek uygulamada</h2>
+      <p class="mlbn-section-sub">Beslemeden büyümeye, aşıdan hatıra kitabına — bebeğinizle ilgili her şeyi kolayca takip edin.</p>
+
+      <div class="mlbn-grid">
+        <div class="mlbn-card"><span class="mlbn-card-icon">📸</span><h3>Anılar</h3><p>Fotoğraf ve kısa notlarla her anı dakikalar içinde kaydedin. 30'dan fazla hazır şablonla kategorilendirin.</p></div>
+        <div class="mlbn-card"><span class="mlbn-card-icon">👣</span><h3>İlk Adımlar</h3><p>İlk gülümsemeden ilk adıma kadar tüm özel kilometre taşlarını fotoğrafla belgeleyin ve tarihleriyle saklayın.</p></div>
+        <div class="mlbn-card"><span class="mlbn-card-icon">📏</span><h3>Büyüme Takibi</h3><p>Kilo, boy ve baş çevresi ölçümlerini grafik ve persentil göstergeleriyle takip edin.</p></div>
+        <div class="mlbn-card"><span class="mlbn-card-icon">🍼</span><h3>Beslenme Kaydı</h3><p>Anne sütü (sol/sağ, süre), mama sağma, sütlü mama ve katı gıda takibini detaylı tutun.</p></div>
+        <div class="mlbn-card"><span class="mlbn-card-icon">🩹</span><h3>Bez Kaydı</h3><p>Islak, kirli veya karma bez değişimlerini zaman damgası ve notla kaydedin. Geçmişi filtreleyin.</p></div>
+        <div class="mlbn-card"><span class="mlbn-card-icon">🩺</span><h3>Sağlık Takvimi</h3><p>Yaşa göre otomatik oluşturulan aşı ve kontrol takvimi. Randevu hatırlatmaları ve fotoğraf ekleme desteği.</p></div>
+        <div class="mlbn-card"><span class="mlbn-card-icon">💊</span><h3>Vitamin Takibi</h3><p>Günlük, haftanın belirli günleri veya her N günde bir vitamin hatırlatması. Alındı/atlandı takibi.</p></div>
+        <div class="mlbn-card"><span class="mlbn-card-icon">🦷</span><h3>Diş Haritası</h3><p>FDI diş numaralandırması ile görsel üst ve alt çene haritası. Her dişin çıkış tarihini kaydedin.</p></div>
+        <div class="mlbn-card"><span class="mlbn-card-icon">📔</span><h3>Bebek Günlüğü</h3><p>8 kategori (Doğum, Gelişim, Rutin, Aktivite…) ile zengin metin günlüğü. Fotoğraf ekleyin, PDF olarak paylaşın.</p></div>
+        <div class="mlbn-card"><span class="mlbn-card-icon">📚</span><h3>PDF Bebek Kitabı</h3><p>4 farklı format (A5, A4, 25×25 cm) ve 12 renk teması ile baskıya hazır hatıra kitabı oluşturun.</p></div>
+        <div class="mlbn-card"><span class="mlbn-card-icon">🎵</span><h3>Uyku Sesleri</h3><p>Beyaz, pembe, kahverengi gürültü ve doğa sesleriyle bebeğinizi sakinleştirin. Kilit ekranında çalışmaya devam eder.</p></div>
+        <div class="mlbn-card"><span class="mlbn-card-icon">👥</span><h3>Ebeveyn Paylaşımı</h3><p>E-posta davetiyesiyle partnerinizi ekleyin. İki ebeveyn birlikte, aynı bebek profilinde takip etsin.</p></div>
+        <div class="mlbn-card"><span class="mlbn-card-icon">🔬</span><span class="mlbn-card-new">Yeni</span><h3>CDC Gelişim Rehberi</h3><p>CDC "Learn the Signs. Act Early." veritabanına dayalı 2–60 ay gelişim takibi. Sosyal, dil, motor, bilişsel kategoriler.</p></div>
+        <div class="mlbn-card"><span class="mlbn-card-icon">✂️</span><span class="mlbn-card-new">Yeni</span><h3>Fotoğraf Editörü</h3><p>Kırpma (1:1, 4:3, 9:16) ve döndürme özelliğiyle fotoğrafları uygulama içinde düzenleyin, harici uygulama gerekmez.</p></div>
+        <div class="mlbn-card"><span class="mlbn-card-icon">🔔</span><h3>Bildirim Merkezi</h3><p>Vitamin, aşı, kontrol ve sistem bildirimlerini tek merkezde takip edin. Okundu/okunmadı durumu ile yönetin.</p></div>
+      </div>
+
+      <div class="mlbn-plus-box">
+        <h2>⭐ Plus ile daha fazlası</h2>
+        <p>Sınırsız profil, toplu fotoğraf yükleme, reklamsız deneyim ve çok daha fazlası.</p>
+        <div class="mlbn-plus-grid">
+          <div class="mlbn-plus-item"><span>👶</span><div>Sınırsız bebek profili (ücretsizde 5)</div></div>
+          <div class="mlbn-plus-item"><span>📷</span><div>Tek seferde 10'a kadar toplu fotoğraf yükleme</div></div>
+          <div class="mlbn-plus-item"><span>👫</span><div>Bebek başına 2 ebeveyn paylaşımı (ücretsizde 1)</div></div>
+          <div class="mlbn-plus-item"><span>📚</span><div>PDF kitapta tarih ve kategori filtresi</div></div>
+          <div class="mlbn-plus-item"><span>🚫</span><div>Filigransız PDF &amp; fotoğraf paylaşımı</div></div>
+          <div class="mlbn-plus-item"><span>🎵</span><div>Premium uyku sesleri koleksiyonu</div></div>
+        </div>
+        <div class="mlbn-btn-row">
+          <a href="https://apps.apple.com/app/my-little-baby-notebook/id6741442905" class="mlbn-btn" style="background:#5FA584;">Plus'a Geç →</a>
+        </div>
+      </div>
+
+      <h2 class="mlbn-section-title">5 dil desteği</h2>
+      <p class="mlbn-section-sub">Türkçe, İngilizce, Almanca, İspanyolca ve İtalyanca — kendi dilinizde kullanın.</p>
+      <div class="mlbn-lang-row">
+        <span class="mlbn-lang-chip">🇹🇷 Türkçe</span>
+        <span class="mlbn-lang-chip">🇬🇧 English</span>
+        <span class="mlbn-lang-chip">🇩🇪 Deutsch</span>
+        <span class="mlbn-lang-chip">🇪🇸 Español</span>
+        <span class="mlbn-lang-chip">🇮🇹 Italiano</span>
+      </div>
+
+      <div class="mlbn-cta">
+        <h2>Bugün başlayın, hiçbir anı kaçırmayın 🌿</h2>
+        <p>Ücretsiz indirin, bebeğinizin her anını güvenle saklayın.</p>
+        <div class="mlbn-btn-row">
+          <a href="https://apps.apple.com/app/my-little-baby-notebook/id6741442905" class="mlbn-btn mlbn-btn-green">🍎 App Store</a>
+          <a href="https://play.google.com/store/apps/details?id=com.busratemur.mylittlebabynotebook" class="mlbn-btn" style="background:#1F3D2E;">▶ Google Play</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="/privacy.html" id="footer-privacy">Privacy Policy</a>
+      <a href="/terms.html" id="footer-terms">Terms of Service</a>
+      <a href="mailto:support@mylittlebabynotebook.app">Contact</a>
+    </div>
+    <div>© 2025 My Little Baby Notebook · Made with 🌿 by <a href="https://jalocotech.com">JaLo Tech</a></div>
+  </footer>
+
+  <script>
+    // Language detection & toggle
+    function setLang(lang) {
+      document.getElementById('lang-en').classList.toggle('visible', lang === 'en');
+      document.getElementById('lang-tr').classList.toggle('visible', lang === 'tr');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
+      document.documentElement.lang = lang;
+      localStorage.setItem('mlbn-lang', lang);
+
+      // Nav & footer labels
+      const navCta = document.getElementById('nav-dl-link');
+      const footerPrivacy = document.getElementById('footer-privacy');
+      const footerTerms = document.getElementById('footer-terms');
+      if (lang === 'tr') {
+        navCta.textContent = 'İndir';
+        footerPrivacy.textContent = 'Gizlilik Politikası';
+        footerTerms.textContent = 'Kullanım Koşulları';
+      } else {
+        navCta.textContent = 'Download';
+        footerPrivacy.textContent = 'Privacy Policy';
+        footerTerms.textContent = 'Terms of Service';
+      }
+    }
+
+    // On load: respect saved preference, then browser language
+    (function() {
+      const saved = localStorage.getItem('mlbn-lang');
+      if (saved === 'tr' || saved === 'en') { setLang(saved); return; }
+      const nav = navigator.language || navigator.userLanguage || '';
+      if (nav.startsWith('tr')) { setLang('tr'); }
+    })();
+  </script>
+</body>
+</html>
