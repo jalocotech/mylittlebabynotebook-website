@@ -337,6 +337,46 @@
     .mlbn-format-name { font-size: 14px; font-weight: 800; color: #1F3D2E; }
     .mlbn-format-dims { font-size: 11px; font-weight: 600; color: #7C8B82; margin-top: -8px; }
 
+    /* ── SOUND SHOWCASE ── */
+    .mlbn-sound-section { margin-bottom: 72px; }
+    .mlbn-sound-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 12px; margin-bottom: 20px;
+    }
+    @media (max-width: 640px) { .mlbn-sound-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; } }
+    .mlbn-sound-card {
+      border-radius: 20px; padding: 20px 10px 16px;
+      display: flex; flex-direction: column; align-items: center;
+      gap: 9px; position: relative;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .mlbn-sound-card:hover { transform: translateY(-5px); box-shadow: 0 18px 36px rgba(0,0,0,0.14); }
+    .mlbn-sound-icon {
+      width: 38px; height: 38px; color: #fff; flex-shrink: 0;
+    }
+    .mlbn-sound-icon img { width: 100%; height: 100%; }
+    .mlbn-sound-name {
+      font-size: 11.5px; font-weight: 700; text-align: center;
+      color: rgba(255,255,255,0.96); line-height: 1.35;
+    }
+    .mlbn-sound-badge {
+      position: absolute; top: 9px; right: 9px;
+      border-radius: 5px; font-size: 8px; font-weight: 800;
+      padding: 2px 6px; letter-spacing: .04em; line-height: 1.4;
+    }
+    .mlbn-sound-badge.free { background: rgba(255,255,255,0.88); color: #1F3D2E; }
+    .mlbn-sound-badge.plus { background: #FFD700; color: #7A5A00; }
+    .mlbn-timer-bar {
+      background: #F6FAF5; border: 1.5px solid #DCE9E3; border-radius: 14px;
+      padding: 14px 20px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+    }
+    .mlbn-timer-label { font-size: 13px; font-weight: 700; color: #1F3D2E; }
+    .mlbn-timer-chips { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .mlbn-timer-chip {
+      background: #fff; border: 1.5px solid #DCE9E3; border-radius: 50px;
+      padding: 5px 13px; font-size: 12px; font-weight: 700; color: #1F3D2E;
+    }
+
     /* ── FOOTER ── */
     .site-footer {
       border-top: 1px solid #DCE9E3; padding: 32px 24px;
@@ -445,10 +485,100 @@
         <div class="mlbn-card"><span class="mlbn-card-icon"><img src="/icons/icon_disler.svg" alt="Tooth Map"></span><h3>Tooth Map</h3><p>Visual upper and lower jaw diagram using FDI dental notation. Record each tooth's eruption date.</p></div>
         <div class="mlbn-card"><span class="mlbn-card-icon shrink"><img src="/icons/menu1.png" alt="Baby Diary"></span><h3>Baby Diary</h3><p>Log your baby's most precious moments day by day. Create notes, personalize with different styles, and revisit everything from first smiles to sleepless nights.</p></div>
         <div class="mlbn-card"><span class="mlbn-card-icon sm"><img src="/icons/tab_anasayfa_sage.svg" alt="PDF Baby Book"></span><h3>PDF Baby Book</h3><p>Create a print-ready keepsake book. Free includes Classic style. ⭐ Plus unlocks 12 styles, 12 colors &amp; 4 formats.</p></div>
-        <div class="mlbn-card"><span class="mlbn-card-icon shrink"><img src="/icons/icon_ses.png" alt="Sleep Sounds"></span><h3>Sleep Sounds</h3><p>Soothe your baby with white, pink and brown noise or nature sounds. Plays in background with lock screen support.</p></div>
+        <div class="mlbn-card"><span class="mlbn-card-icon shrink"><img src="/icons/icon_ses.png" alt="Sleep Sounds"></span><h3>Sleep Sounds</h3><p>Free: White Noise. ⭐ Plus unlocks 11 more — fan, heartbeat, womb, airplane cabin and more. Auto-off timer included.</p></div>
         <div class="mlbn-card"><span class="mlbn-card-icon"><img src="/icons/co-parent.png" alt="Co-Parenting"></span><h3>Co-Parenting</h3><p>Invite your partner via email. Both parents track together on the same baby profile, in real time.</p></div>
         <div class="mlbn-card"><span class="mlbn-card-icon sm">✂️</span><span class="mlbn-card-new">New</span><h3>In-App Photo Editor</h3><p>Crop (1:1, 4:3, 9:16) and rotate photos right inside the app — no external editor needed.</p></div>
         <div class="mlbn-card"><span class="mlbn-card-icon sm">🔔</span><h3>Notification Center</h3><p>All supplement, vaccine, checkup and system alerts in one feed. Mark as read or dismiss individually.</p></div>
+      </div>
+
+      <!-- ── SLEEP SOUNDS SHOWCASE (EN) ── -->
+      <div class="mlbn-sound-section">
+        <div class="mlbn-book-plus-badge">⭐ Plus Feature</div>
+        <h2 class="mlbn-section-title">Soothe your baby<br><em>to sleep.</em></h2>
+        <p class="mlbn-section-sub">12 carefully crafted sleep sounds — white noise, nature tones, and comforting body sounds. Plays in the background with lock-screen controls and an auto-off timer.</p>
+
+        <div class="mlbn-book-stats" style="margin-bottom:32px;">
+          <div class="mlbn-book-stat"><span class="mlbn-book-stat-num">12</span><span class="mlbn-book-stat-lbl">Sleep Sounds</span></div>
+          <div class="mlbn-book-stat-sep">·</div>
+          <div class="mlbn-book-stat"><span class="mlbn-book-stat-num">5</span><span class="mlbn-book-stat-lbl">Timer Options</span></div>
+          <div class="mlbn-book-stat-sep">·</div>
+          <div class="mlbn-book-stat" style="gap:6px;"><span style="font-size:18px;">🔒</span><span class="mlbn-book-stat-lbl">Lock Screen</span></div>
+        </div>
+
+        <div class="mlbn-sound-grid">
+          <div class="mlbn-sound-card" style="background:linear-gradient(135deg,#B7DCC4,#5FA584);">
+            <span class="mlbn-sound-badge free">FREE</span>
+            <span class="mlbn-sound-icon"><img src="/icons/sounds/sound_beyaz_gurultu.svg" alt="White Noise" style="filter:brightness(0) invert(1)"></span>
+            <span class="mlbn-sound-name">White Noise</span>
+          </div>
+          <div class="mlbn-sound-card" style="background:linear-gradient(135deg,#F8D7DD,#E088A0);">
+            <span class="mlbn-sound-badge plus">⭐</span>
+            <span class="mlbn-sound-icon"><img src="/icons/sounds/sound_pembe_gurultu.svg" alt="Pink Noise" style="filter:brightness(0) invert(1)"></span>
+            <span class="mlbn-sound-name">Pink Noise</span>
+          </div>
+          <div class="mlbn-sound-card" style="background:linear-gradient(135deg,#E8D5C0,#B48060);">
+            <span class="mlbn-sound-badge plus">⭐</span>
+            <span class="mlbn-sound-icon"><img src="/icons/sounds/sound_kahverengi_gurultu.svg" alt="Brown Noise" style="filter:brightness(0) invert(1)"></span>
+            <span class="mlbn-sound-name">Brown Noise</span>
+          </div>
+          <div class="mlbn-sound-card" style="background:linear-gradient(135deg,#C8DCEA,#7AAAC8);">
+            <span class="mlbn-sound-badge plus">⭐</span>
+            <span class="mlbn-sound-icon"><img src="/icons/sounds/sound_fan.svg" alt="Fan" style="filter:brightness(0) invert(1)"></span>
+            <span class="mlbn-sound-name">Fan</span>
+          </div>
+          <div class="mlbn-sound-card" style="background:linear-gradient(135deg,#F8EDDA,#D4A860);">
+            <span class="mlbn-sound-badge plus">⭐</span>
+            <span class="mlbn-sound-icon"><img src="/icons/sounds/sound_sac_kurutma.svg" alt="Hair Dryer" style="filter:brightness(0) invert(1)"></span>
+            <span class="mlbn-sound-name">Hair Dryer</span>
+          </div>
+          <div class="mlbn-sound-card" style="background:linear-gradient(135deg,#D8EAE0,#7ABAA8);">
+            <span class="mlbn-sound-badge plus">⭐</span>
+            <span class="mlbn-sound-icon"><img src="/icons/sounds/sound_supurge.svg" alt="Vacuum" style="filter:brightness(0) invert(1)"></span>
+            <span class="mlbn-sound-name">Vacuum</span>
+          </div>
+          <div class="mlbn-sound-card" style="background:linear-gradient(135deg,#D0D8F0,#7888C8);">
+            <span class="mlbn-sound-badge plus">⭐</span>
+            <span class="mlbn-sound-icon"><img src="/icons/sounds/sound_ucak_kabini.svg" alt="Airplane Cabin" style="filter:brightness(0) invert(1)"></span>
+            <span class="mlbn-sound-name">Airplane Cabin</span>
+          </div>
+          <div class="mlbn-sound-card" style="background:linear-gradient(135deg,#F8D0D8,#D87090);">
+            <span class="mlbn-sound-badge plus">⭐</span>
+            <span class="mlbn-sound-icon"><img src="/icons/sounds/sound_kalp_atisi.svg" alt="Heartbeat" style="filter:brightness(0) invert(1)"></span>
+            <span class="mlbn-sound-name">Heartbeat</span>
+          </div>
+          <div class="mlbn-sound-card" style="background:linear-gradient(135deg,#E8D0E8,#B880C0);">
+            <span class="mlbn-sound-badge plus">⭐</span>
+            <span class="mlbn-sound-icon"><img src="/icons/sounds/sound_rahim_sesi.svg" alt="Womb Sound" style="filter:brightness(0) invert(1)"></span>
+            <span class="mlbn-sound-name">Womb Sound</span>
+          </div>
+          <div class="mlbn-sound-card" style="background:linear-gradient(135deg,#D8E8D0,#88B880);">
+            <span class="mlbn-sound-badge plus">⭐</span>
+            <span class="mlbn-sound-icon"><img src="/icons/sounds/sound_sish.svg" alt="Shusher" style="filter:brightness(0) invert(1)"></span>
+            <span class="mlbn-sound-name">Shusher</span>
+          </div>
+          <div class="mlbn-sound-card" style="background:linear-gradient(135deg,#D0E8E8,#70B8B8);">
+            <span class="mlbn-sound-badge plus">⭐</span>
+            <span class="mlbn-sound-icon"><img src="/icons/sounds/sound_ugultu.svg" alt="Hum / Drone" style="filter:brightness(0) invert(1)"></span>
+            <span class="mlbn-sound-name">Hum / Drone</span>
+          </div>
+          <div class="mlbn-sound-card" style="background:linear-gradient(135deg,#E0D8E8,#9888B8);">
+            <span class="mlbn-sound-badge plus">⭐</span>
+            <span class="mlbn-sound-icon"><img src="/icons/sounds/sound_dusuk_titresim.svg" alt="Low Rumble" style="filter:brightness(0) invert(1)"></span>
+            <span class="mlbn-sound-name">Low Rumble</span>
+          </div>
+        </div>
+
+        <div class="mlbn-timer-bar">
+          <span style="font-size:20px;">⏱</span>
+          <span class="mlbn-timer-label">Auto-off timer</span>
+          <div class="mlbn-timer-chips">
+            <span class="mlbn-timer-chip">15 min</span>
+            <span class="mlbn-timer-chip">30 min</span>
+            <span class="mlbn-timer-chip">45 min</span>
+            <span class="mlbn-timer-chip">60 min</span>
+            <span class="mlbn-timer-chip">90 min</span>
+          </div>
+        </div>
       </div>
 
       <!-- ── PDF BOOK SHOWCASE (EN) ── -->
@@ -625,10 +755,100 @@
         <div class="mlbn-card"><span class="mlbn-card-icon"><img src="/icons/icon_disler.svg" alt="Diş Haritası"></span><h3>Diş Haritası</h3><p>FDI diş numaralandırması ile görsel üst ve alt çene haritası. Her dişin çıkış tarihini kaydedin.</p></div>
         <div class="mlbn-card"><span class="mlbn-card-icon shrink"><img src="/icons/menu1.png" alt="Bebek Günlüğü"></span><h3>Bebek Günlüğü</h3><p>Bebeğinizin en özel anlarını günlük olarak kaydedin. Notlar oluşturun, farklı süsleme stilleriyle kişiselleştirin. İlk gülümsemeden uykusuz gecelere kadar tüm küçük anları sevgiyle saklayın.</p></div>
         <div class="mlbn-card"><span class="mlbn-card-icon sm"><img src="/icons/tab_anasayfa_sage.svg" alt="PDF Bebek Kitabı"></span><h3>PDF Bebek Kitabı</h3><p>Baskıya hazır hatıra kitabı oluşturun. Ücretsizde Klasik stil. ⭐ Plus ile 12 stil, 12 renk ve 4 format.</p></div>
-        <div class="mlbn-card"><span class="mlbn-card-icon shrink"><img src="/icons/icon_ses.png" alt="Uyku Sesleri"></span><h3>Uyku Sesleri</h3><p>Beyaz, pembe, kahverengi gürültü ve doğa sesleriyle bebeğinizi sakinleştirin. Kilit ekranında çalışmaya devam eder.</p></div>
+        <div class="mlbn-card"><span class="mlbn-card-icon shrink"><img src="/icons/icon_ses.png" alt="Uyku Sesleri"></span><h3>Uyku Sesleri</h3><p>Ücretsizde Beyaz Gürültü. ⭐ Plus ile 11 ses daha — fan, kalp atışı, rahim sesi, uçak kabini ve daha fazlası. Zamanlayıcı dahil.</p></div>
         <div class="mlbn-card"><span class="mlbn-card-icon"><img src="/icons/co-parent.png" alt="Ebeveyn Paylaşımı"></span><h3>Ebeveyn Paylaşımı</h3><p>E-posta davetiyesiyle partnerinizi ekleyin. İki ebeveyn birlikte, aynı bebek profilinde takip etsin.</p></div>
         <div class="mlbn-card"><span class="mlbn-card-icon sm">✂️</span><span class="mlbn-card-new">Yeni</span><h3>Fotoğraf Editörü</h3><p>Kırpma (1:1, 4:3, 9:16) ve döndürme özelliğiyle fotoğrafları uygulama içinde düzenleyin, harici uygulama gerekmez.</p></div>
         <div class="mlbn-card"><span class="mlbn-card-icon sm">🔔</span><h3>Bildirim Merkezi</h3><p>Takviye, aşı, kontrol ve sistem bildirimlerini tek merkezde takip edin. Okundu/okunmadı durumu ile yönetin.</p></div>
+      </div>
+
+      <!-- ── UYKU SESLERİ VİTRİNİ (TR) ── -->
+      <div class="mlbn-sound-section">
+        <div class="mlbn-book-plus-badge">⭐ Plus Özelliği</div>
+        <h2 class="mlbn-section-title">Bebeğinizi huzurla<br><em>uyutun.</em></h2>
+        <p class="mlbn-section-sub">12 özenle hazırlanmış uyku sesi — beyaz gürültü, doğa tonları ve rahatlatıcı beden sesleri. Kilit ekranı kontrolü ve otomatik kapanma zamanlayıcısıyla arka planda çalar.</p>
+
+        <div class="mlbn-book-stats" style="margin-bottom:32px;">
+          <div class="mlbn-book-stat"><span class="mlbn-book-stat-num">12</span><span class="mlbn-book-stat-lbl">Uyku Sesi</span></div>
+          <div class="mlbn-book-stat-sep">·</div>
+          <div class="mlbn-book-stat"><span class="mlbn-book-stat-num">5</span><span class="mlbn-book-stat-lbl">Zamanlayıcı</span></div>
+          <div class="mlbn-book-stat-sep">·</div>
+          <div class="mlbn-book-stat" style="gap:6px;"><span style="font-size:18px;">🔒</span><span class="mlbn-book-stat-lbl">Kilit Ekranı</span></div>
+        </div>
+
+        <div class="mlbn-sound-grid">
+          <div class="mlbn-sound-card" style="background:linear-gradient(135deg,#B7DCC4,#5FA584);">
+            <span class="mlbn-sound-badge free">ÜCRETSİZ</span>
+            <span class="mlbn-sound-icon"><img src="/icons/sounds/sound_beyaz_gurultu.svg" alt="Beyaz Gürültü" style="filter:brightness(0) invert(1)"></span>
+            <span class="mlbn-sound-name">Beyaz Gürültü</span>
+          </div>
+          <div class="mlbn-sound-card" style="background:linear-gradient(135deg,#F8D7DD,#E088A0);">
+            <span class="mlbn-sound-badge plus">⭐</span>
+            <span class="mlbn-sound-icon"><img src="/icons/sounds/sound_pembe_gurultu.svg" alt="Pembe Gürültü" style="filter:brightness(0) invert(1)"></span>
+            <span class="mlbn-sound-name">Pembe Gürültü</span>
+          </div>
+          <div class="mlbn-sound-card" style="background:linear-gradient(135deg,#E8D5C0,#B48060);">
+            <span class="mlbn-sound-badge plus">⭐</span>
+            <span class="mlbn-sound-icon"><img src="/icons/sounds/sound_kahverengi_gurultu.svg" alt="Kahverengi Gürültü" style="filter:brightness(0) invert(1)"></span>
+            <span class="mlbn-sound-name">Kahverengi Gürültü</span>
+          </div>
+          <div class="mlbn-sound-card" style="background:linear-gradient(135deg,#C8DCEA,#7AAAC8);">
+            <span class="mlbn-sound-badge plus">⭐</span>
+            <span class="mlbn-sound-icon"><img src="/icons/sounds/sound_fan.svg" alt="Fan" style="filter:brightness(0) invert(1)"></span>
+            <span class="mlbn-sound-name">Fan</span>
+          </div>
+          <div class="mlbn-sound-card" style="background:linear-gradient(135deg,#F8EDDA,#D4A860);">
+            <span class="mlbn-sound-badge plus">⭐</span>
+            <span class="mlbn-sound-icon"><img src="/icons/sounds/sound_sac_kurutma.svg" alt="Saç Kurutma" style="filter:brightness(0) invert(1)"></span>
+            <span class="mlbn-sound-name">Saç Kurutma</span>
+          </div>
+          <div class="mlbn-sound-card" style="background:linear-gradient(135deg,#D8EAE0,#7ABAA8);">
+            <span class="mlbn-sound-badge plus">⭐</span>
+            <span class="mlbn-sound-icon"><img src="/icons/sounds/sound_supurge.svg" alt="Süpürge" style="filter:brightness(0) invert(1)"></span>
+            <span class="mlbn-sound-name">Süpürge</span>
+          </div>
+          <div class="mlbn-sound-card" style="background:linear-gradient(135deg,#D0D8F0,#7888C8);">
+            <span class="mlbn-sound-badge plus">⭐</span>
+            <span class="mlbn-sound-icon"><img src="/icons/sounds/sound_ucak_kabini.svg" alt="Uçak Kabini" style="filter:brightness(0) invert(1)"></span>
+            <span class="mlbn-sound-name">Uçak Kabini</span>
+          </div>
+          <div class="mlbn-sound-card" style="background:linear-gradient(135deg,#F8D0D8,#D87090);">
+            <span class="mlbn-sound-badge plus">⭐</span>
+            <span class="mlbn-sound-icon"><img src="/icons/sounds/sound_kalp_atisi.svg" alt="Kalp Atışı" style="filter:brightness(0) invert(1)"></span>
+            <span class="mlbn-sound-name">Kalp Atışı</span>
+          </div>
+          <div class="mlbn-sound-card" style="background:linear-gradient(135deg,#E8D0E8,#B880C0);">
+            <span class="mlbn-sound-badge plus">⭐</span>
+            <span class="mlbn-sound-icon"><img src="/icons/sounds/sound_rahim_sesi.svg" alt="Rahim Sesi" style="filter:brightness(0) invert(1)"></span>
+            <span class="mlbn-sound-name">Rahim Sesi</span>
+          </div>
+          <div class="mlbn-sound-card" style="background:linear-gradient(135deg,#D8E8D0,#88B880);">
+            <span class="mlbn-sound-badge plus">⭐</span>
+            <span class="mlbn-sound-icon"><img src="/icons/sounds/sound_sish.svg" alt="Şişh" style="filter:brightness(0) invert(1)"></span>
+            <span class="mlbn-sound-name">Şişh</span>
+          </div>
+          <div class="mlbn-sound-card" style="background:linear-gradient(135deg,#D0E8E8,#70B8B8);">
+            <span class="mlbn-sound-badge plus">⭐</span>
+            <span class="mlbn-sound-icon"><img src="/icons/sounds/sound_ugultu.svg" alt="Uğultu" style="filter:brightness(0) invert(1)"></span>
+            <span class="mlbn-sound-name">Uğultu</span>
+          </div>
+          <div class="mlbn-sound-card" style="background:linear-gradient(135deg,#E0D8E8,#9888B8);">
+            <span class="mlbn-sound-badge plus">⭐</span>
+            <span class="mlbn-sound-icon"><img src="/icons/sounds/sound_dusuk_titresim.svg" alt="Düşük Titreşim" style="filter:brightness(0) invert(1)"></span>
+            <span class="mlbn-sound-name">Düşük Titreşim</span>
+          </div>
+        </div>
+
+        <div class="mlbn-timer-bar">
+          <span style="font-size:20px;">⏱</span>
+          <span class="mlbn-timer-label">Otomatik kapanma zamanlayıcısı</span>
+          <div class="mlbn-timer-chips">
+            <span class="mlbn-timer-chip">15 dk</span>
+            <span class="mlbn-timer-chip">30 dk</span>
+            <span class="mlbn-timer-chip">45 dk</span>
+            <span class="mlbn-timer-chip">60 dk</span>
+            <span class="mlbn-timer-chip">90 dk</span>
+          </div>
+        </div>
       </div>
 
       <!-- ── PDF KİTAP VİTRİNİ (TR) ── -->

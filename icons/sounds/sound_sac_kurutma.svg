@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <title>Saç Kurutma — Hair Dryer</title>
+  <path d="M 10 14 H 28 A 8 8 0 0 1 28 30 H 22 L 20 38 H 16 L 14 30 H 10 Z" fill="currentColor" fill-opacity="0.14"></path>
+  <path d="M 10 14 H 28 A 8 8 0 0 1 28 30 H 22 L 20 38 H 16 L 14 30 H 10 Z"></path>
+  <line x1="28" y1="17" x2="34" y2="15"></line>
+  <line x1="28" y1="22" x2="36" y2="22"></line>
+  <line x1="28" y1="27" x2="34" y2="29"></line>
+  <circle cx="19" cy="22" r="2.5" fill="currentColor" stroke="none"></circle>
+</svg>

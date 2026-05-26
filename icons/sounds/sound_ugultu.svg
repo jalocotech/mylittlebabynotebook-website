@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <title>Uğultu — Hum (sound waves)</title>
+  <line x1="10" y1="24" x2="14" y2="24" stroke-width="2.4"></line>
+  <path d="M 18 18 Q 21 24 18 30" stroke-width="2.4"></path>
+  <path d="M 24 14 Q 30 24 24 34" stroke-width="2.4"></path>
+  <path d="M 30 10 Q 39 24 30 38" stroke-width="2.4" opacity="0.55"></path>
+  <circle cx="12" cy="24" r="2" fill="currentColor" stroke="none"></circle>
+</svg>

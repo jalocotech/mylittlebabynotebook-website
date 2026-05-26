@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <title>Rahim Sesi — Womb (curled baby)</title>
+  <circle cx="24" cy="24" r="16" fill="currentColor" fill-opacity="0.12"></circle>
+  <circle cx="24" cy="24" r="16"></circle>
+  <circle cx="22" cy="20" r="4.5" fill="currentColor" fill-opacity="0.25"></circle>
+  <circle cx="22" cy="20" r="4.5"></circle>
+  <path d="M 18 24 C 14 26 14 30 18 31 C 22 32 28 30 30 27 C 32 24 31 21 28 22"></path>
+</svg>

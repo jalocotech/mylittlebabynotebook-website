@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <title>Kalp Atışı — Heartbeat</title>
+  <path d="M 24 38 C 14 31 8 25 8 18 C 8 13 12 10 16 10 C 19 10 22 12 24 15 C 26 12 29 10 32 10 C 36 10 40 13 40 18 C 40 25 34 31 24 38 Z" fill="currentColor" fill-opacity="0.15"></path>
+  <path d="M 24 38 C 14 31 8 25 8 18 C 8 13 12 10 16 10 C 19 10 22 12 24 15 C 26 12 29 10 32 10 C 36 10 40 13 40 18 C 40 25 34 31 24 38 Z"></path>
+  <path d="M 10 22 L 16 22 L 19 17 L 22 27 L 26 19 L 29 22 L 38 22" stroke="currentColor" stroke-width="1.8" fill="none"></path>
+</svg>
