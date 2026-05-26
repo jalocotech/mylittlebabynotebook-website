@@ -254,6 +254,89 @@
     .mlbn-btn-green { background: #5FA584; }
     .mlbn-btn-green:hover { background: #4a8a6a; }
 
+    /* ── PDF BOOK SHOWCASE ── */
+    .mlbn-book-section { margin-bottom: 72px; }
+    .mlbn-book-plus-badge {
+      display: flex; align-items: center; gap: 6px; justify-content: center;
+      width: fit-content; margin: 0 auto 14px;
+      background: #1F3D2E; color: #fff;
+      font-size: 11px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 50px;
+    }
+    .mlbn-book-section .mlbn-section-title em { font-style: italic; font-weight: 700; color: #5FA584; }
+    .mlbn-book-stats {
+      display: flex; align-items: center; justify-content: center;
+      gap: 6px; flex-wrap: wrap; margin-bottom: 44px;
+    }
+    .mlbn-book-stat {
+      display: flex; align-items: center; gap: 10px;
+      background: #F6FAF5; border: 1.5px solid #DCE9E3;
+      border-radius: 50px; padding: 10px 22px;
+    }
+    .mlbn-book-stat-num {
+      font-size: 24px; font-weight: 800; color: #5FA584; letter-spacing: -0.04em; line-height: 1;
+    }
+    .mlbn-book-stat-lbl { font-size: 13px; font-weight: 700; color: #1F3D2E; }
+    .mlbn-book-stat-sep {
+      font-size: 20px; font-weight: 800; color: #DCE9E3; line-height: 1;
+    }
+    .mlbn-style-strip {
+      display: flex; gap: 14px;
+      overflow-x: auto; padding: 6px 2px 20px;
+      -webkit-overflow-scrolling: touch; scrollbar-width: none;
+      margin-bottom: 48px;
+    }
+    .mlbn-style-strip::-webkit-scrollbar { display: none; }
+    .mlbn-style-card {
+      flex: 0 0 168px;
+      background: #fff; border: 1.5px solid #DCE9E3; border-radius: 16px;
+      overflow: hidden; transition: transform .2s, box-shadow .2s, border-color .2s;
+    }
+    .mlbn-style-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 48px rgba(20,40,30,0.13);
+      border-color: #5FA584;
+    }
+    .mlbn-style-thumb-wrap {
+      width: 100%; height: 114px; overflow: hidden; background: #F6FAF5;
+    }
+    .mlbn-style-thumb {
+      width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block;
+    }
+    .mlbn-style-body { padding: 11px 13px 13px; }
+    .mlbn-style-name { font-size: 13px; font-weight: 800; color: #1F3D2E; margin: 0 0 7px; }
+    .mlbn-style-foot { display: flex; align-items: center; gap: 7px; }
+    .mlbn-color-dot {
+      width: 13px; height: 13px; border-radius: 50%; flex-shrink: 0;
+      border: 1.5px solid rgba(0,0,0,.1);
+    }
+    .mlbn-size-tag {
+      font-size: 10px; font-weight: 700; color: #7C8B82;
+      background: #F2F8F4; border: 1px solid #DCE9E3;
+      border-radius: 50px; padding: 2px 8px; white-space: nowrap;
+    }
+    .mlbn-formats-wrap { text-align: center; }
+    .mlbn-formats-title {
+      font-size: 16px; font-weight: 800; color: #1F3D2E;
+      margin: 0 0 24px; letter-spacing: -0.01em;
+    }
+    .mlbn-formats-row {
+      display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+    }
+    .mlbn-format-card {
+      display: flex; flex-direction: column; align-items: center; gap: 12px;
+      background: #F6FAF5; border: 1.5px solid #DCE9E3; border-radius: 18px;
+      padding: 22px 18px; width: 148px;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .mlbn-format-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(20,40,30,0.1); }
+    .mlbn-format-paper {
+      background: #fff; border: 1.5px solid #B8D8C6; border-radius: 4px;
+      box-shadow: 0 4px 16px rgba(20,40,30,0.12), 0 1px 4px rgba(20,40,30,0.06);
+    }
+    .mlbn-format-name { font-size: 14px; font-weight: 800; color: #1F3D2E; }
+    .mlbn-format-dims { font-size: 11px; font-weight: 600; color: #7C8B82; margin-top: -8px; }
+
     /* ── FOOTER ── */
     .site-footer {
       border-top: 1px solid #DCE9E3; padding: 32px 24px;
@@ -366,6 +449,58 @@
         <div class="mlbn-card"><span class="mlbn-card-icon"><img src="/icons/co-parent.png" alt="Co-Parenting"></span><h3>Co-Parenting</h3><p>Invite your partner via email. Both parents track together on the same baby profile, in real time.</p></div>
         <div class="mlbn-card"><span class="mlbn-card-icon sm">✂️</span><span class="mlbn-card-new">New</span><h3>In-App Photo Editor</h3><p>Crop (1:1, 4:3, 9:16) and rotate photos right inside the app — no external editor needed.</p></div>
         <div class="mlbn-card"><span class="mlbn-card-icon sm">🔔</span><h3>Notification Center</h3><p>All supplement, vaccine, checkup and system alerts in one feed. Mark as read or dismiss individually.</p></div>
+      </div>
+
+      <!-- ── PDF BOOK SHOWCASE (EN) ── -->
+      <div class="mlbn-book-section">
+        <div class="mlbn-book-plus-badge">⭐ Plus Feature</div>
+        <h2 class="mlbn-section-title">Your baby's story,<br><em>beautifully printed.</em></h2>
+        <p class="mlbn-section-sub">Turn your app memories into a gorgeous keepsake PDF book — ready to download, share or print at any size. Pick a style, choose a color, select your format.</p>
+
+        <div class="mlbn-book-stats">
+          <div class="mlbn-book-stat"><span class="mlbn-book-stat-num">12</span><span class="mlbn-book-stat-lbl">Unique Styles</span></div>
+          <div class="mlbn-book-stat-sep">×</div>
+          <div class="mlbn-book-stat"><span class="mlbn-book-stat-num">12</span><span class="mlbn-book-stat-lbl">Color Themes</span></div>
+          <div class="mlbn-book-stat-sep">×</div>
+          <div class="mlbn-book-stat"><span class="mlbn-book-stat-num">3</span><span class="mlbn-book-stat-lbl">Page Formats</span></div>
+        </div>
+
+        <div class="mlbn-style-strip">
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/1_klasik_green_a5_landscape_anlar_page.png" alt="Classic"></div><div class="mlbn-style-body"><div class="mlbn-style-name">Classic</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#7BAF6A"></span><span class="mlbn-size-tag">A5 Landscape</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/2_album_pink_a5_landscape_anlar_page.png" alt="Album"></div><div class="mlbn-style-body"><div class="mlbn-style-name">Album</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#E898AA"></span><span class="mlbn-size-tag">A5 Landscape</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/3_sade_blue_a4_portrait_anlar_page.png" alt="Clean"></div><div class="mlbn-style-body"><div class="mlbn-style-name">Clean</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#6A9CC8"></span><span class="mlbn-size-tag">A4</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/4_polaroid_lilac_a5_landscape_anlar_page.png" alt="Polaroid"></div><div class="mlbn-style-body"><div class="mlbn-style-name">Polaroid</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#A88EC4"></span><span class="mlbn-size-tag">A5 Landscape</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/5_cizgi_yatay_peach_a4_portrait_anlar_page.png" alt="Lined"></div><div class="mlbn-style-body"><div class="mlbn-style-name">Lined</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#ECA776"></span><span class="mlbn-size-tag">A4</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/6_geometrik_cicek_butter_a5_landscape_anlar_page.png" alt="Floral"></div><div class="mlbn-style-body"><div class="mlbn-style-name">Geometric Floral</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#E4C356"></span><span class="mlbn-size-tag">A5 Landscape</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/7_gingham_seafoam_a5_portrait_anlar_page.png" alt="Gingham"></div><div class="mlbn-style-body"><div class="mlbn-style-name">Gingham</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#5ABDB0"></span><span class="mlbn-size-tag">A5 Portrait</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/8_kalpler_dagilmis_mist_a4_portrait_anlar_page.png" alt="Scattered Hearts"></div><div class="mlbn-style-body"><div class="mlbn-style-name">Scattered Hearts</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#8EACA4"></span><span class="mlbn-size-tag">A4</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/9_kalpler_dolu_rosewood_a5_landscape_anlar_page.png" alt="Full Hearts"></div><div class="mlbn-style-body"><div class="mlbn-style-name">Full Hearts</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#B56168"></span><span class="mlbn-size-tag">A5 Landscape</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/10_petek_yildiz_wheat_a4_portrait_anlar_page.png" alt="Hexagon Star"></div><div class="mlbn-style-body"><div class="mlbn-style-name">Hexagon Star</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#C2A06C"></span><span class="mlbn-size-tag">A4</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/11_puantiye_kucuk_vivamagenta_a5_landscape_anlar_page.png" alt="Polka Dots"></div><div class="mlbn-style-body"><div class="mlbn-style-name">Polka Dots</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#B82854"></span><span class="mlbn-size-tag">A5 Landscape</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/12_zigzag_mocha_a4_portrait_anlar_page.png" alt="Zigzag"></div><div class="mlbn-style-body"><div class="mlbn-style-name">Zigzag</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#7A604E"></span><span class="mlbn-size-tag">A4</span></div></div></div>
+        </div>
+
+        <div class="mlbn-formats-wrap">
+          <p class="mlbn-formats-title">Choose your perfect format</p>
+          <div class="mlbn-formats-row">
+            <div class="mlbn-format-card">
+              <div class="mlbn-format-paper" style="width:88px;height:62px;"></div>
+              <div><div class="mlbn-format-name">A5 Landscape</div><div class="mlbn-format-dims">210 × 148 mm</div></div>
+            </div>
+            <div class="mlbn-format-card">
+              <div class="mlbn-format-paper" style="width:62px;height:88px;"></div>
+              <div><div class="mlbn-format-name">A5 Portrait</div><div class="mlbn-format-dims">148 × 210 mm</div></div>
+            </div>
+            <div class="mlbn-format-card">
+              <div class="mlbn-format-paper" style="width:62px;height:88px;"></div>
+              <div><div class="mlbn-format-name">A4</div><div class="mlbn-format-dims">210 × 297 mm</div></div>
+            </div>
+            <div class="mlbn-format-card">
+              <div class="mlbn-format-paper" style="width:76px;height:76px;"></div>
+              <div><div class="mlbn-format-name">Square</div><div class="mlbn-format-dims">25 × 25 cm</div></div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="mlbn-plus-box">
@@ -494,6 +629,58 @@
         <div class="mlbn-card"><span class="mlbn-card-icon"><img src="/icons/co-parent.png" alt="Ebeveyn Paylaşımı"></span><h3>Ebeveyn Paylaşımı</h3><p>E-posta davetiyesiyle partnerinizi ekleyin. İki ebeveyn birlikte, aynı bebek profilinde takip etsin.</p></div>
         <div class="mlbn-card"><span class="mlbn-card-icon sm">✂️</span><span class="mlbn-card-new">Yeni</span><h3>Fotoğraf Editörü</h3><p>Kırpma (1:1, 4:3, 9:16) ve döndürme özelliğiyle fotoğrafları uygulama içinde düzenleyin, harici uygulama gerekmez.</p></div>
         <div class="mlbn-card"><span class="mlbn-card-icon sm">🔔</span><h3>Bildirim Merkezi</h3><p>Takviye, aşı, kontrol ve sistem bildirimlerini tek merkezde takip edin. Okundu/okunmadı durumu ile yönetin.</p></div>
+      </div>
+
+      <!-- ── PDF KİTAP VİTRİNİ (TR) ── -->
+      <div class="mlbn-book-section">
+        <div class="mlbn-book-plus-badge">⭐ Plus Özelliği</div>
+        <h2 class="mlbn-section-title">Bebeğinizin hikâyesi,<br><em>güzelce basılsın.</em></h2>
+        <p class="mlbn-section-sub">Uygulamadaki tüm anılarınızı indirilebilir, paylaşılabilir veya baskıya hazır kişisel bir PDF kitabına dönüştürün. Stil seçin, renginizi belirleyin, formatınıza karar verin.</p>
+
+        <div class="mlbn-book-stats">
+          <div class="mlbn-book-stat"><span class="mlbn-book-stat-num">12</span><span class="mlbn-book-stat-lbl">Benzersiz Stil</span></div>
+          <div class="mlbn-book-stat-sep">×</div>
+          <div class="mlbn-book-stat"><span class="mlbn-book-stat-num">12</span><span class="mlbn-book-stat-lbl">Renk Teması</span></div>
+          <div class="mlbn-book-stat-sep">×</div>
+          <div class="mlbn-book-stat"><span class="mlbn-book-stat-num">3</span><span class="mlbn-book-stat-lbl">Sayfa Formatı</span></div>
+        </div>
+
+        <div class="mlbn-style-strip">
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/1_klasik_green_a5_landscape_anlar_page.png" alt="Klasik"></div><div class="mlbn-style-body"><div class="mlbn-style-name">Klasik</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#7BAF6A"></span><span class="mlbn-size-tag">A5 Yatay</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/2_album_pink_a5_landscape_anlar_page.png" alt="Albüm"></div><div class="mlbn-style-body"><div class="mlbn-style-name">Albüm</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#E898AA"></span><span class="mlbn-size-tag">A5 Yatay</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/3_sade_blue_a4_portrait_anlar_page.png" alt="Sade"></div><div class="mlbn-style-body"><div class="mlbn-style-name">Sade</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#6A9CC8"></span><span class="mlbn-size-tag">A4</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/4_polaroid_lilac_a5_landscape_anlar_page.png" alt="Polaroid"></div><div class="mlbn-style-body"><div class="mlbn-style-name">Polaroid</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#A88EC4"></span><span class="mlbn-size-tag">A5 Yatay</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/5_cizgi_yatay_peach_a4_portrait_anlar_page.png" alt="Çizgi Yatay"></div><div class="mlbn-style-body"><div class="mlbn-style-name">Çizgi Yatay</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#ECA776"></span><span class="mlbn-size-tag">A4</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/6_geometrik_cicek_butter_a5_landscape_anlar_page.png" alt="Geometrik Çiçek"></div><div class="mlbn-style-body"><div class="mlbn-style-name">Geometrik Çiçek</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#E4C356"></span><span class="mlbn-size-tag">A5 Yatay</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/7_gingham_seafoam_a5_portrait_anlar_page.png" alt="Gingham"></div><div class="mlbn-style-body"><div class="mlbn-style-name">Gingham</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#5ABDB0"></span><span class="mlbn-size-tag">A5 Dikey</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/8_kalpler_dagilmis_mist_a4_portrait_anlar_page.png" alt="Dağınık Kalpler"></div><div class="mlbn-style-body"><div class="mlbn-style-name">Dağınık Kalpler</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#8EACA4"></span><span class="mlbn-size-tag">A4</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/9_kalpler_dolu_rosewood_a5_landscape_anlar_page.png" alt="Dolu Kalpler"></div><div class="mlbn-style-body"><div class="mlbn-style-name">Dolu Kalpler</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#B56168"></span><span class="mlbn-size-tag">A5 Yatay</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/10_petek_yildiz_wheat_a4_portrait_anlar_page.png" alt="Petek Yıldız"></div><div class="mlbn-style-body"><div class="mlbn-style-name">Petek Yıldız</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#C2A06C"></span><span class="mlbn-size-tag">A4</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/11_puantiye_kucuk_vivamagenta_a5_landscape_anlar_page.png" alt="Küçük Puantiye"></div><div class="mlbn-style-body"><div class="mlbn-style-name">Küçük Puantiye</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#B82854"></span><span class="mlbn-size-tag">A5 Yatay</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/12_zigzag_mocha_a4_portrait_anlar_page.png" alt="Zigzag"></div><div class="mlbn-style-body"><div class="mlbn-style-name">Zigzag</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#7A604E"></span><span class="mlbn-size-tag">A4</span></div></div></div>
+        </div>
+
+        <div class="mlbn-formats-wrap">
+          <p class="mlbn-formats-title">Formatınızı seçin</p>
+          <div class="mlbn-formats-row">
+            <div class="mlbn-format-card">
+              <div class="mlbn-format-paper" style="width:88px;height:62px;"></div>
+              <div><div class="mlbn-format-name">A5 Yatay</div><div class="mlbn-format-dims">210 × 148 mm</div></div>
+            </div>
+            <div class="mlbn-format-card">
+              <div class="mlbn-format-paper" style="width:62px;height:88px;"></div>
+              <div><div class="mlbn-format-name">A5 Dikey</div><div class="mlbn-format-dims">148 × 210 mm</div></div>
+            </div>
+            <div class="mlbn-format-card">
+              <div class="mlbn-format-paper" style="width:62px;height:88px;"></div>
+              <div><div class="mlbn-format-name">A4</div><div class="mlbn-format-dims">210 × 297 mm</div></div>
+            </div>
+            <div class="mlbn-format-card">
+              <div class="mlbn-format-paper" style="width:76px;height:76px;"></div>
+              <div><div class="mlbn-format-name">Kare</div><div class="mlbn-format-dims">25 × 25 cm</div></div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="mlbn-plus-box">
