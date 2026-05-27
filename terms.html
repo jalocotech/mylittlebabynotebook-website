@@ -52,6 +52,10 @@
     .site-footer a { color: #5FA584; text-decoration: none; font-weight: 700; }
     .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 16px; flex-wrap: wrap; }
     @media (max-width: 600px) { table { display: block; overflow-x: auto; } }
+
+  /* ── Copy Protection ─────────────────────────────────────────────────────── */
+  * { -webkit-user-select: none !important; -moz-user-select: none !important; user-select: none !important; }
+  img { -webkit-user-drag: none !important; pointer-events: none !important; }
   </style>
 </head>
 <body>
@@ -411,6 +415,19 @@
     const saved = localStorage.getItem('mlbn-lang');
     if (saved === 'tr' || saved === 'en') { setLang(saved); return; }
     if ((navigator.language || '').startsWith('tr')) { setLang('tr'); }
+  })();
+</script>
+<script>
+  (function(){
+    document.addEventListener('contextmenu',function(e){e.preventDefault();});
+    document.addEventListener('keydown',function(e){
+      var ctrl=e.ctrlKey||e.metaKey;
+      if(ctrl&&['c','x','a','s','u','p'].includes((e.key||'').toLowerCase()))e.preventDefault();
+      if(ctrl&&e.shiftKey&&['i','j','c'].includes((e.key||'').toLowerCase()))e.preventDefault();
+      if(e.key==='F12')e.preventDefault();
+    });
+    document.addEventListener('dragstart',function(e){e.preventDefault();});
+    document.addEventListener('selectstart',function(e){e.preventDefault();});
   })();
 </script>
 </body>
