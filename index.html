@@ -392,6 +392,24 @@
     .site-footer a { color: #5FA584; text-decoration: none; font-weight: 700; }
     .site-footer a:hover { text-decoration: underline; }
     .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 16px; flex-wrap: wrap; }
+
+  /* ── Copy Protection ─────────────────────────────────────────────────────── */
+  * {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+  }
+  img, svg, video {
+    -webkit-user-drag: none !important;
+    user-drag: none !important;
+    pointer-events: none !important;
+  }
+  /* input/textarea seçimine izin ver (form alanları için) */
+  input, textarea {
+    -webkit-user-select: text !important;
+    user-select: text !important;
+  }
   </style>
 </head>
 <body>
@@ -991,5 +1009,43 @@
       if (nav.startsWith('tr')) { setLang('tr'); }
     })();
   </script>
+
+<script>
+  (function () {
+    'use strict';
+
+    // Sağ tık menüsünü devre dışı bırak
+    document.addEventListener('contextmenu', function (e) { e.preventDefault(); return false; });
+
+    // Klavye kısayollarını engelle
+    document.addEventListener('keydown', function (e) {
+      var k = e.key || '';
+      var ctrl = e.ctrlKey || e.metaKey;
+
+      // Ctrl/Cmd + C, X, A, S, U, P
+      if (ctrl && ['c','x','a','s','u','p'].includes(k.toLowerCase())) { e.preventDefault(); return false; }
+      // Ctrl/Cmd + Shift + I, J, C (DevTools)
+      if (ctrl && e.shiftKey && ['i','j','c'].includes(k.toLowerCase())) { e.preventDefault(); return false; }
+      // F12 (DevTools)
+      if (k === 'F12') { e.preventDefault(); return false; }
+      // PrintScreen
+      if (k === 'PrintScreen') { e.preventDefault(); return false; }
+    });
+
+    // Görsel sürüklemeyi engelle
+    document.addEventListener('dragstart', function (e) { e.preventDefault(); return false; });
+
+    // Seçimi temizle (fare ile seçim yapılmaya çalışıldığında)
+    document.addEventListener('selectstart', function (e) { e.preventDefault(); return false; });
+
+    // Touch cihazlarda uzun basma menüsünü engelle
+    document.addEventListener('touchstart', function (e) {
+      if (e.target.tagName === 'IMG' || e.target.tagName === 'SVG') {
+        e.preventDefault();
+      }
+    }, { passive: false });
+  })();
+</script>
+
 </body>
 </html>
