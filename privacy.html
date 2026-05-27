@@ -94,7 +94,7 @@
     <ul>
       <li>Full name, email address, encrypted password</li>
       <li>Google account information (if you use Google Sign-In)</li>
-      <li>Biometric login preference flag (actual biometric data never leaves your device)</li>
+      <li>Biometric login preference flag; when biometric login is enabled, your login email and encrypted password are stored in the device secure enclave (iOS Keychain / Android Keystore) — this data never leaves your device and is deleted when you disable biometric login</li>
     </ul>
 
     <h3>3.2 Baby Profile Information</h3>
@@ -119,9 +119,11 @@
 
     <h3>3.5 Photos and Media</h3>
     <p>Photos edited using the in-app editor are <strong>processed entirely on your device</strong>, then uploaded to Cloudflare R2 storage. No editing metadata is sent to developer servers.</p>
+    <p>When you add a photo, its EXIF metadata (including capture date) is read on-device to auto-fill dates. This metadata is never uploaded — only the photo itself is stored, with EXIF stripped before upload.</p>
 
     <h3>3.6 Co-Parenting Feature</h3>
     <p>When you invite a co-parent, their <strong>email address</strong> is stored to manage shared access. It is not shared with third parties or used for marketing.</p>
+    <p>When you choose to share content (photos, PDF memory books, milestone images) via the system share sheet, the content is delivered to the third-party app you select. The developer has no control over how that app handles the shared data.</p>
 
     <h3>3.7 Advertising Data — Free Tier Only</h3>
     <table>
@@ -261,9 +263,11 @@
 
     <h3>3.5 Fotoğraf ve Medya</h3>
     <p>Uygulama içi fotoğraf editörüyle işlenen görseller <strong>yalnızca sizin cihazınızda işlenir</strong> ve ardından Cloudflare R2 depolamasına yüklenir. Düzenleme verileri geliştirici sunucularına iletilmez.</p>
+    <p>Fotoğraf eklediğinizde, EXIF meta verisi (çekim tarihi dahil) tarih otomatik doldurma amacıyla yalnızca cihazınızda okunur. Bu meta veri hiçbir zaman yüklenmez — yalnızca fotoğrafın kendisi, EXIF soyulmuş biçimde saklanır.</p>
 
     <h3>3.6 Ebeveyn Paylaşımı</h3>
     <p>Bir bebek profilini başka bir ebeveynle paylaştığınızda, davet ettiğiniz kişinin <strong>e-posta adresi</strong> sisteme kaydedilir. Bu e-posta yalnızca davet ve erişim yönetimi için kullanılır; üçüncü taraflarla paylaşılmaz.</p>
+    <p>Sistem paylaşım menüsü aracılığıyla içerik (fotoğraf, PDF hatıra kitabı, kilometre taşı görseli) paylaştığınızda, içerik seçtiğiniz üçüncü taraf uygulamaya iletilir. Geliştirici bu uygulamanın söz konusu veriyi nasıl işleyeceğini kontrol etmez.</p>
 
     <h3>3.7 Reklam Tanımlayıcısı (Yalnızca Ücretsiz Katman)</h3>
     <table>
@@ -307,6 +311,7 @@
       <li>Fotoğraflara erişim Firebase kimlik token'ı (Bearer) ile korunur</li>
       <li>Ekran görüntüsü alma uygulamada engellenmektedir</li>
       <li>Biyometrik veri yalnızca cihaz işlemcisinde işlenir; geliştiriciye iletilmez</li>
+      <li>Biyometrik giriş etkinleştirildiğinde, e-posta adresiniz ve şifrelenmiş parolanız cihazın güvenli belleğine (iOS Keychain / Android Keystore) kaydedilir — bu veri hiçbir zaman cihazınızdan çıkmaz ve biyometrik girişi devre dışı bıraktığınızda silinir</li>
     </ul>
 
     <hr>
