@@ -441,18 +441,65 @@
       animation: mlbnOverlayIn .18s ease;
     }
     #mlbn-preview-close {
-      position: fixed; top: 18px; right: 18px; z-index: 10000;
-      width: 36px; height: 36px; border-radius: 50%;
+      position: fixed; top: 16px; right: 16px; z-index: 10000;
+      width: 38px; height: 38px; border-radius: 50%;
       background: rgba(255,255,255,0.15); border: 1.5px solid rgba(255,255,255,0.3);
       color: #fff; font-size: 18px; line-height: 1;
       display: flex; align-items: center; justify-content: center;
+      cursor: pointer; backdrop-filter: blur(4px); flex-shrink: 0;
+    }
+    #mlbn-preview-close:hover { background: rgba(255,255,255,0.28); }
+    /* Carousel nav buttons */
+    .mlbn-overlay-nav {
+      position: fixed; top: 50%; transform: translateY(-50%); z-index: 10000;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(255,255,255,0.15); border: 1.5px solid rgba(255,255,255,0.3);
+      color: #fff; font-size: 22px; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
       cursor: pointer; backdrop-filter: blur(4px);
+      transition: background .15s, opacity .15s;
+      user-select: none;
+    }
+    .mlbn-overlay-nav:hover { background: rgba(255,255,255,0.30); }
+    .mlbn-overlay-nav.disabled { opacity: 0.25; cursor: default; pointer-events: none; }
+    #mlbn-overlay-prev { left: 12px; }
+    #mlbn-overlay-next { right: 12px; }
+    /* Counter */
+    #mlbn-overlay-counter {
+      position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%);
+      z-index: 10000; color: rgba(255,255,255,0.7);
+      font-size: 12px; font-weight: 700; letter-spacing: .06em;
+      background: rgba(0,0,0,0.3); border-radius: 50px; padding: 4px 14px;
+      backdrop-filter: blur(4px); pointer-events: none;
+    }
+    /* Style name label */
+    #mlbn-overlay-label {
+      position: fixed; bottom: 50px; left: 50%; transform: translateX(-50%);
+      z-index: 10000; color: rgba(255,255,255,0.9);
+      font-size: 14px; font-weight: 800; letter-spacing: .02em;
+      background: rgba(0,0,0,0.35); border-radius: 50px; padding: 6px 18px;
+      backdrop-filter: blur(4px); pointer-events: none; white-space: nowrap;
     }
     @keyframes mlbnOverlayIn {
       from { opacity: 0; transform: scale(0.90); }
       to   { opacity: 1; transform: scale(1); }
     }
+    @keyframes mlbnSlideLeft {
+      from { opacity: 0; transform: translateX(40px) scale(0.96); }
+      to   { opacity: 1; transform: translateX(0) scale(1); }
+    }
+    @keyframes mlbnSlideRight {
+      from { opacity: 0; transform: translateX(-40px) scale(0.96); }
+      to   { opacity: 1; transform: translateX(0) scale(1); }
+    }
+    #mlbn-overlay-img.slide-left  { animation: mlbnSlideLeft  .18s ease; }
+    #mlbn-overlay-img.slide-right { animation: mlbnSlideRight .18s ease; }
     @media (hover: none) { #mlbn-preview-popup { display: none !important; } }
+    @media (max-width: 480px) {
+      .mlbn-overlay-nav { width: 38px; height: 38px; font-size: 18px; }
+      #mlbn-overlay-prev { left: 6px; }
+      #mlbn-overlay-next { right: 6px; }
+    }
 
   /* ── Copy Protection ─────────────────────────────────────────────────────── */
   * {
@@ -1112,80 +1159,157 @@
   <div id="mlbn-preview-popup" aria-hidden="true"><img id="mlbn-preview-img" src="" alt=""></div>
   <div id="mlbn-preview-overlay" aria-hidden="true">
     <button id="mlbn-preview-close" aria-label="Close">✕</button>
+    <button id="mlbn-overlay-prev" class="mlbn-overlay-nav" aria-label="Previous">&#8249;</button>
     <img id="mlbn-overlay-img" src="" alt="">
+    <button id="mlbn-overlay-next" class="mlbn-overlay-nav" aria-label="Next">&#8250;</button>
+    <div id="mlbn-overlay-label"></div>
+    <div id="mlbn-overlay-counter"></div>
   </div>
 
   <script>
   (function () {
-    var popup     = document.getElementById('mlbn-preview-popup');
-    var popupImg  = document.getElementById('mlbn-preview-img');
-    var overlay   = document.getElementById('mlbn-preview-overlay');
-    var overlayImg= document.getElementById('mlbn-overlay-img');
-    var closeBtn  = document.getElementById('mlbn-preview-close');
+    var popup      = document.getElementById('mlbn-preview-popup');
+    var popupImg   = document.getElementById('mlbn-preview-img');
+    var overlay    = document.getElementById('mlbn-preview-overlay');
+    var overlayImg = document.getElementById('mlbn-overlay-img');
+    var closeBtn   = document.getElementById('mlbn-preview-close');
+    var prevBtn    = document.getElementById('mlbn-overlay-prev');
+    var nextBtn    = document.getElementById('mlbn-overlay-next');
+    var counter    = document.getElementById('mlbn-overlay-counter');
+    var label      = document.getElementById('mlbn-overlay-label');
     var hideTimer;
+
+    // All cards across both language sections — built once
+    var allCards = [];
+    var currentIdx = -1;
+
+    function buildCardList() {
+      // Only the visible lang-section's cards
+      var visibleSection = document.querySelector('.lang-section.visible');
+      if (!visibleSection) visibleSection = document;
+      allCards = Array.from(visibleSection.querySelectorAll('.mlbn-style-card'));
+    }
 
     function isTouchDevice() {
       return window.matchMedia('(hover: none)').matches || navigator.maxTouchPoints > 0;
     }
 
-    function openOverlay(src) {
-      overlayImg.src = src;
+    function getCardData(card) {
+      var thumb = card.querySelector('.mlbn-style-thumb');
+      var name  = card.querySelector('.mlbn-style-name');
+      return {
+        src:  thumb ? thumb.getAttribute('src').split('?')[0] : '',
+        name: name  ? name.textContent.trim() : ''
+      };
+    }
+
+    function showSlide(idx, dir) {
+      var data = getCardData(allCards[idx]);
+      var animClass = dir === 'next' ? 'slide-left' : dir === 'prev' ? 'slide-right' : '';
+
+      overlayImg.classList.remove('slide-left', 'slide-right');
+      // Force reflow to restart animation
+      void overlayImg.offsetWidth;
+      overlayImg.src = data.src;
+      if (animClass) overlayImg.classList.add(animClass);
+
+      label.textContent   = data.name;
+      counter.textContent = (idx + 1) + ' / ' + allCards.length;
+      prevBtn.classList.toggle('disabled', idx === 0);
+      nextBtn.classList.toggle('disabled', idx === allCards.length - 1);
+      currentIdx = idx;
+    }
+
+    function openOverlay(idx) {
+      buildCardList();
       overlay.setAttribute('aria-hidden', 'false');
       overlay.classList.add('active');
       document.body.style.overflow = 'hidden';
+      showSlide(idx, '');
     }
 
     function closeOverlay() {
       overlay.classList.remove('active');
       overlay.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
+      currentIdx = -1;
     }
 
+    function navigate(dir) {
+      var next = currentIdx + (dir === 'next' ? 1 : -1);
+      if (next < 0 || next >= allCards.length) return;
+      showSlide(next, dir);
+    }
+
+    // Nav buttons
+    prevBtn.addEventListener('click', function (e) { e.stopPropagation(); navigate('prev'); });
+    nextBtn.addEventListener('click', function (e) { e.stopPropagation(); navigate('next'); });
+    closeBtn.addEventListener('click', function (e) { e.stopPropagation(); closeOverlay(); });
+
+    // Click on backdrop closes
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closeOverlay();
+    });
+
+    // Keyboard
+    document.addEventListener('keydown', function (e) {
+      if (!overlay.classList.contains('active')) return;
+      if (e.key === 'Escape')      closeOverlay();
+      if (e.key === 'ArrowRight')  navigate('next');
+      if (e.key === 'ArrowLeft')   navigate('prev');
+    });
+
+    // Touch swipe support
+    var touchStartX = 0;
+    overlay.addEventListener('touchstart', function (e) {
+      touchStartX = e.changedTouches[0].clientX;
+    }, { passive: true });
+    overlay.addEventListener('touchend', function (e) {
+      var dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 50) navigate(dx < 0 ? 'next' : 'prev');
+    }, { passive: true });
+
+    // Positionpopup
     function positionPopup(card) {
       var rect = card.getBoundingClientRect();
       var pw = 290;
       var left = rect.left + rect.width / 2 - pw / 2;
       left = Math.max(8, Math.min(left, window.innerWidth - pw - 8));
-
-      // Estimate popup height from image aspect (use 1:1 safe estimate)
       var ph = pw * 0.9;
       var top = (rect.top > ph + 24) ? rect.top - ph - 12 : rect.bottom + 12;
-
-      popup.style.left  = left + 'px';
-      popup.style.top   = top  + 'px';
+      popup.style.left = left + 'px';
+      popup.style.top  = top  + 'px';
     }
 
-    overlay.addEventListener('click', function (e) {
-      if (e.target === overlay || e.target === closeBtn) closeOverlay();
-    });
+    // Wire up every card
+    function wireCards() {
+      document.querySelectorAll('.mlbn-style-card').forEach(function (card) {
+        var thumb = card.querySelector('.mlbn-style-thumb');
+        if (!thumb) return;
 
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeOverlay();
-    });
+        // Desktop hover popup
+        card.addEventListener('mouseenter', function () {
+          if (isTouchDevice()) return;
+          clearTimeout(hideTimer);
+          popupImg.src = thumb.getAttribute('src').split('?')[0];
+          positionPopup(card);
+          popup.style.display = 'block';
+        });
+        card.addEventListener('mouseleave', function () {
+          hideTimer = setTimeout(function () { popup.style.display = 'none'; }, 80);
+        });
 
-    document.querySelectorAll('.mlbn-style-card').forEach(function (card) {
-      var thumb = card.querySelector('.mlbn-style-thumb');
-      if (!thumb) return;
-
-      // Desktop hover
-      card.addEventListener('mouseenter', function () {
-        if (isTouchDevice()) return;
-        clearTimeout(hideTimer);
-        var src = thumb.getAttribute('src').split('?')[0];
-        popupImg.src = src;
-        positionPopup(card);
-        popup.style.display = 'block';
+        // Click / tap → carousel overlay
+        card.addEventListener('click', function () {
+          buildCardList();
+          var idx = allCards.indexOf(card);
+          if (idx === -1) idx = 0;
+          openOverlay(idx);
+        });
       });
+    }
 
-      card.addEventListener('mouseleave', function () {
-        hideTimer = setTimeout(function () { popup.style.display = 'none'; }, 80);
-      });
-
-      // Click / tap → overlay (works on both desktop and mobile)
-      card.addEventListener('click', function () {
-        openOverlay(thumb.getAttribute('src').split('?')[0]);
-      });
-    });
+    wireCards();
   })();
   </script>
 </body>
