@@ -417,6 +417,43 @@
     .site-footer a:hover { text-decoration: underline; }
     .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 16px; flex-wrap: wrap; }
 
+    /* ── Style Card Preview ── */
+    .mlbn-style-card { cursor: zoom-in; }
+    #mlbn-preview-popup {
+      display: none; position: fixed; z-index: 9000; pointer-events: none;
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.38), 0 4px 16px rgba(0,0,0,0.18);
+      width: 290px; background: #fff;
+    }
+    #mlbn-preview-popup img { width: 100%; height: auto; display: block; }
+    #mlbn-preview-overlay {
+      display: none; position: fixed; inset: 0; z-index: 9999;
+      background: rgba(10,20,15,0.82); backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      align-items: center; justify-content: center; cursor: zoom-out;
+      padding: 16px;
+    }
+    #mlbn-preview-overlay.active { display: flex; }
+    #mlbn-preview-overlay img {
+      max-width: min(90vw, 500px); max-height: 82vh;
+      border-radius: 18px; object-fit: contain;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.55);
+      animation: mlbnOverlayIn .18s ease;
+    }
+    #mlbn-preview-close {
+      position: fixed; top: 18px; right: 18px; z-index: 10000;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255,255,255,0.15); border: 1.5px solid rgba(255,255,255,0.3);
+      color: #fff; font-size: 18px; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; backdrop-filter: blur(4px);
+    }
+    @keyframes mlbnOverlayIn {
+      from { opacity: 0; transform: scale(0.90); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    @media (hover: none) { #mlbn-preview-popup { display: none !important; } }
+
   /* ── Copy Protection ─────────────────────────────────────────────────────── */
   * {
     -webkit-user-select: none !important;
@@ -644,18 +681,19 @@
         </div>
 
         <div class="mlbn-style-strip">
-          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/klasik_green_25x25_anlar_page.png" alt="Classic"><span class="mlbn-style-badge free">FREE</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Classic</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#7BAF6A"></span><span class="mlbn-size-tag">25×25</span></div></div></div>
-          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/2_album_pink_a5_landscape_anlar_page.png" alt="Album"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Album</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#E898AA"></span><span class="mlbn-size-tag">A5 Landscape</span></div></div></div>
-          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/3_sade_blue_a4_portrait_anlar_page.png" alt="Clean"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Clean</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#6A9CC8"></span><span class="mlbn-size-tag">A4</span></div></div></div>
-          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/4_polaroid_lilac_a5_landscape_anlar_page.png" alt="Polaroid"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Polaroid</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#A88EC4"></span><span class="mlbn-size-tag">A5 Landscape</span></div></div></div>
-          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/5_cizgi_yatay_peach_a4_portrait_anlar_page.png" alt="Lined"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Lined</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#ECA776"></span><span class="mlbn-size-tag">A4</span></div></div></div>
-          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/6_geometrik_cicek_butter_a5_landscape_anlar_page.png" alt="Floral"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Geometric Floral</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#E4C356"></span><span class="mlbn-size-tag">A5 Landscape</span></div></div></div>
-          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/7_gingham_seafoam_a5_portrait_anlar_page.png" alt="Gingham"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Gingham</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#5ABDB0"></span><span class="mlbn-size-tag">A5 Portrait</span></div></div></div>
-          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/8_kalpler_dagilmis_mist_a4_portrait_anlar_page.png" alt="Scattered Hearts"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Scattered Hearts</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#8EACA4"></span><span class="mlbn-size-tag">A4</span></div></div></div>
-          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/9_kalpler_dolu_rosewood_a5_landscape_anlar_page.png" alt="Full Hearts"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Full Hearts</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#B56168"></span><span class="mlbn-size-tag">A5 Landscape</span></div></div></div>
-          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/10_petek_yildiz_wheat_a4_portrait_anlar_page.png" alt="Hexagon Star"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Hexagon Star</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#C2A06C"></span><span class="mlbn-size-tag">A4</span></div></div></div>
-          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/11_puantiye_kucuk_vivamagenta_a5_landscape_anlar_page.png" alt="Polka Dots"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Polka Dots</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#B82854"></span><span class="mlbn-size-tag">A5 Landscape</span></div></div></div>
-          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/12_zigzag_mocha_a4_portrait_anlar_page.png" alt="Zigzag"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Zigzag</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#7A604E"></span><span class="mlbn-size-tag">A4</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/en_classic_25x25.png" alt="Classic"><span class="mlbn-style-badge free">FREE</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Classic</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#F0F0F0"></span><span class="mlbn-size-tag">25×25</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/en_album_collage_25x25.png" alt="Album Collage"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Album Collage</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#F0F0F0"></span><span class="mlbn-size-tag">25×25</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/en_plain_a5.png" alt="Plain"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Plain</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#F0F0F0"></span><span class="mlbn-size-tag">A5 Portrait</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/en_polaroid_a5.png" alt="Polaroid"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Polaroid</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#F0F0F0"></span><span class="mlbn-size-tag">A5 Portrait</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/en_gingham_collage_a5.png" alt="Gingham"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Gingham</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#F0F0E0"></span><span class="mlbn-size-tag">A5 Portrait</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/en_honeycomb_collage_a5.png" alt="Honeycomb"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Honeycomb</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#F0F0F0"></span><span class="mlbn-size-tag">A5 Portrait</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/en_heart1_collage_a5.png" alt="Scattered Hearts"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Scattered Hearts</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#F0F0F0"></span><span class="mlbn-size-tag">A5 Portrait</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/en_heart2_collage_25x25.png" alt="Full Hearts"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Full Hearts</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#F0F0F0"></span><span class="mlbn-size-tag">25×25</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/en_polka1_a5.png" alt="Polka Dots"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Polka Dots</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#F0F0F0"></span><span class="mlbn-size-tag">A5 Portrait</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/en_polka2_a5.png" alt="Polka Dots II"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Polka Dots II</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#503010"></span><span class="mlbn-size-tag">A5 Portrait</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/en_flower_collage_a4.png" alt="Flower Collage"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Flower Collage</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#F0F0F0"></span><span class="mlbn-size-tag">A4</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/en_stripes_25x25.png" alt="Stripes"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Stripes</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#B07040"></span><span class="mlbn-size-tag">25×25</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/en_zigzag_a4.png" alt="Zigzag"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Zigzag</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#604020"></span><span class="mlbn-size-tag">A4</span></div></div></div>
         </div>
 
         <div class="mlbn-formats-wrap">
@@ -912,18 +950,19 @@
         </div>
 
         <div class="mlbn-style-strip">
-          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/klasik_green_25x25_anlar_page.png" alt="Klasik"><span class="mlbn-style-badge free">ÜCRETSİZ</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Klasik</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#7BAF6A"></span><span class="mlbn-size-tag">25×25</span></div></div></div>
-          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/2_album_pink_a5_landscape_anlar_page.png" alt="Albüm"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Albüm</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#E898AA"></span><span class="mlbn-size-tag">A5 Yatay</span></div></div></div>
-          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/3_sade_blue_a4_portrait_anlar_page.png" alt="Sade"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Sade</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#6A9CC8"></span><span class="mlbn-size-tag">A4</span></div></div></div>
-          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/4_polaroid_lilac_a5_landscape_anlar_page.png" alt="Polaroid"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Polaroid</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#A88EC4"></span><span class="mlbn-size-tag">A5 Yatay</span></div></div></div>
-          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/5_cizgi_yatay_peach_a4_portrait_anlar_page.png" alt="Çizgi Yatay"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Çizgi Yatay</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#ECA776"></span><span class="mlbn-size-tag">A4</span></div></div></div>
-          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/6_geometrik_cicek_butter_a5_landscape_anlar_page.png" alt="Geometrik Çiçek"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Geometrik Çiçek</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#E4C356"></span><span class="mlbn-size-tag">A5 Yatay</span></div></div></div>
-          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/7_gingham_seafoam_a5_portrait_anlar_page.png" alt="Gingham"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Gingham</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#5ABDB0"></span><span class="mlbn-size-tag">A5 Dikey</span></div></div></div>
-          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/8_kalpler_dagilmis_mist_a4_portrait_anlar_page.png" alt="Dağınık Kalpler"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Dağınık Kalpler</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#8EACA4"></span><span class="mlbn-size-tag">A4</span></div></div></div>
-          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/9_kalpler_dolu_rosewood_a5_landscape_anlar_page.png" alt="Dolu Kalpler"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Dolu Kalpler</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#B56168"></span><span class="mlbn-size-tag">A5 Yatay</span></div></div></div>
-          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/10_petek_yildiz_wheat_a4_portrait_anlar_page.png" alt="Petek Yıldız"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Petek Yıldız</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#C2A06C"></span><span class="mlbn-size-tag">A4</span></div></div></div>
-          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/11_puantiye_kucuk_vivamagenta_a5_landscape_anlar_page.png" alt="Küçük Puantiye"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Küçük Puantiye</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#B82854"></span><span class="mlbn-size-tag">A5 Yatay</span></div></div></div>
-          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/12_zigzag_mocha_a4_portrait_anlar_page.png" alt="Zigzag"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Zigzag</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#7A604E"></span><span class="mlbn-size-tag">A4</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/tr_klasik_25x25.png" alt="Klasik"><span class="mlbn-style-badge free">ÜCRETSİZ</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Klasik</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#F0F0F0"></span><span class="mlbn-size-tag">25×25</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/tr_album_kolaj_a4.png" alt="Albüm Kolaj"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Albüm Kolaj</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#F0F0E0"></span><span class="mlbn-size-tag">A4</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/tr_sade_a4.png" alt="Sade"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Sade</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#F0F0F0"></span><span class="mlbn-size-tag">A4</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/tr_polaroid_a5.png" alt="Polaroid"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Polaroid</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#F0F0F0"></span><span class="mlbn-size-tag">A5 Yatay</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/tr_cizgi_a4.png" alt="Çizgi"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Çizgi</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#908060"></span><span class="mlbn-size-tag">A4</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/tr_geometrik_cicek_a5.png" alt="Geometrik Çiçek"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Geometrik Çiçek</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#908060"></span><span class="mlbn-size-tag">A5 Dikey</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/tr_gingham_kolaj_a4.png" alt="Gingham"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Gingham</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#F0F0F0"></span><span class="mlbn-size-tag">A4</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/tr_kalpler_dagilmis_kolaj_a5.png" alt="Dağınık Kalpler"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Dağınık Kalpler</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#F0F0F0"></span><span class="mlbn-size-tag">A5 Yatay</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/tr_kalpler_dolu_kolaj_25x25.png" alt="Dolu Kalpler"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Dolu Kalpler</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#F0F0F0"></span><span class="mlbn-size-tag">25×25</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/tr_petek_yildiz_kolaj_a5.png" alt="Petek Yıldız"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Petek Yıldız</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#F0F0F0"></span><span class="mlbn-size-tag">A5 Dikey</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/tr_puantiye_kucuk_kolaj_a5.png" alt="Küçük Puantiye"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Küçük Puantiye</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#F0F0F0"></span><span class="mlbn-size-tag">A5 Yatay</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/tr_yaprak_dali_kolaj_25x25.png" alt="Yaprak Dalı"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Yaprak Dalı</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#F0F0F0"></span><span class="mlbn-size-tag">25×25</span></div></div></div>
+          <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/tr_zigzag_a5.png" alt="Zigzag"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Zigzag</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#908060"></span><span class="mlbn-size-tag">A5 Yatay</span></div></div></div>
         </div>
 
         <div class="mlbn-formats-wrap">
@@ -1069,5 +1108,85 @@
   })();
 </script>
 
+  <!-- Style card image preview -->
+  <div id="mlbn-preview-popup" aria-hidden="true"><img id="mlbn-preview-img" src="" alt=""></div>
+  <div id="mlbn-preview-overlay" aria-hidden="true">
+    <button id="mlbn-preview-close" aria-label="Close">✕</button>
+    <img id="mlbn-overlay-img" src="" alt="">
+  </div>
+
+  <script>
+  (function () {
+    var popup     = document.getElementById('mlbn-preview-popup');
+    var popupImg  = document.getElementById('mlbn-preview-img');
+    var overlay   = document.getElementById('mlbn-preview-overlay');
+    var overlayImg= document.getElementById('mlbn-overlay-img');
+    var closeBtn  = document.getElementById('mlbn-preview-close');
+    var hideTimer;
+
+    function isTouchDevice() {
+      return window.matchMedia('(hover: none)').matches || navigator.maxTouchPoints > 0;
+    }
+
+    function openOverlay(src) {
+      overlayImg.src = src;
+      overlay.setAttribute('aria-hidden', 'false');
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeOverlay() {
+      overlay.classList.remove('active');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    function positionPopup(card) {
+      var rect = card.getBoundingClientRect();
+      var pw = 290;
+      var left = rect.left + rect.width / 2 - pw / 2;
+      left = Math.max(8, Math.min(left, window.innerWidth - pw - 8));
+
+      // Estimate popup height from image aspect (use 1:1 safe estimate)
+      var ph = pw * 0.9;
+      var top = (rect.top > ph + 24) ? rect.top - ph - 12 : rect.bottom + 12;
+
+      popup.style.left  = left + 'px';
+      popup.style.top   = top  + 'px';
+    }
+
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay || e.target === closeBtn) closeOverlay();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeOverlay();
+    });
+
+    document.querySelectorAll('.mlbn-style-card').forEach(function (card) {
+      var thumb = card.querySelector('.mlbn-style-thumb');
+      if (!thumb) return;
+
+      // Desktop hover
+      card.addEventListener('mouseenter', function () {
+        if (isTouchDevice()) return;
+        clearTimeout(hideTimer);
+        var src = thumb.getAttribute('src').split('?')[0];
+        popupImg.src = src;
+        positionPopup(card);
+        popup.style.display = 'block';
+      });
+
+      card.addEventListener('mouseleave', function () {
+        hideTimer = setTimeout(function () { popup.style.display = 'none'; }, 80);
+      });
+
+      // Click / tap → overlay (works on both desktop and mobile)
+      card.addEventListener('click', function () {
+        openOverlay(thumb.getAttribute('src').split('?')[0]);
+      });
+    });
+  })();
+  </script>
 </body>
 </html>
