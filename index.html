@@ -354,6 +354,38 @@
     .mlbn-formats-row {
       display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
     }
+    /* ── Color Themes ── */
+    .mlbn-colors-wrap { text-align: center; margin-bottom: 40px; }
+    .mlbn-colors-grid {
+      display: flex; flex-wrap: wrap; gap: 12px 10px;
+      justify-content: center; max-width: 540px; margin: 0 auto;
+    }
+    .mlbn-color-chip {
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      width: 72px;
+    }
+    .mlbn-color-swatch-wrap { position: relative; display: inline-flex; }
+    .mlbn-color-swatch {
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 2px solid rgba(0,0,0,0.08);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.14);
+      transition: transform .15s, box-shadow .15s;
+    }
+    .mlbn-color-chip:hover .mlbn-color-swatch {
+      transform: scale(1.18); box-shadow: 0 5px 16px rgba(0,0,0,0.22);
+    }
+    .mlbn-color-badge {
+      position: absolute; top: -4px; right: -8px;
+      font-size: 7.5px; font-weight: 800; letter-spacing: .03em;
+      border-radius: 4px; padding: 1px 5px; line-height: 1.5;
+      white-space: nowrap;
+    }
+    .mlbn-color-badge.free { background: #2E9E55; color: #fff; }
+    .mlbn-color-badge.plus { background: #FFD700; color: #7A5A00; }
+    .mlbn-color-label {
+      font-size: 10.5px; font-weight: 700; color: #4A5E52;
+      line-height: 1.2; text-align: center;
+    }
     .mlbn-format-card {
       display: flex; flex-direction: column; align-items: center; gap: 12px;
       background: #F6FAF5; border: 1.5px solid #DCE9E3; border-radius: 18px;
@@ -743,6 +775,24 @@
           <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/en_zigzag_a4.png" alt="Zigzag"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Zigzag</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#604020"></span><span class="mlbn-size-tag">A4</span></div></div></div>
         </div>
 
+        <div class="mlbn-colors-wrap">
+          <p class="mlbn-formats-title">Color Themes</p>
+          <div class="mlbn-colors-grid">
+            <div class="mlbn-color-chip"><div class="mlbn-color-swatch-wrap"><div class="mlbn-color-swatch" style="background:#7BAF6A;"></div><span class="mlbn-color-badge free">FREE</span></div><div class="mlbn-color-label">Sage</div></div>
+            <div class="mlbn-color-chip"><div class="mlbn-color-swatch-wrap"><div class="mlbn-color-swatch" style="background:#E898AA;"></div><span class="mlbn-color-badge plus">⭐</span></div><div class="mlbn-color-label">Pink</div></div>
+            <div class="mlbn-color-chip"><div class="mlbn-color-swatch-wrap"><div class="mlbn-color-swatch" style="background:#6A9CC8;"></div><span class="mlbn-color-badge plus">⭐</span></div><div class="mlbn-color-label">Blue</div></div>
+            <div class="mlbn-color-chip"><div class="mlbn-color-swatch-wrap"><div class="mlbn-color-swatch" style="background:#A88EC4;"></div><span class="mlbn-color-badge plus">⭐</span></div><div class="mlbn-color-label">Lilac</div></div>
+            <div class="mlbn-color-chip"><div class="mlbn-color-swatch-wrap"><div class="mlbn-color-swatch" style="background:#ECA776;"></div><span class="mlbn-color-badge plus">⭐</span></div><div class="mlbn-color-label">Peach</div></div>
+            <div class="mlbn-color-chip"><div class="mlbn-color-swatch-wrap"><div class="mlbn-color-swatch" style="background:#E4C356;"></div><span class="mlbn-color-badge plus">⭐</span></div><div class="mlbn-color-label">Butter</div></div>
+            <div class="mlbn-color-chip"><div class="mlbn-color-swatch-wrap"><div class="mlbn-color-swatch" style="background:#5ABDB0;"></div><span class="mlbn-color-badge plus">⭐</span></div><div class="mlbn-color-label">Seafoam</div></div>
+            <div class="mlbn-color-chip"><div class="mlbn-color-swatch-wrap"><div class="mlbn-color-swatch" style="background:#8EACA4;"></div><span class="mlbn-color-badge plus">⭐</span></div><div class="mlbn-color-label">Mist</div></div>
+            <div class="mlbn-color-chip"><div class="mlbn-color-swatch-wrap"><div class="mlbn-color-swatch" style="background:#B56168;"></div><span class="mlbn-color-badge plus">⭐</span></div><div class="mlbn-color-label">Rosewood</div></div>
+            <div class="mlbn-color-chip"><div class="mlbn-color-swatch-wrap"><div class="mlbn-color-swatch" style="background:#C2A06C;"></div><span class="mlbn-color-badge plus">⭐</span></div><div class="mlbn-color-label">Wheat</div></div>
+            <div class="mlbn-color-chip"><div class="mlbn-color-swatch-wrap"><div class="mlbn-color-swatch" style="background:#B82854;"></div><span class="mlbn-color-badge plus">⭐</span></div><div class="mlbn-color-label">Viva Magenta</div></div>
+            <div class="mlbn-color-chip"><div class="mlbn-color-swatch-wrap"><div class="mlbn-color-swatch" style="background:#7A604E;"></div><span class="mlbn-color-badge plus">⭐</span></div><div class="mlbn-color-label">Mocha</div></div>
+          </div>
+        </div>
+
         <div class="mlbn-formats-wrap">
           <p class="mlbn-formats-title">Formats</p>
           <div class="mlbn-formats-row">
@@ -1010,6 +1060,24 @@
           <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/tr_puantiye_kucuk_kolaj_a5.png" alt="Küçük Puantiye"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Küçük Puantiye</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#F0F0F0"></span><span class="mlbn-size-tag">A5 Yatay</span></div></div></div>
           <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/tr_yaprak_dali_kolaj_25x25.png" alt="Yaprak Dalı"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Yaprak Dalı</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#F0F0F0"></span><span class="mlbn-size-tag">25×25</span></div></div></div>
           <div class="mlbn-style-card"><div class="mlbn-style-thumb-wrap"><img class="mlbn-style-thumb" src="/icons/book_samples/tr_zigzag_a5.png" alt="Zigzag"><span class="mlbn-style-badge plus">⭐</span></div><div class="mlbn-style-body"><div class="mlbn-style-name">Zigzag</div><div class="mlbn-style-foot"><span class="mlbn-color-dot" style="background:#908060"></span><span class="mlbn-size-tag">A5 Yatay</span></div></div></div>
+        </div>
+
+        <div class="mlbn-colors-wrap">
+          <p class="mlbn-formats-title">Renk Temaları</p>
+          <div class="mlbn-colors-grid">
+            <div class="mlbn-color-chip"><div class="mlbn-color-swatch-wrap"><div class="mlbn-color-swatch" style="background:#7BAF6A;"></div><span class="mlbn-color-badge free">ÜCRETSİZ</span></div><div class="mlbn-color-label">Adaçayı</div></div>
+            <div class="mlbn-color-chip"><div class="mlbn-color-swatch-wrap"><div class="mlbn-color-swatch" style="background:#E898AA;"></div><span class="mlbn-color-badge plus">⭐</span></div><div class="mlbn-color-label">Pembe</div></div>
+            <div class="mlbn-color-chip"><div class="mlbn-color-swatch-wrap"><div class="mlbn-color-swatch" style="background:#6A9CC8;"></div><span class="mlbn-color-badge plus">⭐</span></div><div class="mlbn-color-label">Mavi</div></div>
+            <div class="mlbn-color-chip"><div class="mlbn-color-swatch-wrap"><div class="mlbn-color-swatch" style="background:#A88EC4;"></div><span class="mlbn-color-badge plus">⭐</span></div><div class="mlbn-color-label">Lavanta</div></div>
+            <div class="mlbn-color-chip"><div class="mlbn-color-swatch-wrap"><div class="mlbn-color-swatch" style="background:#ECA776;"></div><span class="mlbn-color-badge plus">⭐</span></div><div class="mlbn-color-label">Şeftali</div></div>
+            <div class="mlbn-color-chip"><div class="mlbn-color-swatch-wrap"><div class="mlbn-color-swatch" style="background:#E4C356;"></div><span class="mlbn-color-badge plus">⭐</span></div><div class="mlbn-color-label">Tereyağı</div></div>
+            <div class="mlbn-color-chip"><div class="mlbn-color-swatch-wrap"><div class="mlbn-color-swatch" style="background:#5ABDB0;"></div><span class="mlbn-color-badge plus">⭐</span></div><div class="mlbn-color-label">Deniz</div></div>
+            <div class="mlbn-color-chip"><div class="mlbn-color-swatch-wrap"><div class="mlbn-color-swatch" style="background:#8EACA4;"></div><span class="mlbn-color-badge plus">⭐</span></div><div class="mlbn-color-label">Sis</div></div>
+            <div class="mlbn-color-chip"><div class="mlbn-color-swatch-wrap"><div class="mlbn-color-swatch" style="background:#B56168;"></div><span class="mlbn-color-badge plus">⭐</span></div><div class="mlbn-color-label">Gül Ağacı</div></div>
+            <div class="mlbn-color-chip"><div class="mlbn-color-swatch-wrap"><div class="mlbn-color-swatch" style="background:#C2A06C;"></div><span class="mlbn-color-badge plus">⭐</span></div><div class="mlbn-color-label">Buğday</div></div>
+            <div class="mlbn-color-chip"><div class="mlbn-color-swatch-wrap"><div class="mlbn-color-swatch" style="background:#B82854;"></div><span class="mlbn-color-badge plus">⭐</span></div><div class="mlbn-color-label">Viva Magenta</div></div>
+            <div class="mlbn-color-chip"><div class="mlbn-color-swatch-wrap"><div class="mlbn-color-swatch" style="background:#7A604E;"></div><span class="mlbn-color-badge plus">⭐</span></div><div class="mlbn-color-label">Mocha</div></div>
+          </div>
         </div>
 
         <div class="mlbn-formats-wrap">
