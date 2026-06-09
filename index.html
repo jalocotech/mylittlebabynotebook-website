@@ -791,10 +791,10 @@
         <p class="mlbn-section-sub">Every milestone you record and every memory you capture becomes a beautiful card you can share instantly — send to family via WhatsApp, post to Instagram, or download and print to frame forever.</p>
 
         <div class="mlbn-moments-strip">
-          <div class="mlbn-moment-card"><img src="/icons/moments/en_m_born.png"     alt="I Was Born"></div>
+          <div class="mlbn-moment-card"><img src="/icons/moments/en_m_born2.png"    alt="I Was Born"></div>
           <div class="mlbn-moment-card"><img src="/icons/moments/en_m_sleep.png"    alt="May Angels Watch Over You"></div>
-          <div class="mlbn-moment-card"><img src="/icons/moments/en_m_feeding.png"  alt="First Feeding"></div>
-          <div class="mlbn-moment-card"><img src="/icons/moments/en_m_smile.png"    alt="My First Smile"></div>
+          <div class="mlbn-moment-card"><img src="/icons/moments/en_m_feeding2.png" alt="First Feeding"></div>
+          <div class="mlbn-moment-card"><img src="/icons/moments/en_m_smile2.png"   alt="My First Smile"></div>
           <div class="mlbn-moment-card"><img src="/icons/moments/en_m_birthday.png" alt="Half Birthday"></div>
           <div class="mlbn-moment-card"><img src="/icons/moments/en_m_walking.png"  alt="Tiny Feet First Steps"></div>
           <div class="mlbn-moment-card"><img src="/icons/moments/en_m_swim.png"     alt="Little Fish in Action"></div>
@@ -1715,7 +1715,70 @@
       });
     }
 
+    // ── Moment & Step cards hover/click ──────────────────────────────
+    var momentOverlayActive = false;
+
+    function openMomentOverlay(src) {
+      momentOverlayActive = true;
+      overlayImg.src = src;
+      prevBtn.style.display = 'none';
+      nextBtn.style.display = 'none';
+      counter.style.display = 'none';
+      label.style.display   = 'none';
+      overlay.setAttribute('aria-hidden', 'false');
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Patch closeOverlay to restore nav buttons when a moment was open
+    var _origClose = closeOverlay;
+    closeOverlay = function () {
+      _origClose();
+      if (momentOverlayActive) {
+        momentOverlayActive = false;
+        prevBtn.style.display = '';
+        nextBtn.style.display = '';
+        counter.style.display = '';
+        label.style.display   = '';
+      }
+    };
+
+    function wireMomentCards() {
+      document.querySelectorAll('.mlbn-moment-card').forEach(function (card) {
+        var img = card.querySelector('img');
+        if (!img) return;
+
+        card.style.cursor = 'zoom-in';
+
+        // Desktop hover popup
+        card.addEventListener('mouseenter', function () {
+          if (isTouchDevice()) return;
+          clearTimeout(hideTimer);
+          popupImg.src = img.getAttribute('src').split('?')[0];
+          var rect = card.getBoundingClientRect();
+          var pw = 260;
+          var left = Math.max(8, Math.min(rect.left + rect.width/2 - pw/2, window.innerWidth - pw - 8));
+          var ph = pw * 1.4;
+          var top = (rect.top > ph + 24) ? rect.top - ph - 12 : rect.bottom + 12;
+          popup.style.left = left + 'px';
+          popup.style.top  = top + 'px';
+          popup.style.width = pw + 'px';
+          popup.style.display = 'block';
+        });
+
+        card.addEventListener('mouseleave', function () {
+          hideTimer = setTimeout(function () { popup.style.display = 'none'; }, 80);
+        });
+
+        // Click / tap → full image overlay (natural aspect ratio)
+        card.addEventListener('click', function () {
+          openMomentOverlay(img.getAttribute('src').split('?')[0]);
+        });
+      });
+    }
+
     wireCards();
+    wireMomentCards();
   })();
   </script>
 </body>
