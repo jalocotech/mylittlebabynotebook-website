@@ -39,7 +39,7 @@
   <link rel="apple-touch-icon" href="/logo.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,500;0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,500;0,700;0,800;1,700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -277,6 +277,81 @@
     .mlbn-cta p { color: #7C8B82; margin: 0 0 32px; font-size: 15px; font-weight: 500; }
     .mlbn-btn-green { background: #5FA584; }
     .mlbn-btn-green:hover { background: #4a8a6a; }
+
+    /* ── Baby Diary Showcase ── */
+    .mlbn-diary-section { margin-bottom: 72px; text-align: center; }
+    .mlbn-diary-strip {
+      display: flex; gap: 18px;
+      overflow-x: auto; padding: 8px 2px 24px;
+      -webkit-overflow-scrolling: touch; scrollbar-width: none;
+      margin-top: 32px; justify-content: flex-start;
+    }
+    .mlbn-diary-strip::-webkit-scrollbar { display: none; }
+    .mlbn-diary-card {
+      flex: 0 0 240px; border-radius: 22px;
+      padding: 22px 20px 22px;
+      background: #fff7f8;
+      box-shadow: 0 4px 24px rgba(200,140,160,0.13);
+      position: relative; display: flex; flex-direction: column;
+      align-items: center; min-height: 340px;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .mlbn-diary-card:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(200,140,160,0.22); }
+    .mlbn-diary-inner {
+      background: #fff; border-radius: 16px; width: 100%;
+      padding: 20px 16px 18px; flex: 1;
+      display: flex; flex-direction: column; align-items: center;
+      position: relative; overflow: hidden;
+    }
+    .mlbn-diary-date {
+      font-size: 11px; color: #B0A0A8; font-weight: 600;
+      letter-spacing: .02em; margin-bottom: 10px;
+    }
+    .mlbn-diary-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 18px; font-weight: 800; color: #1a1a2e;
+      text-align: center; line-height: 1.25; margin-bottom: 12px;
+    }
+    .mlbn-diary-body {
+      font-size: 11.5px; color: #888090; line-height: 1.75;
+      text-align: center; flex: 1;
+    }
+    /* Decorations */
+    .mlbn-deco-polka-corner {
+      position: absolute; width: 36px; height: 36px;
+    }
+    .mlbn-deco-polka-corner.tl { top: 10px; left: 10px; }
+    .mlbn-deco-polka-corner.tr { top: 10px; right: 10px; }
+    .mlbn-deco-polka-corner.bl { bottom: 10px; left: 10px; }
+    .mlbn-deco-polka-corner.br { bottom: 10px; right: 10px; }
+    .mlbn-deco-hearts-row {
+      display: flex; gap: 5px; justify-content: center;
+      margin: 8px 0; flex-wrap: wrap;
+    }
+    .mlbn-deco-hearts-row span { color: #F0A0B8; font-size: 9px; }
+    .mlbn-deco-wave {
+      width: 100%; margin: 8px 0;
+      overflow: visible;
+    }
+    .mlbn-deco-corner-frame {
+      position: absolute; width: 28px; height: 28px;
+    }
+    .mlbn-deco-corner-frame.tl { top: 8px; left: 8px; }
+    .mlbn-deco-corner-frame.tr { top: 8px; right: 8px; transform: scaleX(-1); }
+    .mlbn-deco-corner-frame.bl { bottom: 8px; left: 8px; transform: scaleY(-1); }
+    .mlbn-deco-corner-frame.br { bottom: 8px; right: 8px; transform: scale(-1); }
+    .mlbn-deco-heart-line {
+      display: flex; align-items: center; gap: 6px;
+      margin: 8px 0; justify-content: center; width: 100%;
+    }
+    .mlbn-deco-heart-line hr {
+      flex: 1; border: none; border-top: 1.5px solid #F8C0D0; margin: 0;
+    }
+    .mlbn-deco-dots-hearts {
+      display: flex; gap: 5px; align-items: center; justify-content: center;
+      margin-top: 10px;
+    }
+    .mlbn-deco-dots-hearts span { color: #F0A8C0; font-size: 8px; }
 
     /* ── PDF BOOK SHOWCASE ── */
     .mlbn-book-section { margin-bottom: 72px; }
@@ -653,6 +728,83 @@
         <div class="mlbn-card"><span class="mlbn-card-icon"><img src="/icons/co-parent.png" alt="Co-Parenting"></span><h3>Co-Parenting</h3><p>Invite your partner via email. Both parents track together on the same baby profile, in real time.</p></div>
         <div class="mlbn-card"><span class="mlbn-card-icon sm">✂️</span><span class="mlbn-card-new">New</span><h3>In-App Photo Editor</h3><p>Crop (1:1, 4:3, 9:16) and rotate photos right inside the app — no external editor needed.</p></div>
         <div class="mlbn-card"><span class="mlbn-card-icon sm">🔔</span><h3>Notification Center</h3><p>All supplement, vaccine, checkup and system alerts in one feed. Mark as read or dismiss individually.</p></div>
+      </div>
+
+      <!-- ── BABY DIARY SHOWCASE (EN) ── -->
+      <div class="mlbn-diary-section">
+        <h2 class="mlbn-section-title">A diary that grows<br><em>with them.</em></h2>
+        <p class="mlbn-section-sub">Write down thoughts, big moments and everyday magic — with beautiful templates that make every entry special. Share as a card or keep forever.</p>
+        <div class="mlbn-diary-strip">
+
+          <!-- Card 1: Happy Half Birthday (polka dots) -->
+          <div class="mlbn-diary-card">
+            <div class="mlbn-diary-inner">
+              <svg class="mlbn-deco-polka-corner tl" viewBox="0 0 36 36"><circle cx="8" cy="8" r="5" fill="#F4AABE"/><circle cx="20" cy="6" r="3" fill="#F4AABE"/><circle cx="7" cy="20" r="3" fill="#F4AABE"/><circle cx="17" cy="18" r="2" fill="#F4AABE"/></svg>
+              <svg class="mlbn-deco-polka-corner tr" viewBox="0 0 36 36"><circle cx="28" cy="8" r="5" fill="#F4AABE"/><circle cx="16" cy="6" r="3" fill="#F4AABE"/><circle cx="29" cy="20" r="3" fill="#F4AABE"/><circle cx="19" cy="18" r="2" fill="#F4AABE"/></svg>
+              <svg class="mlbn-deco-polka-corner bl" viewBox="0 0 36 36"><circle cx="8" cy="28" r="5" fill="#F4AABE"/><circle cx="20" cy="30" r="3" fill="#F4AABE"/><circle cx="7" cy="16" r="3" fill="#F4AABE"/><circle cx="17" cy="18" r="2" fill="#F4AABE"/></svg>
+              <svg class="mlbn-deco-polka-corner br" viewBox="0 0 36 36"><circle cx="28" cy="28" r="5" fill="#F4AABE"/><circle cx="16" cy="30" r="3" fill="#F4AABE"/><circle cx="29" cy="16" r="3" fill="#F4AABE"/><circle cx="19" cy="18" r="2" fill="#F4AABE"/></svg>
+              <div class="mlbn-diary-date">April 24, 2026</div>
+              <div class="mlbn-diary-title">Happy Half Birthday!</div>
+              <div class="mlbn-diary-body">Time flies so fast, you are officially 6 months old today! Witnessing your growth journey as your parents is an amazing feeling. You surprise us everyday by learning something new.</div>
+            </div>
+          </div>
+
+          <!-- Card 2: Hello to Life (hearts rows) -->
+          <div class="mlbn-diary-card">
+            <div class="mlbn-diary-inner">
+              <div class="mlbn-diary-date">November 24, 2025</div>
+              <div class="mlbn-diary-title">Hello to Life My Little Miracle</div>
+              <div class="mlbn-deco-hearts-row">
+                <span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span>
+              </div>
+              <div class="mlbn-diary-body">Today you opened your eyes to the world and brought infinite joy to our lives. The moment I held you, I was mesmerized by your scent. You are now the center of our family.</div>
+              <div class="mlbn-deco-hearts-row" style="margin-top:auto;padding-top:10px;">
+                <span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Big Family Endless Laughs (wave) -->
+          <div class="mlbn-diary-card">
+            <div class="mlbn-diary-inner">
+              <div class="mlbn-diary-date">February 10, 2026</div>
+              <div class="mlbn-diary-title">Big Family, Endless Laughs</div>
+              <svg class="mlbn-deco-wave" height="18" viewBox="0 0 200 18">
+                <path d="M0 9 C20 0,40 18,60 9 S100 0,120 9 S160 18,180 9 S200 0,220 9" fill="none" stroke="#F4B8CE" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+              <div class="mlbn-diary-body">Our home was so joyful today as the whole family gathered in our modern living room. While you sat in your cozy bouncer enjoying all the attention, we laughed a lot watching you.</div>
+            </div>
+          </div>
+
+          <!-- Card 4: First Picnic by the Sea (corner frames) -->
+          <div class="mlbn-diary-card">
+            <div class="mlbn-diary-inner">
+              <svg class="mlbn-deco-corner-frame tl" viewBox="0 0 28 28"><path d="M2 14 L2 2 L14 2" fill="none" stroke="#F4A8C0" stroke-width="1.8" stroke-linecap="round"/><path d="M2 2 L2 2" fill="none" stroke="#F4A8C0" stroke-width="3" stroke-linecap="round"/><circle cx="7" cy="7" r="2.5" fill="none" stroke="#F4A8C0" stroke-width="1.5"/></svg>
+              <svg class="mlbn-deco-corner-frame tr" viewBox="0 0 28 28"><path d="M2 14 L2 2 L14 2" fill="none" stroke="#F4A8C0" stroke-width="1.8" stroke-linecap="round"/><circle cx="7" cy="7" r="2.5" fill="none" stroke="#F4A8C0" stroke-width="1.5"/></svg>
+              <svg class="mlbn-deco-corner-frame bl" viewBox="0 0 28 28"><path d="M2 14 L2 2 L14 2" fill="none" stroke="#F4A8C0" stroke-width="1.8" stroke-linecap="round"/><circle cx="7" cy="7" r="2.5" fill="none" stroke="#F4A8C0" stroke-width="1.5"/></svg>
+              <svg class="mlbn-deco-corner-frame br" viewBox="0 0 28 28"><path d="M2 14 L2 2 L14 2" fill="none" stroke="#F4A8C0" stroke-width="1.8" stroke-linecap="round"/><circle cx="7" cy="7" r="2.5" fill="none" stroke="#F4A8C0" stroke-width="1.5"/></svg>
+              <div class="mlbn-diary-date">May 27, 2026</div>
+              <div class="mlbn-diary-title">Our First Picnic by the Sea</div>
+              <div class="mlbn-diary-body">Today we were all at the beach together. We spread our blanket on the grass and had a wonderful day with the sound of waves. The sea breeze was great and you kept smiling all day.</div>
+            </div>
+          </div>
+
+          <!-- Card 5: Splashing Around Baby Spa (heart divider + dots) -->
+          <div class="mlbn-diary-card">
+            <div class="mlbn-diary-inner">
+              <div class="mlbn-diary-date">May 27, 2026</div>
+              <div class="mlbn-diary-title">Splashing Around at Baby Spa</div>
+              <div class="mlbn-deco-heart-line">
+                <hr/><span style="color:#F4A8C0;font-size:14px;">♥</span><hr/>
+              </div>
+              <div class="mlbn-diary-body">Our little fish introduced to the pool today! You balanced and splashed so well with your special neck floatie. You had so much fun and slept like an angel after your bath.</div>
+              <div class="mlbn-deco-dots-hearts" style="margin-top:auto;padding-top:10px;">
+                <span>•</span><span>♡</span><span>•</span><span>♡</span><span>•</span><span>♡</span><span>•</span><span>♡</span><span>•</span><span>♡</span><span>•</span><span>♡</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
 
       <!-- ── SLEEP SOUNDS SHOWCASE (EN) ── -->
