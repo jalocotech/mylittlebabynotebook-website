@@ -352,6 +352,23 @@
       margin-top: 10px;
     }
     .mlbn-deco-dots-hearts span { color: #F0A8C0; font-size: 8px; }
+    /* TR green variant */
+    .mlbn-diary-card.green { background: #f0f7f2; }
+    .mlbn-diary-card.green .mlbn-deco-hearts-row span { color: #7BAF8A; }
+    .mlbn-diary-card.green .mlbn-deco-dots-hearts span { color: #7BAF8A; }
+    .mlbn-diary-card.green .mlbn-deco-wave path { stroke: #7BAF8A; }
+    .mlbn-diary-card.green .mlbn-deco-corner-frame path { stroke: #7BAF8A; }
+    .mlbn-diary-card.green .mlbn-deco-corner-frame circle { stroke: #7BAF8A; }
+    .mlbn-diary-card.green .mlbn-deco-polka-corner circle { fill: #8BBFA0; }
+    .mlbn-diary-card.green .mlbn-deco-heart-line hr { border-top-color: #8BBFA0; }
+    .mlbn-diary-card.green .mlbn-deco-star-line hr { border-top-color: #8BBFA0; }
+    /* Star-line decoration (TR card 1) */
+    .mlbn-deco-star-line {
+      display: flex; align-items: center; gap: 6px;
+      margin: 8px 0; justify-content: center; width: 100%;
+    }
+    .mlbn-deco-star-line hr { flex: 1; border: none; border-top: 1.5px solid #F8C0D0; margin: 0; }
+    .mlbn-deco-star-line span { color: #8BBFA0; font-size: 12px; letter-spacing: 2px; }
 
     /* ── PDF BOOK SHOWCASE ── */
     .mlbn-book-section { margin-bottom: 72px; }
@@ -1092,6 +1109,83 @@
         <div class="mlbn-card"><span class="mlbn-card-icon"><img src="/icons/co-parent.png" alt="Ebeveyn Paylaşımı"></span><h3>Ebeveyn Paylaşımı</h3><p>E-posta davetiyesiyle partnerinizi ekleyin. İki ebeveyn birlikte, aynı bebek profilinde takip etsin.</p></div>
         <div class="mlbn-card"><span class="mlbn-card-icon sm">✂️</span><span class="mlbn-card-new">Yeni</span><h3>Fotoğraf Editörü</h3><p>Kırpma (1:1, 4:3, 9:16) ve döndürme özelliğiyle fotoğrafları uygulama içinde düzenleyin, harici uygulama gerekmez.</p></div>
         <div class="mlbn-card"><span class="mlbn-card-icon sm">🔔</span><h3>Bildirim Merkezi</h3><p>Takviye, aşı, kontrol ve sistem bildirimlerini tek merkezde takip edin. Okundu/okunmadı durumu ile yönetin.</p></div>
+      </div>
+
+      <!-- ── BEBEK GÜNLÜĞÜ VİTRİNİ (TR) ── -->
+      <div class="mlbn-diary-section">
+        <h2 class="mlbn-section-title">Onunla büyüyen<br><em>bir günlük.</em></h2>
+        <p class="mlbn-section-sub">Düşüncelerinizi, büyük anları ve küçük detayları yazın — her girişi özel kılan güzel şablonlarla. Kart olarak paylaşın veya sonsuza saklayın.</p>
+        <div class="mlbn-diary-strip">
+
+          <!-- Kart 1: Yarım Yaşın Kutlu Olsun (star-line) -->
+          <div class="mlbn-diary-card green">
+            <div class="mlbn-diary-inner">
+              <div class="mlbn-diary-date">12 Şubat 2026</div>
+              <div class="mlbn-diary-title">Yarım Yaşın Kutlu Olsun</div>
+              <div class="mlbn-deco-star-line">
+                <hr/><span>·✳ ✳ ✳·</span><hr/>
+              </div>
+              <div class="mlbn-diary-body">Zaman ne kadar da çabuk geçiyor, bugün tam 6 aylık oldun! Anne ve baban olarak senin büyüme yolculuğuna tanıklık etmek harika bir duygu. Her gün yeni bir şey öğrenerek bizi şaşırtıyorsun.</div>
+              <div class="mlbn-deco-star-line" style="margin-top:auto;padding-top:10px;">
+                <hr/><span>·✳ ✳ ✳·</span><hr/>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kart 2: Bebek Spasında Yüzme Keyfi (wave bottom) -->
+          <div class="mlbn-diary-card green">
+            <div class="mlbn-diary-inner">
+              <div class="mlbn-diary-date">5 Şubat 2026</div>
+              <div class="mlbn-diary-title">Bebek Spasında Yüzme Keyfi</div>
+              <div class="mlbn-diary-body">Küçük balığımız bugün havuzla tanıştı! Özel boyun simidinle suyun üzerinde kendi kendine öyle güzel dengede kaldın ve çırpındın ki... Hem çok eğlendin hem de banyodan sonra mışıl mışıl uyudun.</div>
+              <svg class="mlbn-deco-wave" height="18" viewBox="0 0 200 18" style="margin-top:auto;padding-top:10px;">
+                <path d="M0 9 C20 0,40 18,60 9 S100 0,120 9 S160 18,180 9 S200 0,220 9" fill="none" stroke="#8BBFA0" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Kart 3: İlk Doğa Keşfi (yeşil polka dot köşeler) -->
+          <div class="mlbn-diary-card green">
+            <div class="mlbn-diary-inner">
+              <svg class="mlbn-deco-polka-corner tl" viewBox="0 0 36 36"><circle cx="8" cy="8" r="5" fill="#8BBFA0"/><circle cx="20" cy="6" r="3" fill="#8BBFA0"/><circle cx="7" cy="20" r="3" fill="#8BBFA0"/><circle cx="17" cy="18" r="2" fill="#8BBFA0"/></svg>
+              <svg class="mlbn-deco-polka-corner tr" viewBox="0 0 36 36"><circle cx="28" cy="8" r="5" fill="#8BBFA0"/><circle cx="16" cy="6" r="3" fill="#8BBFA0"/><circle cx="29" cy="20" r="3" fill="#8BBFA0"/><circle cx="19" cy="18" r="2" fill="#8BBFA0"/></svg>
+              <svg class="mlbn-deco-polka-corner bl" viewBox="0 0 36 36"><circle cx="8" cy="28" r="5" fill="#8BBFA0"/><circle cx="20" cy="30" r="3" fill="#8BBFA0"/><circle cx="7" cy="16" r="3" fill="#8BBFA0"/><circle cx="17" cy="18" r="2" fill="#8BBFA0"/></svg>
+              <svg class="mlbn-deco-polka-corner br" viewBox="0 0 36 36"><circle cx="28" cy="28" r="5" fill="#8BBFA0"/><circle cx="16" cy="30" r="3" fill="#8BBFA0"/><circle cx="29" cy="16" r="3" fill="#8BBFA0"/><circle cx="19" cy="18" r="2" fill="#8BBFA0"/></svg>
+              <div class="mlbn-diary-date">8 Ocak 2026</div>
+              <div class="mlbn-diary-title">İlk Doğa Keşfi</div>
+              <div class="mlbn-diary-body">Bugün hava çok güzeldi ve seninle ilk kez yeşillikler içinde uzun bir yürüyüşe çıktık. Bebek arabasında pusete güvenle kurulup meraklı gözlerle ağaçları ve kuşları izlemen bizi çok mutlu etti.</div>
+            </div>
+          </div>
+
+          <!-- Kart 4: Hayata Merhaba Küçük Mucize (yeşil kalpler) -->
+          <div class="mlbn-diary-card green">
+            <div class="mlbn-diary-inner">
+              <div class="mlbn-diary-date">24 Kasım 2025</div>
+              <div class="mlbn-diary-title">Hayata Merhaba Küçük Mucize</div>
+              <div class="mlbn-deco-hearts-row">
+                <span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span>
+              </div>
+              <div class="mlbn-diary-body">Bugün dünyaya gözlerini açtın ve hayatımıza sonsuz bir neşe getirdin. Seni ilk kucağıma aldığım an kokunla büyülendim, zaman tamamen durdu. Artık üç kişilik çekirdek ailemizin merkezisin.</div>
+              <div class="mlbn-deco-hearts-row" style="margin-top:auto;padding-top:10px;">
+                <span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kart 5: Büyük Aile, Bol Kahkaha (yeşil polka dot köşeler) -->
+          <div class="mlbn-diary-card green">
+            <div class="mlbn-diary-inner">
+              <svg class="mlbn-deco-polka-corner tl" viewBox="0 0 36 36"><circle cx="8" cy="8" r="5" fill="#8BBFA0"/><circle cx="20" cy="6" r="3" fill="#8BBFA0"/><circle cx="7" cy="20" r="3" fill="#8BBFA0"/><circle cx="17" cy="18" r="2" fill="#8BBFA0"/></svg>
+              <svg class="mlbn-deco-polka-corner tr" viewBox="0 0 36 36"><circle cx="28" cy="8" r="5" fill="#8BBFA0"/><circle cx="16" cy="6" r="3" fill="#8BBFA0"/><circle cx="29" cy="20" r="3" fill="#8BBFA0"/><circle cx="19" cy="18" r="2" fill="#8BBFA0"/></svg>
+              <svg class="mlbn-deco-polka-corner bl" viewBox="0 0 36 36"><circle cx="8" cy="28" r="5" fill="#8BBFA0"/><circle cx="20" cy="30" r="3" fill="#8BBFA0"/><circle cx="7" cy="16" r="3" fill="#8BBFA0"/><circle cx="17" cy="18" r="2" fill="#8BBFA0"/></svg>
+              <svg class="mlbn-deco-polka-corner br" viewBox="0 0 36 36"><circle cx="28" cy="28" r="5" fill="#8BBFA0"/><circle cx="16" cy="30" r="3" fill="#8BBFA0"/><circle cx="29" cy="16" r="3" fill="#8BBFA0"/><circle cx="19" cy="18" r="2" fill="#8BBFA0"/></svg>
+              <div class="mlbn-diary-date">29 Nisan 2026</div>
+              <div class="mlbn-diary-title">Büyük Aile, Bol Kahkaha</div>
+              <div class="mlbn-diary-body">Bugün evimiz çok neşeliydi; tüm aile modern salonumuzda toplandık. Sen ortada konforlu ana kucağında oturup tüm ilginin tadını çıkarırken, biz senin tatlı hallerini izleyip bol bol güldük.</div>
+            </div>
+          </div>
+
+        </div>
       </div>
 
       <!-- ── UYKU SESLERİ VİTRİNİ (TR) ── -->
