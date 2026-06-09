@@ -1750,19 +1750,19 @@
 
         card.style.cursor = 'zoom-in';
 
-        // Desktop hover popup
+        // Desktop hover popup — always above the card
         card.addEventListener('mouseenter', function () {
           if (isTouchDevice()) return;
           clearTimeout(hideTimer);
           popupImg.src = img.getAttribute('src').split('?')[0];
           var rect = card.getBoundingClientRect();
           var pw = 260;
+          var ph = pw * 1.45; // portrait estimate
           var left = Math.max(8, Math.min(rect.left + rect.width/2 - pw/2, window.innerWidth - pw - 8));
-          var ph = pw * 1.4;
-          var top = (rect.top > ph + 24) ? rect.top - ph - 12 : rect.bottom + 12;
-          popup.style.left = left + 'px';
-          popup.style.top  = top + 'px';
-          popup.style.width = pw + 'px';
+          var top  = Math.max(8, rect.top - ph - 14); // always above, clamp to 8px from top
+          popup.style.left  = left + 'px';
+          popup.style.top   = top  + 'px';
+          popup.style.width = pw   + 'px';
           popup.style.display = 'block';
         });
 
