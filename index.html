@@ -278,6 +278,44 @@
     .mlbn-btn-green { background: #5FA584; }
     .mlbn-btn-green:hover { background: #4a8a6a; }
 
+    /* ── Memory Moments Showcase ── */
+    .mlbn-moments-section { margin-bottom: 80px; text-align: center; }
+    .mlbn-moments-strip {
+      display: flex; gap: 14px;
+      overflow-x: auto; padding: 12px 4px 28px;
+      -webkit-overflow-scrolling: touch; scrollbar-width: none;
+      margin-top: 36px; align-items: flex-end;
+    }
+    .mlbn-moments-strip::-webkit-scrollbar { display: none; }
+    .mlbn-moment-card {
+      flex: 0 0 190px; border-radius: 20px; overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      transition: transform .22s, box-shadow .22s;
+      cursor: zoom-in; position: relative;
+    }
+    .mlbn-moment-card:nth-child(odd)  { transform: rotate(-1.5deg); }
+    .mlbn-moment-card:nth-child(even) { transform: rotate(1.2deg) translateY(-8px); }
+    .mlbn-moment-card:hover {
+      transform: rotate(0) translateY(-10px) scale(1.04) !important;
+      box-shadow: 0 20px 56px rgba(0,0,0,0.28);
+      z-index: 10;
+    }
+    .mlbn-moment-card img {
+      width: 100%; height: 280px; object-fit: cover; display: block;
+    }
+    /* Share chips */
+    .mlbn-share-chips {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      justify-content: center; margin-top: 28px;
+    }
+    .mlbn-share-chip {
+      display: flex; align-items: center; gap: 6px;
+      background: #F6FAF5; border: 1.5px solid #DCE9E3;
+      border-radius: 50px; padding: 7px 16px;
+      font-size: 12px; font-weight: 700; color: #1F3D2E;
+    }
+    .mlbn-share-chip span { font-size: 16px; }
+
     /* ── Baby Diary Showcase ── */
     .mlbn-diary-section { margin-bottom: 72px; text-align: center; }
     .mlbn-diary-strip {
@@ -745,6 +783,32 @@
         <div class="mlbn-card"><span class="mlbn-card-icon"><img src="/icons/co-parent.png" alt="Co-Parenting"></span><h3>Co-Parenting</h3><p>Invite your partner via email. Both parents track together on the same baby profile, in real time.</p></div>
         <div class="mlbn-card"><span class="mlbn-card-icon sm">✂️</span><span class="mlbn-card-new">New</span><h3>In-App Photo Editor</h3><p>Crop (1:1, 4:3, 9:16) and rotate photos right inside the app — no external editor needed.</p></div>
         <div class="mlbn-card"><span class="mlbn-card-icon sm">🔔</span><h3>Notification Center</h3><p>All supplement, vaccine, checkup and system alerts in one feed. Mark as read or dismiss individually.</p></div>
+      </div>
+
+      <!-- ── MEMORY MOMENTS SHOWCASE (EN) ── -->
+      <div class="mlbn-moments-section">
+        <h2 class="mlbn-section-title">Every moment,<br><em>made to share.</em></h2>
+        <p class="mlbn-section-sub">Capture a moment and instantly turn it into a beautiful card — share to Instagram, WhatsApp, or any app with one tap. Or download it, print it and frame it forever.</p>
+
+        <div class="mlbn-moments-strip">
+          <div class="mlbn-moment-card"><img src="/icons/moments/en_m_born.png"     alt="I Was Born"></div>
+          <div class="mlbn-moment-card"><img src="/icons/moments/en_m_sleep.png"    alt="May Angels Watch Over You"></div>
+          <div class="mlbn-moment-card"><img src="/icons/moments/en_m_feeding.png"  alt="First Feeding"></div>
+          <div class="mlbn-moment-card"><img src="/icons/moments/en_m_smile.png"    alt="My First Smile"></div>
+          <div class="mlbn-moment-card"><img src="/icons/moments/en_m_birthday.png" alt="Half Birthday"></div>
+          <div class="mlbn-moment-card"><img src="/icons/moments/en_m_walking.png"  alt="Tiny Feet First Steps"></div>
+          <div class="mlbn-moment-card"><img src="/icons/moments/en_m_swim.png"     alt="Little Fish in Action"></div>
+          <div class="mlbn-moment-card"><img src="/icons/moments/en_m_family.png"   alt="First Adventure as Three"></div>
+          <div class="mlbn-moment-card"><img src="/icons/moments/en_m_sea.png"      alt="Sea Breeze and Lots of Joy"></div>
+          <div class="mlbn-moment-card"><img src="/icons/moments/en_m_traveler.png" alt="Little Traveler"></div>
+        </div>
+
+        <div class="mlbn-share-chips">
+          <div class="mlbn-share-chip"><span>📸</span> Share to Instagram</div>
+          <div class="mlbn-share-chip"><span>💬</span> Send via WhatsApp</div>
+          <div class="mlbn-share-chip"><span>🖨️</span> Print &amp; Frame</div>
+          <div class="mlbn-share-chip"><span>⬇️</span> Save to Photos</div>
+        </div>
       </div>
 
       <!-- ── BABY DIARY SHOWCASE (EN) ── -->
