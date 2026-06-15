@@ -1483,7 +1483,7 @@
     <div class="footer-links">
       <a href="/privacy.html" id="footer-privacy">Privacy Policy</a>
       <a href="/terms.html" id="footer-terms">Terms of Service</a>
-      <a href="mailto:support@mylittlebabynotebook.app">Contact</a>
+      <a href="/support.html" id="footer-support">Support</a>
     </div>
     <div>© 2026 My Little Baby Notebook · Made with 🌿 by <a href="https://jalocotech.com">Jaloco Tech</a></div>
   </footer>
@@ -1502,14 +1502,17 @@
       const navCta = document.getElementById('nav-dl-link');
       const footerPrivacy = document.getElementById('footer-privacy');
       const footerTerms = document.getElementById('footer-terms');
+      const footerSupport = document.getElementById('footer-support');
       if (lang === 'tr') {
         navCta.textContent = 'İndir';
         footerPrivacy.textContent = 'Gizlilik Politikası';
         footerTerms.textContent = 'Kullanım Koşulları';
+        footerSupport.textContent = 'Destek';
       } else {
         navCta.textContent = 'Download';
         footerPrivacy.textContent = 'Privacy Policy';
         footerTerms.textContent = 'Terms of Service';
+        footerSupport.textContent = 'Support';
       }
     }
 

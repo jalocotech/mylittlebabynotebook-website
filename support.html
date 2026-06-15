@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help Center — My Little Baby Notebook</title>
+  <meta name="description" content="Help center and frequently asked questions for My Little Baby Notebook app.">
+  <link rel="canonical" href="https://mylittlebabynotebook.app/support.html">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <link rel="apple-touch-icon" href="/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,500;0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1F3D2E; background: #fff; }
+    .site-nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid #DCE9E3; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between; height: 60px;
+    }
+    .nav-logo { font-size: 15px; font-weight: 800; color: #1F3D2E; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+    .nav-logo img { width: 32px; height: 32px; border-radius: 8px; display: block; }
+    .nav-back { background: #F6FAF5; border: 1px solid #DCE9E3; color: #1F3D2E; padding: 8px 16px; border-radius: 10px; font-size: 13px; font-weight: 700; text-decoration: none; }
+    .page-wrap { max-width: 760px; margin: 0 auto; padding: 56px 24px 80px; }
+    .legal-header { margin-bottom: 32px; }
+    .legal-header h1 { font-size: clamp(24px, 4vw, 36px); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px; }
+    .legal-meta { color: #7C8B82; font-size: 14px; font-weight: 500; }
+    .lang-toggle { display: flex; background: #F6FAF5; border: 1px solid #DCE9E3; border-radius: 50px; padding: 3px; gap: 2px; margin-bottom: 24px; width: fit-content; }
+    .lang-btn { background: transparent; border: none; cursor: pointer; font-family: inherit; font-size: 12px; font-weight: 700; color: #7C8B82; padding: 5px 14px; border-radius: 50px; transition: background .15s, color .15s; }
+    .lang-btn.active { background: #1F3D2E; color: #fff; }
+    .lang-section { display: none; }
+    .lang-section.visible { display: block; }
+    .search-wrap { margin-bottom: 32px; }
+    .search-input {
+      width: 100%; padding: 12px 16px; font-size: 14px; font-family: inherit;
+      border: 1px solid #DCE9E3; border-radius: 12px; background: #F6FAF5; color: #1F3D2E;
+      outline: none;
+    }
+    .search-input:focus { border-color: #5FA584; }
+    .contact-card {
+      background: #F6FAF5; border: 1px solid #DCE9E3; border-radius: 12px;
+      padding: 20px 24px; margin: 0 0 32px;
+    }
+    .contact-card p { margin-bottom: 6px; font-size: 14.5px; color: #374740; line-height: 1.75; }
+    .contact-card strong { color: #1F3D2E; }
+    h2 { font-size: 17px; font-weight: 800; margin: 32px 0 12px; color: #1F3D2E; letter-spacing: -0.01em; }
+    h2:first-of-type { margin-top: 0; }
+    p { font-size: 14.5px; color: #374740; line-height: 1.75; margin-bottom: 12px; }
+    strong { color: #1F3D2E; }
+    a { color: #5FA584; }
+    details.faq {
+      border: 1px solid #DCE9E3; border-radius: 12px; margin-bottom: 8px;
+      background: #fff; overflow: hidden;
+    }
+    details.faq summary {
+      padding: 13px 16px; font-size: 14.5px; font-weight: 700; cursor: pointer;
+      list-style: none; color: #1F3D2E; position: relative; padding-right: 36px;
+    }
+    details.faq summary::-webkit-details-marker { display: none; }
+    details.faq summary::after {
+      content: '+'; position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+      font-size: 18px; font-weight: 800; color: #5FA584; transition: transform .15s;
+    }
+    details.faq[open] summary::after { content: '−'; }
+    details.faq .faq-a { padding: 0 16px 14px; border-top: 1px solid #F0F5F2; }
+    details.faq .faq-a p { margin: 12px 0 0; font-size: 13.5px; color: #5C6E65; }
+    details.faq.faq-hidden { display: none; }
+    hr { border: none; border-top: 1px solid #DCE9E3; margin: 32px 0; }
+    .site-footer { border-top: 1px solid #DCE9E3; padding: 32px 24px; text-align: center; color: #7C8B82; font-size: 13px; font-weight: 500; }
+    .site-footer a { color: #5FA584; text-decoration: none; font-weight: 700; }
+    .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 16px; flex-wrap: wrap; }
+
+  /* ── Copy Protection ─────────────────────────────────────────────────────── */
+  * { -webkit-user-select: none !important; -moz-user-select: none !important; user-select: none !important; }
+  img { -webkit-user-drag: none !important; pointer-events: none !important; }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="nav-logo" href="/"><img src="/logo.svg" alt="My Little Baby Notebook"> My Little Baby Notebook</a>
+  <a class="nav-back" href="/">← Back</a>
+</nav>
+
+<div class="page-wrap">
+  <div class="legal-header">
+    <h1 id="page-title">Help Center</h1>
+    <p class="legal-meta" id="page-meta">Frequently asked questions and usage guide</p>
+  </div>
+
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" id="btn-tr" onclick="setLang('tr')">TR</button>
+  </div>
+
+  <div class="search-wrap">
+    <input type="text" class="search-input" id="faq-search" oninput="filterFaq(this.value)" placeholder="Search...">
+  </div>
+
+  <div class="contact-card" id="contact-card">
+    <p><strong>Still need help? Email us:</strong></p>
+    <p><a href="mailto:support@mylittlebabynotebook.app">support@mylittlebabynotebook.app</a></p>
+  </div>
+
+  <!-- ── ENGLISH ── -->
+  <div id="lang-en" class="lang-section visible">
+
+    <h2>Getting Started</h2>
+    <details class="faq">
+      <summary>How do I create a baby profile?</summary>
+      <div class="faq-a"><p>When you first open the app, the baby profile creation screen appears automatically. Enter the name, birth date, gender and photo, then the profile is created.<br><br>To add another baby, go to the Profile page and tap "Add New Child Profile".</p></div>
+    </details>
+    <details class="faq">
+      <summary>Can I add more than one baby?</summary>
+      <div class="faq-a"><p>Yes! You can create as many baby profiles as you like. Tap the baby photo or name on the home screen to switch between profiles.</p></div>
+    </details>
+    <details class="faq">
+      <summary>How do I change the language?</summary>
+      <div class="faq-a"><p>Go to Profile → Settings → Language to choose from Turkish, English, German, Italian or Spanish.</p></div>
+    </details>
+    <details class="faq">
+      <summary>How do I change the unit system?</summary>
+      <div class="faq-a"><p>Go to Profile → Settings → Unit System to switch between metric (kg/cm) and imperial (lb/in).</p></div>
+    </details>
+
+    <h2>Moments</h2>
+    <details class="faq">
+      <summary>How do I add a moment?</summary>
+      <div class="faq-a"><p>Go to the Moments tab in the bottom menu and tap the + button at the bottom right. Choose a ready-made template or enter free text. You can add photos and set a category and sub-category.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Can I add photos to moments?</summary>
+      <div class="faq-a"><p>Yes! While creating or editing a moment, tap "Add Photo" and select a photo from your gallery. The built-in editor opens so you can crop and rotate before it is added to the form.</p></div>
+    </details>
+    <details class="faq">
+      <summary>How do I share a moment?</summary>
+      <div class="faq-a"><p>Long-press a moment or open its detail page. Tap the share icon and the moment is prepared as a visual card ready to share to any app.</p></div>
+    </details>
+    <details class="faq">
+      <summary>How does the photo editor work?</summary>
+      <div class="faq-a"><p>After selecting a photo from your gallery, the in-app editor opens automatically. Use the rotate button to turn the photo 90°. Choose one of four crop ratios — 1:1 (square), 4:3, 4:5, or 9:16 — to crop the photo.<br><br>The Save button stays disabled until a ratio is selected. Use Undo to revert the last rotation.</p></div>
+    </details>
+    <details class="faq">
+      <summary>What is Bulk Moment?</summary>
+      <div class="faq-a"><p>A Plus-exclusive feature. In the Moments tab, tap the + button and choose "Add Bulk Moment". You can select up to 10 photos from your gallery at once; each photo is saved as a separate moment.</p></div>
+    </details>
+    <details class="faq">
+      <summary>What can I fill in for each photo in Bulk Moment?</summary>
+      <div class="faq-a"><p>For each photo you can add:<br>• Date – auto-filled from EXIF; you can change it.<br>• What happened – optional, 60 characters.<br>• Note – optional, 75 characters.<br>• Category / Sub-category – defaults to Bulk / Other; changeable.<br><br>You can also save with just the date and no other text.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Who can use Bulk Moment?</summary>
+      <div class="faq-a"><p>Bulk Moment is available to Plus subscribers only. Standard users can add one moment at a time.</p></div>
+    </details>
+
+    <h2>Feeding</h2>
+    <details class="faq">
+      <summary>What feeding types can I record?</summary>
+      <div class="faq-a"><p>Four feeding types are supported: Breastfeeding (left/right breast and duration), Bottle (amount and source), and Solid Food (fruit, vegetables, meats, grains, dairy).<br><br>Tap the + button in the Feeding tab to choose a type.</p></div>
+    </details>
+    <details class="faq">
+      <summary>How do I record a breastfeeding session?</summary>
+      <div class="faq-a"><p>Go to Feeding → + → Breastfeeding. Enter the duration in minutes for left breast, right breast or both.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Can I search past feeding records?</summary>
+      <div class="faq-a"><p>Yes, use the search bar at the top of the Feeding screen to filter by notes. Records are grouped by date.</p></div>
+    </details>
+
+    <h2>Diaper Tracking</h2>
+    <details class="faq">
+      <summary>How do I log a diaper change?</summary>
+      <div class="faq-a"><p>Go to the Diaper tab in the bottom menu and tap the + button. Choose the diaper type (Dirty / Wet / Mixed), set the time and add an optional note.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Can I filter diapers by date?</summary>
+      <div class="faq-a"><p>Yes! Use the filter bar at the top of the Diaper screen to view Today, 7 Days or 30 Days. Tap the calendar icon to pick a specific date.</p></div>
+    </details>
+    <details class="faq">
+      <summary>How do I share a diaper report?</summary>
+      <div class="faq-a"><p>Tap the share icon at the top right of the Diaper screen. A summary of the selected period is prepared as text and shared to any app.</p></div>
+    </details>
+
+    <h2>Growth &amp; Teeth</h2>
+    <details class="faq">
+      <summary>How do I add a growth measurement?</summary>
+      <div class="faq-a"><p>Go to Growth Tracking from the Tracking menu on the home screen. Tap the + button to enter date, weight, height and head circumference.</p></div>
+    </details>
+    <details class="faq">
+      <summary>How does teeth tracking work?</summary>
+      <div class="faq-a"><p>Go to Tracking → Teeth to see the baby tooth map. Tap a tooth to record the date it came in and add a note. Erupted teeth are highlighted on the map.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Can I see a growth chart?</summary>
+      <div class="faq-a"><p>Yes! The Growth Tracking screen includes interactive charts for weight, height and head circumference. Tap a data point to see details.</p></div>
+    </details>
+
+    <h2>Baby Book</h2>
+    <details class="faq">
+      <summary>How do I create a baby book PDF?</summary>
+      <div class="faq-a"><p>Go to Profile → Baby Book. Select which sections to include and tap "Create PDF". The PDF is generated automatically and ready to share.</p></div>
+    </details>
+    <details class="faq">
+      <summary>What information can be included in the PDF?</summary>
+      <div class="faq-a"><p>You can include the baby cover page, moments and photos, diary notes, and growth and teeth tracking tables. Each section can be toggled on or off.<br><br>The Classic style is free (with watermark); the other 11 design styles are Plus-exclusive. Four formats are available: A5 Landscape, A5 Portrait, A4, and 25×25 cm.</p></div>
+    </details>
+
+    <h2>Account &amp; Security</h2>
+    <details class="faq">
+      <summary>What if I forget my password?</summary>
+      <div class="faq-a"><p>Tap the "Forgot Password" link on the login screen. A password reset link is sent to your email address. Click the link to set a new password.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Where is my data stored? Is it secure?</summary>
+      <div class="faq-a"><p>All your data is stored encrypted on Firebase infrastructure. Screenshots and screen recordings are automatically blocked to protect your privacy.</p></div>
+    </details>
+    <details class="faq">
+      <summary>How do I delete my data?</summary>
+      <div class="faq-a"><p>Use the "Delete My Data" option at the bottom of the Profile page. Deletion takes place within 24 hours and can be reversed during that window.</p></div>
+    </details>
+    <details class="faq">
+      <summary>What is co-parenting?</summary>
+      <div class="faq-a"><p>Co-parenting lets you add a spouse, parent, sibling, or caregiver to share baby care. Invited co-parents can view, edit all baby data, and add their own notes. Manage co-parents easily from Profile → Co-Parents.</p></div>
+    </details>
+    <details class="faq">
+      <summary>How many co-parents can I add?</summary>
+      <div class="faq-a"><p>You can add up to 2 co-parents per baby; this limit applies to all users.<br><br>Free accounts can only co-parent 1 baby. Plus accounts can co-parent up to 5 different babies.</p></div>
+    </details>
+
+    <h2>✨ Plus Membership</h2>
+    <details class="faq">
+      <summary>What is Plus?</summary>
+      <div class="faq-a"><p>Plus is a premium subscription that unlocks all advanced features. It includes multiple babies, bulk moment uploads, advanced filtering, sleep sounds, and brand mark-free sharing.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Do I need Plus to add multiple babies?</summary>
+      <div class="faq-a"><p>Yes, free accounts support only 1 baby profile. With Plus, you can have up to 10 babies in total (owned and shared combined).</p></div>
+    </details>
+    <details class="faq">
+      <summary>What is bulk moment upload?</summary>
+      <div class="faq-a"><p>Bulk moment upload is a Plus-exclusive feature. Tap "Add Multiple Moments" in the Moments tab and select up to 10 photos from your gallery at once. Each photo becomes a separate moment with its own date, title, and notes. This is much faster than adding moments one by one.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Are sleep sounds included in Plus?</summary>
+      <div class="faq-a"><p>Partially! White Noise is free; the other 11 sleep sounds are Plus-exclusive. There are 12 sounds in total. Set a timer so the sound stops automatically after a set duration.</p></div>
+    </details>
+    <details class="faq">
+      <summary>How do date range filters work?</summary>
+      <div class="faq-a"><p>On Feeding, Diaper, Teeth, and other tracking screens, you can filter by date. Plus subscribers get date range filters to view specific periods in detail. This helps you analyze your baby's data for any time period.</p></div>
+    </details>
+    <details class="faq">
+      <summary>What about sharing and brand marks?</summary>
+      <div class="faq-a"><p>When you share moments, steps and PDFs, Plus subscribers won't see brand marks. You get professional, clean-looking shares for your memories.</p></div>
+    </details>
+    <details class="faq">
+      <summary>How do I purchase Plus?</summary>
+      <div class="faq-a"><p>Tap the "Upgrade to Plus" button on the Profile page. Plus is available as a monthly or yearly subscription. You get full access to all Plus features during your trial period.</p></div>
+    </details>
+    <details class="faq">
+      <summary>How do I cancel my Plus subscription?</summary>
+      <div class="faq-a"><p>You can cancel anytime from Profile → Settings → Manage Subscription. After cancellation, you won't have access to Plus features.</p></div>
+    </details>
+
+    <h2>Diary</h2>
+    <details class="faq">
+      <summary>How do I add a diary entry?</summary>
+      <div class="faq-a"><p>Go to the Diary tab from the bottom menu and tap the + button. Add a title (optional) and write your entry. You can customize your diary with divider and corner styles.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Can I search diary entries?</summary>
+      <div class="faq-a"><p>Yes! The Diary screen has a search bar. You can filter by date, title, or content.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Can I edit or delete diary entries?</summary>
+      <div class="faq-a"><p>Yes! Tap an entry to edit it. To delete, long-press the entry or use the delete button on the detail page.</p></div>
+    </details>
+
+    <h2>Care Timeline (Checkups, Vaccines, Supplements)</h2>
+    <details class="faq">
+      <summary>How do I record a health checkup?</summary>
+      <div class="faq-a"><p>Go to the Care tab → Checkups and tap the + button. Enter checkup name, doctor name, location, date, and time. You can optionally set a reminder.</p></div>
+    </details>
+    <details class="faq">
+      <summary>How do I track the vaccine schedule?</summary>
+      <div class="faq-a"><p>From Care → Vaccines, you can see your vaccine records. Completed and upcoming vaccines are listed separately. Mark vaccines as done to track progress.</p></div>
+    </details>
+    <details class="faq">
+      <summary>How does vitamin and supplement tracking work?</summary>
+      <div class="faq-a"><p>Go to Care → Supplements and add a medicine or vitamin. Set the dose, frequency, start date, and end date. The app sends reminders for taking doses on time.</p></div>
+    </details>
+    <details class="faq">
+      <summary>How do I keep notes of questions for doctor visits?</summary>
+      <div class="faq-a"><p>In Care → Questions, you can record questions for doctor visits. Write answers during the visit and keep them for reference.</p></div>
+    </details>
+
+    <h2>Steps</h2>
+    <details class="faq">
+      <summary>What are steps?</summary>
+      <div class="faq-a"><p>Steps (firsts) are important developmental moments like first smile, first step, first word, etc. Each step must include a photo.</p></div>
+    </details>
+    <details class="faq">
+      <summary>How do I add a step?</summary>
+      <div class="faq-a"><p>Go to the Steps tab and tap the +. Enter a title, optional notes, and select a photo. Edit and crop the photo, then save.</p></div>
+    </details>
+    <details class="faq">
+      <summary>How do I share steps?</summary>
+      <div class="faq-a"><p>Long-press a step or open its detail page. Tap share to prepare it as a visual card for sharing with your preferred app.</p></div>
+    </details>
+
+    <h2>Sound &amp; Sleep</h2>
+    <details class="faq">
+      <summary>What is the Sound tab?</summary>
+      <div class="faq-a"><p>The Sound tab offers 12 sleep sounds to help your baby fall asleep. White Noise is free; Pink Noise, Brown Noise, Fan, Hair Dryer, Vacuum, Airplane Cabin, Heartbeat, Womb Sound, Shusher, Hum, and Low Rumble are Plus-exclusive.</p></div>
+    </details>
+    <details class="faq">
+      <summary>How do I set a timer for sounds?</summary>
+      <div class="faq-a"><p>While playing a sound, tap the timer icon. You can set the sound to stop automatically after 5 min, 15 min, 30 min, or 1 hour.</p></div>
+    </details>
+    <details class="faq">
+      <summary>How do I adjust the volume?</summary>
+      <div class="faq-a"><p>The Sound tab has a volume slider. Adjust it to your baby's comfort level.</p></div>
+    </details>
+
+    <p id="no-results-en" style="display:none; text-align:center; color:#7C8B82; padding: 24px 0;">No results found.</p>
+
+  </div>
+
+  <!-- ── TÜRKÇE ── -->
+  <div id="lang-tr" class="lang-section">
+
+    <h2>Başlarken</h2>
+    <details class="faq">
+      <summary>Bebek profili nasıl oluşturabilirim?</summary>
+      <div class="faq-a"><p>Uygulamayı ilk açtığınızda bebek profili oluşturma ekranı otomatik olarak gelir. İsim, doğum tarihi, cinsiyet ve fotoğraf bilgilerini girdikten sonra profil oluşturulur.<br><br>Yeni bebek eklemek için profil sayfasına gidin ve "Yeni Çocuk Profili Ekle" seçeneğini kullanın.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Birden fazla bebek ekleyebilir miyim?</summary>
+      <div class="faq-a"><p>Evet! Dilediğiniz kadar bebek profili oluşturabilirsiniz. Ana sayfada bebek fotoğrafına veya ismine dokunarak profiller arasında geçiş yapabilirsiniz.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Dil nasıl değiştirilir?</summary>
+      <div class="faq-a"><p>Profil sayfası → Ayarlar → Dil menüsünden Türkçe, İngilizce, Almanca, İtalyanca ve İspanyolca seçeneklerinden birini seçebilirsiniz.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Ölçü birimi nasıl değiştirilir?</summary>
+      <div class="faq-a"><p>Profil sayfası → Ayarlar → Ölçü Birimi bölümünden metrik (kg/cm) veya imparyal (lb/in) sistemi seçebilirsiniz.</p></div>
+    </details>
+
+    <h2>Anlar</h2>
+    <details class="faq">
+      <summary>An nasıl eklenir?</summary>
+      <div class="faq-a"><p>Alt menüden Anlar sekmesine gidin ve sağ alttaki + düğmesine dokunun. Hazır şablonlardan birini seçin ya da serbest metin girin. Fotoğraf ekleyebilir, kategori ve alt kategori belirleyebilirsiniz.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Anlara fotoğraf ekleyebilir miyim?</summary>
+      <div class="faq-a"><p>Evet! An oluştururken veya düzenlerken "Fotoğraf Ekle" seçeneğine dokunun ve galerinizden bir fotoğraf seçin. Fotoğraf seçilince düzenleme ekranı açılır; kırpıp döndürdükten sonra an formuna otomatik eklenir.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Anları nasıl paylaşabilirim?</summary>
+      <div class="faq-a"><p>Bir anın üzerine uzun basın veya detay sayfasını açın. Paylaşım ikonuna dokunduğunuzda an, görsel kart olarak hazırlanır ve istediğiniz uygulamaya paylaşılır.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Fotoğraf düzenleme nasıl çalışır?</summary>
+      <div class="faq-a"><p>Galerinizden bir fotoğraf seçtikten sonra uygulama içi düzenleme ekranı açılır. Döndür tuşuyla fotoğrafı 90° döndürebilirsiniz. 1:1 (kare), 4:3, 4:5 veya 9:16 oranlarından birini seçerek kırpma yapabilirsiniz.<br><br>Bir oran seçmeden Kaydet düğmesi aktif olmaz. Geri Al ile son döndürme işlemini iptal edebilirsiniz.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Çoklu an ekleme nedir?</summary>
+      <div class="faq-a"><p>Plus abonelerine özel bir özelliktir. Anlar sekmesinde + düğmesine dokunduğunuzda "Çoklu An Ekle" seçeneği çıkar. Galeriden en fazla 10 fotoğraf seçebilirsiniz; her fotoğraf ayrı bir an olarak kaydedilir.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Çoklu anda her fotoğrafa ne ekleyebilirim?</summary>
+      <div class="faq-a"><p>Her fotoğraf için şunları girebilirsiniz:<br>• Tarih – Fotoğrafın çekildiği tarih EXIF'ten otomatik gelir; istediğinizde değiştirebilirsiniz.<br>• Ne oldu – İsteğe bağlı, 60 karakter.<br>• Not – İsteğe bağlı, 75 karakter.<br>• Kategori / Alt kategori – Varsayılan olarak Çoklu / Diğer seçili gelir, değiştirebilirsiniz.<br><br>Sadece tarihle, hiçbir metin girmeden de kaydedebilirsiniz.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Çoklu an ekleme özelliği kime açık?</summary>
+      <div class="faq-a"><p>Çoklu an ekleme yalnızca Plus abonelerine açıktır. Standart kullanıcılar her seferinde tek bir an ekleyebilir.</p></div>
+    </details>
+
+    <h2>Beslenme</h2>
+    <details class="faq">
+      <summary>Hangi beslenme türlerini kaydedebilirim?</summary>
+      <div class="faq-a"><p>Dört beslenme türü desteklenmektedir: Emzirme (sol/sağ göğüs ve süre), Mama/biberon (miktar ve kaynak), ve Katı Gıda (meyve, sebze, et, tahıl, süt ürünleri).<br><br>Beslenme sekmesindeki + düğmesine dokunarak tür seçimi yapabilirsiniz.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Emzirme süresi nasıl kaydedilir?</summary>
+      <div class="faq-a"><p>Beslenme → + → Emzirme seçin. Sol göğüs, sağ göğüs veya her ikisi için dakika bazında süre girebilirsiniz.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Geçmiş beslenme kayıtları aranabilir mi?</summary>
+      <div class="faq-a"><p>Evet, Beslenme ekranının üstündeki arama çubuğunu kullanarak notlara göre filtreleyebilirsiniz. Kayıtlar tarihe göre gruplandırılmış şekilde listelenir.</p></div>
+    </details>
+
+    <h2>Bez Takibi</h2>
+    <details class="faq">
+      <summary>Bez değişimi nasıl kaydedilir?</summary>
+      <div class="faq-a"><p>Alt menüden Bez sekmesine gidin, sağ alttaki + düğmesine dokunun. Bez türünü seçin (Kirli / Islak / Karışık), zamanı ayarlayın ve isteğe bağlı not ekleyin.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Bezleri tarihe göre filtreleyebilir miyim?</summary>
+      <div class="faq-a"><p>Evet! Bez ekranının üstündeki filtre çubuğunu kullanarak Bugün, 7 Gün veya 30 Günlük kayıtları görüntüleyebilirsiniz. Takvim ikonuna dokunarak belirli bir tarih de seçebilirsiniz.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Bez raporunu nasıl paylaşabilirim?</summary>
+      <div class="faq-a"><p>Bez ekranının sağ üstündeki paylaşım ikonuna dokunun. Seçili dönemin özeti metin olarak hazırlanır ve istediğiniz uygulamaya paylaşılır.</p></div>
+    </details>
+
+    <h2>Büyüme &amp; Diş</h2>
+    <details class="faq">
+      <summary>Büyüme ölçümü nasıl eklenir?</summary>
+      <div class="faq-a"><p>Ana sayfadaki Takip menüsünden Büyüme Takibi'ne gidin. Sağ alttaki + düğmesi ile tarih, kilo, boy ve baş çevresi bilgilerini girebilirsiniz.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Diş çıkma takibi nasıl çalışır?</summary>
+      <div class="faq-a"><p>Takip → Dişler menüsünden bebek diş haritasını görebilirsiniz. Bir dişe dokunarak çıkma tarihini ve not ekleyebilirsiniz. Çıkan dişler haritada renkli olarak işaretlenir.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Büyüme grafiğini görebilir miyim?</summary>
+      <div class="faq-a"><p>Evet! Büyüme Takibi ekranında kilo, boy ve baş çevresi için interaktif grafikler bulunmaktadır. Grafik noktalarına dokunarak detayları görebilirsiniz.</p></div>
+    </details>
+
+    <h2>Bebek Kitabım</h2>
+    <details class="faq">
+      <summary>Bebek kitabı PDF'i nasıl oluşturulur?</summary>
+      <div class="faq-a"><p>Profil → Bebek Kitabım sayfasına gidin. Hangi bölümlerin dahil edileceğini seçin ve "PDF Oluştur" düğmesine dokunun. PDF otomatik oluşturularak paylaşılabilir hale gelir.</p></div>
+    </details>
+    <details class="faq">
+      <summary>PDF'e hangi bilgiler dahil edilebilir?</summary>
+      <div class="faq-a"><p>Bebek kapak sayfası, anlar ve fotoğraflar, günlük notlar ile büyüme ve diş takibi tablolarını PDF'e ekleyebilirsiniz. Her bölümü ayrı ayrı açıp kapatabilirsiniz.<br><br>Klasik stil ücretsiz kullanılabilir (filigranla); diğer 11 tasarım stili Plus abonelerine özeldir. A5 Yatay, A5 Dikey, A4 ve 25×25 cm olmak üzere 4 farklı format mevcuttur.</p></div>
+    </details>
+
+    <h2>Hesap &amp; Güvenlik</h2>
+    <details class="faq">
+      <summary>Şifremi unutursam ne yapabilirim?</summary>
+      <div class="faq-a"><p>Giriş ekranındaki "Şifremi Unuttum" bağlantısına tıklayın. E-posta adresinize şifre sıfırlama linki gönderilir. Linke tıklayarak yeni şifrenizi belirleyebilirsiniz.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Verilerim nerede saklanıyor?</summary>
+      <div class="faq-a"><p>Tüm verileriniz Firebase altyapısı üzerinde şifreli olarak saklanmaktadır. Ekran görüntüsü ve ekran kaydı, gizliliğiniz için otomatik olarak engellenmektedir.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Verilerimi nasıl silebilirim?</summary>
+      <div class="faq-a"><p>Profil sayfasının alt kısmındaki "Verilerimi Sil" seçeneği ile tüm verilerinizi silebilirsiniz. Silme işlemi 24 saat içinde gerçekleşir ve bu süre içinde geri alabilirsiniz.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Co-parenting nedir?</summary>
+      <div class="faq-a"><p>Co-parenting özelliği sayesinde eş, anne, baba veya bakıcı gibi başka kişileri ekleyebilirsiniz. Davet edilen kişi tüm bebek verilerine erişebilir, düzenleyebilir ve kendi notlarını ekleyebilir. Profil → Ebeveynler bölümünden kolayca yönetebilirsiniz.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Kaç co-parent ekleyebilirim?</summary>
+      <div class="faq-a"><p>Her bebek için maksimum 2 co-parent ekleyebilirsiniz; bu sınır tüm kullanıcılar için geçerlidir.<br><br>Ücretsiz hesapla yalnızca 1 bebeğe co-parent olabilirsiniz. Plus hesapla en fazla 5 farklı bebeğe co-parent olabilirsiniz.</p></div>
+    </details>
+
+    <h2>✨ Plus Üyeliği</h2>
+    <details class="faq">
+      <summary>Plus nedir?</summary>
+      <div class="faq-a"><p>Plus, uygulamanın tüm premium özelliklerine erişim sağlayan bir abonelik planıdır. Daha fazla bebek, çoklu an ekleme, gelişmiş filtreleme, uyku sesleri ve marka işareti olmayan paylaşım gibi özel özellikleri açar.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Birden fazla bebek eklemek için Plus gerekli midir?</summary>
+      <div class="faq-a"><p>Evet, ücretsiz hesap yalnızca 1 bebek profilini destekler. Plus üyeliğiyle kendi eklediğiniz ve paylaşılan bebekler dahil toplamda 10 bebeğe kadar profil oluşturabilirsiniz.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Çoklu an ekleme özelliği nedir?</summary>
+      <div class="faq-a"><p>Çoklu an ekleme, Plus abonelerine özel bir özelliktir. Anlar sekmesinde "Çoklu An Ekle" seçeneği ile bir defada galeriden en fazla 10 fotoğraf seçebilirsiniz. Her fotoğraf, farklı tarih, başlık ve notlar ile ayrı bir an olarak kaydedilir. Bu, anı tek tek eklemekten çok daha hızlıdır.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Uyku sesleri Plus'ta mı?</summary>
+      <div class="faq-a"><p>Kısmen! Beyaz Gürültü ücretsiz kullanılabilir; diğer 11 uyku sesi Plus abonelerine özeldir. Uygulamada toplamda 12 uyku sesi bulunmaktadır. Zamanlayıcı ayarlayarak sesin belirli bir süre sonra otomatik kapanmasını sağlayabilirsiniz.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Tarih aralığı filtreleri nasıl çalışır?</summary>
+      <div class="faq-a"><p>Beslenme, Bez, Diş ve diğer takip ekranlarında filtreleme yapabilirsiniz. Plus abonelerine özel tarih aralığı filtreleri ile belirli dönem aralıklarını inceleyebilirsiniz. Bunu yaparak bebeğinizin belirli bir zaman dilimindeki verilerini detaylı şekilde analiz edebilirsiniz.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Paylaşım ve marka işareti hakkında neler bilmeliyim?</summary>
+      <div class="faq-a"><p>Anları, adımları ve PDF'leri paylaştığınızda Plus abonelerine marka işareti gösterilmez. Böylece profesyonel ve temiz görünümlü paylaşımlar yapabilirsiniz.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Plus'ı nasıl satın alırım?</summary>
+      <div class="faq-a"><p>Profil sayfasında Plus üyeliğine yükseltin butonuna dokunun. Abonelik aylık veya yıllık olarak sunulur. İlk deneme süresi boyunca, tüm Plus özelliklerine tam erişim elde edersiniz.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Plus aboneliğimi nasıl iptal edebilirim?</summary>
+      <div class="faq-a"><p>Plus aboneliğini istediğiniz zaman iptal edebilirsiniz. İptal seçeneği Profil → Ayarlar → Abonelik yönetimi bölümünde bulunur. İptal ettiğiniz tarihten sonra Plus özelliklerine artık erişiminiz olmayacaktır.</p></div>
+    </details>
+
+    <h2>Günlük</h2>
+    <details class="faq">
+      <summary>Günlük girişi nasıl eklenir?</summary>
+      <div class="faq-a"><p>Alt menüden Günlük sekmesine gidin ve sağ alttaki + düğmesine dokunun. Başlık (isteğe bağlı) ve içerik yazabilirsiniz. İstediğiniz bölücü ve köşe stilini seçerek günlüğünüzü kişiselleştirebilirsiniz.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Günlük girişlerini arayabilir miyim?</summary>
+      <div class="faq-a"><p>Evet! Günlük ekranında arama çubuğu bulunmaktadır. Tarih, başlık veya içeriğe göre filtreleye bilirsiniz.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Günlük girişlerini düzenleyebilir veya silebilir miyim?</summary>
+      <div class="faq-a"><p>Evet! Bir girişe dokunarak düzenle seçeneğini açabilirsiniz. Girişi silmek için en uzun basın veya detay sayfasında sil butonuna basın.</p></div>
+    </details>
+
+    <h2>Takip (Kontroller, Aşılar, Takviye)</h2>
+    <details class="faq">
+      <summary>Sağlık kontrolü nasıl kaydedilir?</summary>
+      <div class="faq-a"><p>Alt menüden Takip sekmesine gidin ve Kontroller bölümünde + düğmesine dokunun. Kontrol adı, doktor adı, konum, tarih ve saat bilgilerini girebilirsiniz. İsteğe bağlı olarak hatırlatıcı ayarlayabilirsiniz.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Aşı takvimi nasıl takip edilir?</summary>
+      <div class="faq-a"><p>Takip → Aşılar sekmesinde aşı kayıtlarını görebilirsiniz. Yapılmış aşılar ve yapılacak aşılar ayrı listelerde gösterilir. "Yapıldı" olarak işaretleyerek takibi tamamlayabilirsiniz.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Vitamin ve takviye takibi nasıl çalışır?</summary>
+      <div class="faq-a"><p>Takip → Takviye sekmesinde ilaç veya vitamin ekleyebilirsiniz. Doz, sıklık, başlangıç ve bitiş tarihini ayarlayabilirsiniz. Uygulama size hatırlatıcılar göndererek alım zamanlarını hatırlatacaktır.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Doktor ziyaretleri için soru notlarını nasıl tutabilirim?</summary>
+      <div class="faq-a"><p>Takip → Sorular sekmesinde doktor ziyaretleri için sorularınızı kaydedebilirsiniz. Ziyaret sırasında yanıtları yazarak referans olarak saklayabilirsiniz.</p></div>
+    </details>
+
+    <h2>Adımlar</h2>
+    <details class="faq">
+      <summary>İlk adımlar nedir?</summary>
+      <div class="faq-a"><p>İlk adımlar (firsts), bebeğinizin önemli gelişim kilometre taşlarıdır. İlk gülüş, ilk adım, ilk sözcük vb. özel anları kaydedebilirsiniz. Anlardan farklı olarak, her ilk adımla mutlaka bir fotoğraf eklemeniz gerekir.</p></div>
+    </details>
+    <details class="faq">
+      <summary>İlk adımlar nasıl eklenir?</summary>
+      <div class="faq-a"><p>Alt menüden Adımlar sekmesine gidin ve sağ alttaki + düğmesine dokunun. Başlık girin, not ekleyin (isteğe bağlı) ve mutlaka bir fotoğraf seçin. Fotoğrafı düzenle ekranında kırpıp döndürdükten sonra kaydedebilirsiniz.</p></div>
+    </details>
+    <details class="faq">
+      <summary>İlk adımları nasıl paylaşabilirim?</summary>
+      <div class="faq-a"><p>Bir adımın üzerine uzun basın veya detay sayfasını açın. Paylaşım ikonuna dokunduğunuzda adım, görsel kart olarak hazırlanır ve istediğiniz uygulamaya paylaşılır.</p></div>
+    </details>
+
+    <h2>Ses &amp; Uyku</h2>
+    <details class="faq">
+      <summary>Ses sekmesi nedir?</summary>
+      <div class="faq-a"><p>Ses sekmesi, bebeğinizin uyuya dalmasına yardımcı olmak için 12 uyku sesi sunar. Beyaz Gürültü ücretsiz kullanılabilir; Pembe Gürültü, Kahverengi Gürültü, Fan, Saç Kurutma Makinesi, Süpürge, Uçak Kabini, Kalp Atışı, Rahim Sesi, Şısh, Uğultu ve Düşük Titreşim sesleri Plus abonelerine özeldir.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Sesin zamanlayıcısı nasıl ayarlanır?</summary>
+      <div class="faq-a"><p>Ses oynatılırken zamanlayıcı ikonuna dokunun. Sesin 5 dakika, 15 dakika, 30 dakika veya 1 saat sonra otomatik kapanmasını ayarlayabilirsiniz.</p></div>
+    </details>
+    <details class="faq">
+      <summary>Ses seviyesini nasıl ayarlayabilirim?</summary>
+      <div class="faq-a"><p>Ses sekmesinde ses seviyesi kaydırıcısı bulunmaktadır. İstediğiniz seviyelere ayarlayarak bebeğinizin rahatlığını sağlayabilirsiniz.</p></div>
+    </details>
+
+    <p id="no-results-tr" style="display:none; text-align:center; color:#7C8B82; padding: 24px 0;">Sonuç bulunamadı.</p>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-links">
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Service</a>
+    <a href="/support.html">Support</a>
+  </div>
+  <div>© 2026 My Little Baby Notebook · Made with 🌿 by <a href="https://jalocotech.com">Jaloco Tech</a></div>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.getElementById('lang-en').classList.toggle('visible', lang === 'en');
+    document.getElementById('lang-tr').classList.toggle('visible', lang === 'tr');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
+    document.documentElement.lang = lang;
+    localStorage.setItem('mlbn-lang', lang);
+    document.getElementById('page-title').textContent = lang === 'tr' ? 'Yardım Merkezi' : 'Help Center';
+    document.getElementById('page-meta').textContent = lang === 'tr' ? 'Sık sorulan sorular ve kullanım rehberi' : 'Frequently asked questions and usage guide';
+    document.getElementById('faq-search').placeholder = lang === 'tr' ? 'Ara...' : 'Search...';
+    document.querySelector('#contact-card p strong').textContent = lang === 'tr' ? 'Yardıma mı ihtiyacınız var? E-posta gönderin:' : 'Still need help? Email us:';
+    filterFaq(document.getElementById('faq-search').value);
+  }
+
+  function filterFaq(query) {
+    query = query.toLowerCase().trim();
+    document.querySelectorAll('.lang-section').forEach(section => {
+      let anyVisible = false;
+      section.querySelectorAll('h2').forEach(h2 => {
+        let sibling = h2.nextElementSibling;
+        let sectionHasMatch = false;
+        const items = [];
+        while (sibling && sibling.tagName === 'DETAILS') {
+          items.push(sibling);
+          sibling = sibling.nextElementSibling;
+        }
+        items.forEach(item => {
+          const text = item.textContent.toLowerCase();
+          const match = query === '' || text.includes(query);
+          item.classList.toggle('faq-hidden', !match);
+          if (match) { sectionHasMatch = true; anyVisible = true; }
+          if (query !== '' && match) { item.setAttribute('open', ''); }
+          else if (query === '') { item.removeAttribute('open'); }
+        });
+        h2.style.display = sectionHasMatch ? '' : 'none';
+      });
+      const noResults = section.querySelector('[id^="no-results"]');
+      if (noResults) noResults.style.display = anyVisible ? 'none' : '';
+    });
+  }
+
+  (function() {
+    const saved = localStorage.getItem('mlbn-lang');
+    if (saved === 'tr' || saved === 'en') { setLang(saved); return; }
+    if ((navigator.language || '').startsWith('tr')) { setLang('tr'); }
+  })();
+</script>
+<script>
+  (function(){
+    document.addEventListener('contextmenu',function(e){e.preventDefault();});
+    document.addEventListener('keydown',function(e){
+      var ctrl=e.ctrlKey||e.metaKey;
+      if(ctrl&&['c','x','a','s','u','p'].includes((e.key||'').toLowerCase()))e.preventDefault();
+      if(ctrl&&e.shiftKey&&['i','j','c'].includes((e.key||'').toLowerCase()))e.preventDefault();
+      if(e.key==='F12')e.preventDefault();
+    });
+    document.addEventListener('dragstart',function(e){e.preventDefault();});
+    document.addEventListener('selectstart',function(e){e.preventDefault();});
+  })();
+</script>
+</body>
+</html>
