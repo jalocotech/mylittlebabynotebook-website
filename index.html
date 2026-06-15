@@ -91,6 +91,28 @@
     .nav-cta:hover { background: #2d5740; }
     @media (max-width: 480px) { .nav-cta { display: none; } }
 
+    /* Nav menu (Help/Legal dropdown) */
+    .nav-menu { position: relative; }
+    .nav-menu-btn {
+      background: transparent; border: 1px solid #DCE9E3; cursor: pointer;
+      font-family: inherit; font-size: 13px; font-weight: 700;
+      color: #1F3D2E; padding: 7px 14px; border-radius: 10px;
+      display: flex; align-items: center; gap: 4px;
+    }
+    .nav-menu-btn:hover { background: #F6FAF5; }
+    .nav-menu-dropdown {
+      display: none; position: absolute; top: calc(100% + 8px); right: 0;
+      background: #fff; border: 1px solid #DCE9E3; border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08); min-width: 160px;
+      padding: 6px; z-index: 200;
+    }
+    .nav-menu.open .nav-menu-dropdown { display: block; }
+    .nav-menu-dropdown a {
+      display: block; padding: 9px 12px; border-radius: 8px;
+      font-size: 13px; font-weight: 600; color: #1F3D2E; text-decoration: none;
+    }
+    .nav-menu-dropdown a:hover { background: #F6FAF5; }
+
     /* ── MAIN CONTENT ── */
     .page-wrap {
       max-width: 900px;
@@ -691,6 +713,16 @@
       <div class="lang-toggle">
         <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
         <button class="lang-btn" id="btn-tr" onclick="setLang('tr')">TR</button>
+      </div>
+      <div class="nav-menu" id="nav-menu">
+        <button class="nav-menu-btn" id="nav-menu-btn" onclick="document.getElementById('nav-menu').classList.toggle('open')">
+          <span id="nav-menu-label">Help</span> ▾
+        </button>
+        <div class="nav-menu-dropdown">
+          <a href="/support.html" id="nav-menu-support">Support</a>
+          <a href="/privacy.html" id="nav-menu-privacy">Privacy Policy</a>
+          <a href="/terms.html" id="nav-menu-terms">Terms of Service</a>
+        </div>
       </div>
       <a class="nav-cta" href="https://apps.apple.com/app/my-little-baby-notebook/id6741442905" id="nav-dl-link">Download</a>
     </div>
@@ -1503,18 +1535,37 @@
       const footerPrivacy = document.getElementById('footer-privacy');
       const footerTerms = document.getElementById('footer-terms');
       const footerSupport = document.getElementById('footer-support');
+      const navMenuLabel = document.getElementById('nav-menu-label');
+      const navMenuSupport = document.getElementById('nav-menu-support');
+      const navMenuPrivacy = document.getElementById('nav-menu-privacy');
+      const navMenuTerms = document.getElementById('nav-menu-terms');
       if (lang === 'tr') {
         navCta.textContent = 'İndir';
         footerPrivacy.textContent = 'Gizlilik Politikası';
         footerTerms.textContent = 'Kullanım Koşulları';
         footerSupport.textContent = 'Destek';
+        navMenuLabel.textContent = 'Yardım';
+        navMenuSupport.textContent = 'Destek';
+        navMenuPrivacy.textContent = 'Gizlilik Politikası';
+        navMenuTerms.textContent = 'Kullanım Koşulları';
       } else {
         navCta.textContent = 'Download';
         footerPrivacy.textContent = 'Privacy Policy';
         footerTerms.textContent = 'Terms of Service';
         footerSupport.textContent = 'Support';
+        navMenuLabel.textContent = 'Help';
+        navMenuSupport.textContent = 'Support';
+        navMenuPrivacy.textContent = 'Privacy Policy';
+        navMenuTerms.textContent = 'Terms of Service';
       }
     }
+
+    document.addEventListener('click', function(e) {
+      const menu = document.getElementById('nav-menu');
+      if (menu && menu.classList.contains('open') && !menu.contains(e.target)) {
+        menu.classList.remove('open');
+      }
+    });
 
     // On load: respect saved preference, then browser language
     (function() {
