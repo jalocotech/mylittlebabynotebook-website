@@ -66,7 +66,7 @@
 <div class="page-wrap">
   <div class="legal-header">
     <h1 id="page-title">Privacy Policy</h1>
-    <p class="legal-meta" id="page-meta">Last updated: July 8, 2026 · Effective: July 8, 2026</p>
+    <p class="legal-meta" id="page-meta">Last updated: July 26, 2026 · Effective: July 26, 2026</p>
   </div>
 
   <div class="lang-toggle">
@@ -124,7 +124,7 @@
     <p>When you add a photo, its EXIF metadata (including capture date) is read on-device to auto-fill dates. This metadata is never uploaded — only the photo itself is stored, with EXIF stripped before upload.</p>
     <h3 id="co-parenting-feature">3.6 Co-Parenting Feature</h3>
     <p>When you invite a co-parent to share a baby profile, that person’s <strong>email address</strong> is stored to facilitate the invitation and manage shared access. This email is not shared with third parties or used for any marketing purpose.</p>
-    <p>When you choose to share content (photos, PDF memory books, milestone images) via the system share sheet, the content is delivered to the third-party app you select. The developer has no control over how that app handles the shared data.</p>
+    <p>When you choose to share content (photos, PDF memory books, milestone images, baby board PDFs/images) via the system share sheet, the content is delivered to the third-party app you select. The developer has no control over how that app handles the shared data.</p>
     <h3 id="advertising-data-free-tier-only">3.7 Advertising Data — Free Tier Only</h3>
     <p>The free version of My Little Baby Notebook displays advertisements served by <strong>Google AdMob</strong> to support the sustainability of the service. AdMob may collect and process the following:</p>
     <table>
@@ -301,6 +301,11 @@
     </tr>
     <tr>
     <td>Baby Diary (8 categories)</td>
+    <td>Firebase + Cloudflare R2</td>
+    <td>✅ Yes</td>
+    </tr>
+    <tr>
+    <td>Baby Board (photos + title/stickers)</td>
     <td>Firebase + Cloudflare R2</td>
     <td>✅ Yes</td>
     </tr>
@@ -564,7 +569,7 @@
     <p>Fotoğraf eklediğinizde, EXIF meta verisi (çekim tarihi dahil) tarih otomatik doldurma amacıyla yalnızca cihazınızda okunur. Bu meta veri hiçbir zaman yüklenmez — yalnızca fotoğrafın kendisi, EXIF soyulmuş biçimde saklanır.</p>
     <h3 id="ebeveyn-paylaşımı-co-parenting">3.6 Ebeveyn Paylaşımı (Co-Parenting)</h3>
     <p>Bir bebek profilini başka bir ebeveynle paylaştığınızda, davet ettiğiniz kişinin <strong>e-posta adresi</strong> sisteme kaydedilir. Bu e-posta yalnızca davet göndermek ve ortak erişim yönetmek amacıyla kullanılır; üçüncü taraflarla paylaşılmaz.</p>
-    <p>Sistem paylaşım menüsü aracılığıyla içerik (fotoğraf, PDF hatıra kitabı, kilometre taşı görseli) paylaştığınızda, içerik seçtiğiniz üçüncü taraf uygulamaya iletilir. Geliştirici bu uygulamanın söz konusu veriyi nasıl işleyeceğini kontrol etmez.</p>
+    <p>Sistem paylaşım menüsü aracılığıyla içerik (fotoğraf, PDF hatıra kitabı, kilometre taşı görseli, bebek panosu PDF/görseli) paylaştığınızda, içerik seçtiğiniz üçüncü taraf uygulamaya iletilir. Geliştirici bu uygulamanın söz konusu veriyi nasıl işleyeceğini kontrol etmez.</p>
     <h3 id="reklam-tanımlayıcısı-yalnızca-ücretsiz-katman">3.7 Reklam Tanımlayıcısı (Yalnızca Ücretsiz Katman)</h3>
     <p><strong>My Little Baby Notebook</strong> ücretsiz sürümünde, hizmetin sürdürülebilirliğini desteklemek amacıyla <strong>Google AdMob</strong> tarafından sunulan reklamlar gösterilmektedir. Bu reklamlar kapsamında şu veriler işlenebilir:</p>
     <table>
@@ -752,6 +757,11 @@
     <td>✅ Evet</td>
     </tr>
     <tr>
+    <td>Bebek Panosu (fotoğraf + başlık/süs)</td>
+    <td>Firebase Firestore + Cloudflare R2</td>
+    <td>✅ Evet</td>
+    </tr>
+    <tr>
     <td>PDF Bebek Kitabı</td>
     <td>Cihaz üzerinde oluşturulur</td>
     <td>⚠️ Paylaşırsanız evet</td>
@@ -880,8 +890,8 @@
     localStorage.setItem('mlbn-lang', lang);
     document.getElementById('page-title').textContent = lang === 'tr' ? 'Gizlilik Politikası' : 'Privacy Policy';
     document.getElementById('page-meta').textContent = lang === 'tr'
-      ? 'Son güncelleme: 8 Temmuz 2026 · Yürürlük: 8 Temmuz 2026'
-      : 'Last updated: July 8, 2026 · Effective: July 8, 2026';
+      ? 'Son güncelleme: 26 Temmuz 2026 · Yürürlük: 26 Temmuz 2026'
+      : 'Last updated: July 26, 2026 · Effective: July 26, 2026';
   }
   (function() {
     const saved = localStorage.getItem('mlbn-lang');
