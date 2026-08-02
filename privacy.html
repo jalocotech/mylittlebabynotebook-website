@@ -223,7 +223,49 @@
     <p><strong>Consent in the EEA, UK, and Switzerland:</strong> Advertising-related signals (<code>ad_user_data</code>, <code>ad_personalization</code>) are transmitted only if you consent via the dialog described in Section 3.7. Without consent, analytics operates for basic product measurement only and your advertising ID is not used for campaign matching.</p>
     <p><strong>Plus subscribers:</strong> The advertising SDK is disabled, but usage analytics continues to operate for Plus subscribers — this measurement supports product improvement, not ad serving.</p>
     <p><strong>Your right to object:</strong> If you want analytics measurement stopped entirely, email support@mylittlebabynotebook.app. You can also limit advertising-related matching by resetting your advertising ID or opting out of personalized ads in your device settings.</p>
-    <h3 id="device-settings-local-only-never-transmitted">3.9 Device Settings (Local Only — Never Transmitted)</h3>
+    <h3 id="crash-and-performance-diagnostics">3.9 Crash and Performance Diagnostics</h3>
+    <p>We use <strong>Firebase Crashlytics</strong> and <strong>Firebase Performance Monitoring</strong> to monitor app stability and fix errors.</p>
+    <table>
+    <colgroup>
+    <col style="width: 33%" />
+    <col style="width: 33%" />
+    <col style="width: 33%" />
+    </colgroup>
+    <thead>
+    <tr>
+    <th>Data</th>
+    <th>Source</th>
+    <th>Purpose</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Crash records (stack trace, the code location where the error occurred)</td>
+    <td>App</td>
+    <td>Diagnosing and fixing errors</td>
+    </tr>
+    <tr>
+    <td>Device state (model, OS version, available memory, app version at time of crash)</td>
+    <td>Device</td>
+    <td>Understanding the conditions in which the error occurs</td>
+    </tr>
+    <tr>
+    <td>Firebase user ID (uid)</td>
+    <td>Account</td>
+    <td>Distinguishing repeated crashes for the same user</td>
+    </tr>
+    <tr>
+    <td>Performance measurements (app start time, network request duration, screen freeze rate)</td>
+    <td>App</td>
+    <td>Detecting slowdowns</td>
+    </tr>
+    </tbody>
+    </table>
+    <blockquote>
+    <p>⚠️ Crash reports <strong>carry none of the content you enter</strong> — no baby name, photo, health record, or diary text appears in them. Only the technical context of the error (which code failed, on which device, in which version) is transmitted.</p>
+    </blockquote>
+    <p>This data is not used for advertising and is not shared with Google Ads. Collection is enabled only in released builds.</p>
+    <h3 id="device-settings-local-only-never-transmitted">3.10 Device Settings (Local Only — Never Transmitted)</h3>
     <ul>
     <li>Language and measurement unit preferences</li>
     <li>Notification settings</li>
@@ -297,6 +339,12 @@
     <td>USA</td>
     </tr>
     <tr>
+    <td><strong>Firebase Crashlytics &amp; Performance Monitoring</strong></td>
+    <td>Crash stack traces, device state, app version, user ID, performance measurements</td>
+    <td>Error diagnosis and app stability</td>
+    <td>USA</td>
+    </tr>
+    <tr>
     <td><strong>RevenueCat</strong></td>
     <td>Purchase receipts, subscription status, anonymous app user ID</td>
     <td>Subscription management &amp; entitlement verification</td>
@@ -315,7 +363,7 @@
     <p>If you believe data from a child was collected without proper parental consent, contact support@mylittlebabynotebook.app and it will be deleted promptly.</p>
     <hr />
     <h2 id="data-retention">8. Data Retention</h2>
-    <p>Data is retained until you delete it. Account deletion removes all associated data from our servers within <strong>30 days.</strong> Individual entries or baby profiles can be deleted at any time from within the app. Analytics event records are subject to the Google Analytics for Firebase retention setting (user-level data retained for at most 14 months); aggregated, anonymous reports may be retained indefinitely.</p>
+    <p>Data is retained until you delete it. Account deletion removes all associated data from our servers within <strong>30 days.</strong> Individual entries or baby profiles can be deleted at any time from within the app. Analytics event records are subject to the Google Analytics for Firebase retention setting (user-level data retained for at most 14 months); aggregated, anonymous reports may be retained indefinitely. Crash and performance records are subject to the Firebase Crashlytics retention policy (crash records for 90 days).</p>
     <hr />
     <h2 id="your-rights">9. Your Rights</h2>
     <ul>
@@ -327,7 +375,7 @@
     <p>Requests are responded to within <strong>30 days.</strong></p>
     <hr />
     <h2 id="cookies-and-tracking">10. Cookies and Tracking</h2>
-    <p>The app does not use web-based cookies. Two Google SDKs are present: the Google AdMob advertising SDK, active on the free tier only (see Section 3.7), and Google Analytics for Firebase for usage measurement (see Section 3.8). No other third-party tracking SDKs are used, and no behavioral profile is built to target ads at you.</p>
+    <p>The app does not use web-based cookies. Three Google SDKs are present: the Google AdMob advertising SDK, active on the free tier only (see Section 3.7), Google Analytics for Firebase for usage measurement (see Section 3.8), and Firebase Crashlytics/Performance Monitoring for error diagnosis (see Section 3.9). No other third-party tracking SDKs are used, and no behavioral profile is built to target ads at you.</p>
     <hr />
     <h2 id="security">11. Security</h2>
     <ul>
@@ -644,7 +692,55 @@
     <p><strong>AEA, Birleşik Krallık ve İsviçre’de rıza:</strong> Reklam amaçlı sinyaller (<code>ad_user_data</code>, <code>ad_personalization</code>) yalnızca Bölüm 3.7’de açıklanan rıza ekranında onay vermeniz hâlinde iletilir. Rıza vermezseniz analitik yalnızca temel ürün ölçümü için çalışır ve reklam kimliğiniz kampanya eşleştirmesinde kullanılmaz.</p>
     <p><strong>Plus aboneleri:</strong> Reklam SDK’sı devre dışıdır, ancak kullanım analitiği Plus abonelerinde de çalışmaya devam eder — bu ölçüm reklam gösterimi için değil, ürünün geliştirilmesi içindir.</p>
     <p><strong>İtiraz hakkınız:</strong> Analitik ölçümü tamamen durdurmak isterseniz support@mylittlebabynotebook.app adresine yazabilirsiniz (KVKK m.11 uyarınca işlemeye itiraz hakkı). Ayrıca cihaz ayarlarından reklam kimliğinizi sıfırlayarak veya kişiselleştirilmiş reklamları kapatarak reklam amaçlı eşleştirmeyi sınırlayabilirsiniz.</p>
-    <h3 id="cihaz-ve-uygulama-ayarları-yalnızca-yerel-depolama">3.9 Cihaz ve Uygulama Ayarları (Yalnızca Yerel Depolama)</h3>
+    <h3 id="çökme-ve-performans-tanılaması">3.9 Çökme ve Performans Tanılaması</h3>
+    <p>Uygulamanın kararlılığını izlemek ve hataları düzeltmek amacıyla <strong>Firebase Crashlytics</strong> ve <strong>Firebase Performance Monitoring</strong> kullanılmaktadır.</p>
+    <table>
+    <colgroup>
+    <col style="width: 25%" />
+    <col style="width: 25%" />
+    <col style="width: 25%" />
+    <col style="width: 25%" />
+    </colgroup>
+    <thead>
+    <tr>
+    <th>Veri</th>
+    <th>Kaynak</th>
+    <th>Amaç</th>
+    <th>Hukuki Dayanak</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Çökme kayıtları (yığın izi, hatanın oluştuğu kod satırı)</td>
+    <td>Uygulama</td>
+    <td>Hataların teşhisi ve düzeltilmesi</td>
+    <td>KVKK m.5/2-f (meşru menfaat)</td>
+    </tr>
+    <tr>
+    <td>Cihaz durumu (model, işletim sistemi sürümü, kullanılabilir bellek, çökme anındaki uygulama sürümü)</td>
+    <td>Cihaz</td>
+    <td>Hatanın hangi koşullarda oluştuğunu anlama</td>
+    <td>KVKK m.5/2-f</td>
+    </tr>
+    <tr>
+    <td>Firebase kullanıcı kimliği (uid)</td>
+    <td>Hesap</td>
+    <td>Aynı kullanıcıda tekrarlayan çökmeleri ayırt etme</td>
+    <td>KVKK m.5/2-f</td>
+    </tr>
+    <tr>
+    <td>Performans ölçümleri (uygulama açılış süresi, ağ isteklerinin süresi, ekran donma oranı)</td>
+    <td>Uygulama</td>
+    <td>Yavaşlıkların tespiti</td>
+    <td>KVKK m.5/2-f</td>
+    </tr>
+    </tbody>
+    </table>
+    <blockquote>
+    <p>⚠️ Çökme raporları <strong>girdiğiniz içeriği taşımaz</strong> — bebek adı, fotoğraf, sağlık kaydı veya günlük metni bu raporlarda yer almaz. Yalnızca hatanın teknik bağlamı (hangi kodun, hangi cihazda, hangi sürümde çöktüğü) iletilir.</p>
+    </blockquote>
+    <p>Bu veriler reklam amacıyla kullanılmaz ve Google Ads ile paylaşılmaz. Toplama yalnızca yayınlanmış sürümlerde etkindir.</p>
+    <h3 id="cihaz-ve-uygulama-ayarları-yalnızca-yerel-depolama">3.10 Cihaz ve Uygulama Ayarları (Yalnızca Yerel Depolama)</h3>
     <ul>
     <li>Ölçü birimi tercihi (metrik/imperial)</li>
     <li>Dil tercihi</li>
@@ -719,6 +815,12 @@
     <td>ABD</td>
     </tr>
     <tr>
+    <td><strong>Google LLC (Firebase Crashlytics &amp; Performance Monitoring)</strong></td>
+    <td>Çökme yığın izleri, cihaz durumu, uygulama sürümü, kullanıcı kimliği, performans ölçümleri</td>
+    <td>Hata teşhisi ve uygulama kararlılığı</td>
+    <td>ABD</td>
+    </tr>
+    <tr>
     <td><strong>RevenueCat</strong></td>
     <td>Satın alma makbuzları, abonelik durumu, anonim kullanıcı kimliği</td>
     <td>Abonelik yönetimi ve yetkilendirme doğrulaması</td>
@@ -775,6 +877,10 @@
     <td>Analitik olay kayıtları</td>
     <td>Google Analytics for Firebase saklama ayarına tabidir (kullanıcı düzeyinde en fazla 14 ay); toplu ve anonim raporlar süresiz saklanabilir</td>
     </tr>
+    <tr>
+    <td>Çökme ve performans kayıtları</td>
+    <td>Firebase Crashlytics saklama politikasına tabidir (çökme kayıtları 90 gün)</td>
+    </tr>
     </tbody>
     </table>
     <hr />
@@ -805,7 +911,7 @@
     <p>Başvurularınız <strong>30 gün</strong> içinde yanıtlanır.</p>
     <hr />
     <h2 id="çerezler-ve-takip">11. Çerezler ve Takip</h2>
-    <p>Uygulama web tabanlı çerez <strong>kullanmamaktadır.</strong> Uygulamada iki Google SDK’sı bulunur: ücretsiz katmanda aktif olan Google AdMob reklam SDK’sı (bkz. Bölüm 3.7) ve kullanım ölçümü için Google Analytics for Firebase (bkz. Bölüm 3.8). Bunların dışında üçüncü taraf takip SDK’sı yoktur ve size reklam hedeflemek amacıyla davranışsal profil çıkarılmaz.</p>
+    <p>Uygulama web tabanlı çerez <strong>kullanmamaktadır.</strong> Uygulamada üç Google SDK’sı bulunur: ücretsiz katmanda aktif olan Google AdMob reklam SDK’sı (bkz. Bölüm 3.7), kullanım ölçümü için Google Analytics for Firebase (bkz. Bölüm 3.8) ve hata teşhisi için Firebase Crashlytics/Performance Monitoring (bkz. Bölüm 3.9). Bunların dışında üçüncü taraf takip SDK’sı yoktur ve size reklam hedeflemek amacıyla davranışsal profil çıkarılmaz.</p>
     <hr />
     <h2 id="politika-değişiklikleri">12. Politika Değişiklikleri</h2>
     <p>Bu politika güncellendiğinde yeni versiyon uygulama içinde ve/veya web sitemizde yayınlanacaktır. Güncelleme sonrası uygulamayı kullanmaya devam etmeniz yeni politikayı kabul ettiğiniz anlamına gelir.</p>
