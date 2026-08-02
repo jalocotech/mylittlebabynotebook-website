@@ -66,7 +66,7 @@
 <div class="page-wrap">
   <div class="legal-header">
     <h1 id="page-title">Privacy Policy</h1>
-    <p class="legal-meta" id="page-meta">Last updated: July 26, 2026 · Effective: July 26, 2026</p>
+    <p class="legal-meta" id="page-meta">Last updated: August 2, 2026 · Effective: August 2, 2026</p>
   </div>
 
   <div class="lang-toggle">
@@ -168,7 +168,62 @@
     </blockquote>
     <p>Google’s Privacy Policy: https://policies.google.com/privacy To opt out of personalized ads: <strong>Device Settings → Privacy → Ads → Reset Advertising ID / Opt out of personalized ads</strong></p>
     <p><strong>Consent in the EEA, UK, and Switzerland (GDPR):</strong> If you are located in the European Economic Area, the United Kingdom, or Switzerland, personalized advertising is shown only with your consent. On first launch, a consent dialog provided by a Google-certified Consent Management Platform (CMP, IAB TCF-compliant) asks for your choices. The legal basis for personalized advertising is your consent (GDPR Art. 6(1)(a)); if you do not consent, only non-personalized ads are served or no ads are shown. The full list of advertising partners is available within the consent dialog. You can change or withdraw your consent at any time in the app via <strong>Settings → Privacy Options (Ad Consent)</strong>.</p>
-    <h3 id="device-settings-local-only-never-transmitted">3.8 Device Settings (Local Only — Never Transmitted)</h3>
+    <h3 id="usage-analytics-and-campaign-measurement">3.8 Usage Analytics and Campaign Measurement</h3>
+    <p>We use <strong>Google Analytics for Firebase</strong> to understand how the app is used and to measure the effectiveness of the advertising campaigns we run to promote the app. The following data is processed:</p>
+    <table>
+    <colgroup>
+    <col style="width: 33%" />
+    <col style="width: 33%" />
+    <col style="width: 33%" />
+    </colgroup>
+    <thead>
+    <tr>
+    <th>Data</th>
+    <th>Source</th>
+    <th>Purpose</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Event records (first open, sign-up, login, adding a baby profile, adding a moment, viewing the Plus screen, subscription purchase)</td>
+    <td>App</td>
+    <td>Product usage measurement, campaign conversion measurement</td>
+    </tr>
+    <tr>
+    <td>App instance identifier (Firebase installation ID)</td>
+    <td>Device</td>
+    <td>Session attribution</td>
+    </tr>
+    <tr>
+    <td>Advertising ID (IDFA / GAID)</td>
+    <td>Device</td>
+    <td>Ad campaign conversion matching (consent-gated)</td>
+    </tr>
+    <tr>
+    <td>General device and app info (model, OS, app version, language, country)</td>
+    <td>Device</td>
+    <td>Segmentation and troubleshooting</td>
+    </tr>
+    <tr>
+    <td>Firebase user ID (uid)</td>
+    <td>Account</td>
+    <td>Cross-device measurement for the same account</td>
+    </tr>
+    <tr>
+    <td>Subscription amount and currency</td>
+    <td>Purchase</td>
+    <td>Campaign return measurement</td>
+    </tr>
+    </tbody>
+    </table>
+    <blockquote>
+    <p>⚠️ <strong>Your baby’s name, photos, health records, diary entries, and board content are never sent to analytics.</strong> Only the fact that an action occurred is transmitted (for example, “a baby profile was added” — never the contents of that profile).</p>
+    </blockquote>
+    <p>This data may be linked with our <strong>Google Ads</strong> account to measure the performance of app campaigns run to promote the app.</p>
+    <p><strong>Consent in the EEA, UK, and Switzerland:</strong> Advertising-related signals (<code>ad_user_data</code>, <code>ad_personalization</code>) are transmitted only if you consent via the dialog described in Section 3.7. Without consent, analytics operates for basic product measurement only and your advertising ID is not used for campaign matching.</p>
+    <p><strong>Plus subscribers:</strong> The advertising SDK is disabled, but usage analytics continues to operate for Plus subscribers — this measurement supports product improvement, not ad serving.</p>
+    <p><strong>Your right to object:</strong> If you want analytics measurement stopped entirely, email support@mylittlebabynotebook.app. You can also limit advertising-related matching by resetting your advertising ID or opting out of personalized ads in your device settings.</p>
+    <h3 id="device-settings-local-only-never-transmitted">3.9 Device Settings (Local Only — Never Transmitted)</h3>
     <ul>
     <li>Language and measurement unit preferences</li>
     <li>Notification settings</li>
@@ -179,7 +234,8 @@
     <hr />
     <h2 id="how-we-use-your-information">4. How We Use Your Information</h2>
     <p>Your data is used solely to operate the app: - Authenticate and secure your account - Sync your records across your devices via Firebase - Schedule and deliver local reminder notifications (vitamins, vaccines, checkups) - Generate PDF memory books on your device (Classic style free, watermarked; all 14 styles available with Plus) - Display growth charts with WHO percentile curves - Show informational vaccination and checkup schedules based on the Turkish Ministry of Health 0–24 month reference guide - Enable co-parenting sync between co-parents on the same baby profile - Manage your Notification Center (vitamin, vaccine, checkup, and system alerts)</p>
-    <p>Your data is <strong>never sold, used for behavioral profiling, or shared with parties beyond those listed in Section 5.</strong></p>
+    <p>In addition, as described in Section 3.8, event-based analytics data is processed to measure how the app is used and to evaluate the effectiveness of our advertising campaigns.</p>
+    <p>Your data is <strong>never sold, never used to build a profile for targeting ads at you, and never shared with parties beyond those listed in Section 5.</strong></p>
     <hr />
     <h2 id="third-party-services">5. Third-Party Services</h2>
     <table>
@@ -235,6 +291,12 @@
     <td>USA</td>
     </tr>
     <tr>
+    <td><strong>Google Analytics for Firebase &amp; Google Ads</strong></td>
+    <td>Event records, app instance ID, user ID, device info, advertising ID (with consent)</td>
+    <td>Usage analytics and ad campaign conversion measurement</td>
+    <td>USA</td>
+    </tr>
+    <tr>
     <td><strong>RevenueCat</strong></td>
     <td>Purchase receipts, subscription status, anonymous app user ID</td>
     <td>Subscription management &amp; entitlement verification</td>
@@ -242,7 +304,7 @@
     </tr>
     </tbody>
     </table>
-    <p>No behavioral tracking SDKs, data brokers, or marketing analytics services are used beyond those listed above.</p>
+    <p>No data brokers or behavioral tracking SDKs are used beyond the Google services listed above.</p>
     <hr />
     <h2 id="how-your-data-is-stored">6. How Your Data Is Stored</h2>
     <p>The data you save in the app (photos, diary and board content, development/health records, etc.) is stored under your account in our secure cloud infrastructure listed in Section 5 and synced across your devices; some content such as sleep sounds and app settings stays only on your device, and PDF/image exports leave the app only when you choose to share them.</p>
@@ -253,7 +315,7 @@
     <p>If you believe data from a child was collected without proper parental consent, contact support@mylittlebabynotebook.app and it will be deleted promptly.</p>
     <hr />
     <h2 id="data-retention">8. Data Retention</h2>
-    <p>Data is retained until you delete it. Account deletion removes all associated data from our servers within <strong>30 days.</strong> Individual entries or baby profiles can be deleted at any time from within the app.</p>
+    <p>Data is retained until you delete it. Account deletion removes all associated data from our servers within <strong>30 days.</strong> Individual entries or baby profiles can be deleted at any time from within the app. Analytics event records are subject to the Google Analytics for Firebase retention setting (user-level data retained for at most 14 months); aggregated, anonymous reports may be retained indefinitely.</p>
     <hr />
     <h2 id="your-rights">9. Your Rights</h2>
     <ul>
@@ -265,7 +327,7 @@
     <p>Requests are responded to within <strong>30 days.</strong></p>
     <hr />
     <h2 id="cookies-and-tracking">10. Cookies and Tracking</h2>
-    <p>The app does not use web-based cookies. There are no behavioral profiling or third-party analytics SDKs. The only tracking-adjacent component is the Google AdMob advertising SDK, which is active on the free tier only (see Section 3.7).</p>
+    <p>The app does not use web-based cookies. Two Google SDKs are present: the Google AdMob advertising SDK, active on the free tier only (see Section 3.7), and Google Analytics for Firebase for usage measurement (see Section 3.8). No other third-party tracking SDKs are used, and no behavioral profile is built to target ads at you.</p>
     <hr />
     <h2 id="security">11. Security</h2>
     <ul>
@@ -519,7 +581,70 @@
     <p>Google AdMob’un gizlilik politikası: https://policies.google.com/privacy<br />
     Kişiselleştirilmiş reklamları devre dışı bırakmak için: <strong>Cihaz Ayarları → Gizlilik → Reklamlar → Reklam Kimliğini Sıfırla / Kişiselleştirilmiş Reklamları Kapat</strong></p>
     <p><strong>AEA, Birleşik Krallık ve İsviçre’de rıza (GDPR):</strong> Avrupa Ekonomik Alanı, Birleşik Krallık veya İsviçre’de bulunuyorsanız, kişiselleştirilmiş reklamlar yalnızca açık rızanıza dayanılarak gösterilir. Uygulama ilk açılışta, Google sertifikalı bir Kullanıcı Rızası Yönetim Platformu (CMP, IAB TCF uyumlu) aracılığıyla tercihlerinizi sorar. Kişiselleştirilmiş reklamların hukuki dayanağı açık rızanızdır (GDPR m. 6/1-a); rıza vermemeniz hâlinde yalnızca kişiselleştirilmemiş reklamlar gösterilir veya reklam gösterilmez. Reklam ortaklarının tam listesi rıza ekranında yer almaktadır. Rızanızı dilediğiniz zaman uygulama içinden <strong>Ayarlar → Gizlilik Seçenekleri (Reklam Rızası)</strong> adımıyla değiştirebilir veya geri çekebilirsiniz.</p>
-    <h3 id="cihaz-ve-uygulama-ayarları-yalnızca-yerel-depolama">3.8 Cihaz ve Uygulama Ayarları (Yalnızca Yerel Depolama)</h3>
+    <h3 id="kullanım-analitiği-ve-kampanya-ölçümü">3.8 Kullanım Analitiği ve Kampanya Ölçümü</h3>
+    <p>Uygulamanın nasıl kullanıldığını anlamak ve uygulamayı tanıtmak için yürüttüğümüz reklam kampanyalarının etkinliğini ölçmek amacıyla <strong>Google Analytics for Firebase</strong> kullanılmaktadır. Bu kapsamda işlenen veriler:</p>
+    <table>
+    <colgroup>
+    <col style="width: 25%" />
+    <col style="width: 25%" />
+    <col style="width: 25%" />
+    <col style="width: 25%" />
+    </colgroup>
+    <thead>
+    <tr>
+    <th>Veri</th>
+    <th>Kaynak</th>
+    <th>Amaç</th>
+    <th>Hukuki Dayanak</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Olay kayıtları (ilk açılış, kayıt olma, giriş, bebek profili ekleme, anı ekleme, Plus ekranını görüntüleme, abonelik satın alma)</td>
+    <td>Uygulama</td>
+    <td>Ürün kullanımını ölçme, kampanya dönüşüm ölçümü</td>
+    <td>KVKK m.5/2-f (meşru menfaat)</td>
+    </tr>
+    <tr>
+    <td>Uygulama örneği kimliği (Firebase installation ID)</td>
+    <td>Cihaz</td>
+    <td>Oturumları eşleştirme</td>
+    <td>KVKK m.5/2-f</td>
+    </tr>
+    <tr>
+    <td>Reklam tanımlayıcısı (IDFA / GAID)</td>
+    <td>Cihaz</td>
+    <td>Reklam kampanyası dönüşüm eşleştirmesi</td>
+    <td><strong>Açık rıza</strong> (bkz. aşağıdaki rıza notu)</td>
+    </tr>
+    <tr>
+    <td>Genel cihaz ve uygulama bilgisi (model, işletim sistemi, uygulama sürümü, dil, ülke)</td>
+    <td>Cihaz</td>
+    <td>Segmentasyon ve hata ayıklama</td>
+    <td>KVKK m.5/2-f</td>
+    </tr>
+    <tr>
+    <td>Firebase kullanıcı kimliği (uid)</td>
+    <td>Hesap</td>
+    <td>Aynı hesabın cihazlar arası ölçümü</td>
+    <td>KVKK m.5/2-f</td>
+    </tr>
+    <tr>
+    <td>Abonelik tutarı ve para birimi</td>
+    <td>Satın alma</td>
+    <td>Kampanya getirisinin ölçülmesi</td>
+    <td>KVKK m.5/2-f</td>
+    </tr>
+    </tbody>
+    </table>
+    <blockquote>
+    <p>⚠️ <strong>Bebeğinizin adı, fotoğrafları, sağlık kayıtları, günlük yazıları ve pano içerikleri analitiğe hiçbir zaman gönderilmez.</strong> Yalnızca bir eylemin gerçekleştiği bilgisi iletilir (örneğin “bir bebek profili eklendi” — profilin içeriği değil).</p>
+    </blockquote>
+    <p>Bu veriler, uygulamayı tanıtmak amacıyla yürütülen <strong>Google Ads uygulama kampanyalarının</strong> performansını ölçmek için Google Ads hesabımızla ilişkilendirilebilir.</p>
+    <p><strong>AEA, Birleşik Krallık ve İsviçre’de rıza:</strong> Reklam amaçlı sinyaller (<code>ad_user_data</code>, <code>ad_personalization</code>) yalnızca Bölüm 3.7’de açıklanan rıza ekranında onay vermeniz hâlinde iletilir. Rıza vermezseniz analitik yalnızca temel ürün ölçümü için çalışır ve reklam kimliğiniz kampanya eşleştirmesinde kullanılmaz.</p>
+    <p><strong>Plus aboneleri:</strong> Reklam SDK’sı devre dışıdır, ancak kullanım analitiği Plus abonelerinde de çalışmaya devam eder — bu ölçüm reklam gösterimi için değil, ürünün geliştirilmesi içindir.</p>
+    <p><strong>İtiraz hakkınız:</strong> Analitik ölçümü tamamen durdurmak isterseniz support@mylittlebabynotebook.app adresine yazabilirsiniz (KVKK m.11 uyarınca işlemeye itiraz hakkı). Ayrıca cihaz ayarlarından reklam kimliğinizi sıfırlayarak veya kişiselleştirilmiş reklamları kapatarak reklam amaçlı eşleştirmeyi sınırlayabilirsiniz.</p>
+    <h3 id="cihaz-ve-uygulama-ayarları-yalnızca-yerel-depolama">3.9 Cihaz ve Uygulama Ayarları (Yalnızca Yerel Depolama)</h3>
     <ul>
     <li>Ölçü birimi tercihi (metrik/imperial)</li>
     <li>Dil tercihi</li>
@@ -531,7 +656,7 @@
     <p>Bu veriler <strong>yalnızca cihazınızda</strong> saklanır; geliştiriciye iletilmez.</p>
     <hr />
     <h2 id="bilgilerinizi-nasıl-kullanıyoruz">4. Bilgilerinizi Nasıl Kullanıyoruz</h2>
-    <p>Verileriniz yalnızca uygulamanın çalışması için kullanılır: hesabınızın kimlik doğrulaması, kayıtlarınızın cihazlar arasında senkronizasyonu, hatırlatma bildirimlerinin zamanlanması, PDF hatıra kitabı oluşturma, büyüme grafiklerinin gösterimi ve ebeveyn paylaşımı senkronizasyonu. Verileriniz <strong>hiçbir zaman satılmaz, davranışsal profilleme amacıyla kullanılmaz veya Bölüm 5’te listelenenler dışında paylaşılmaz.</strong></p>
+    <p>Verileriniz yalnızca uygulamanın çalışması için kullanılır: hesabınızın kimlik doğrulaması, kayıtlarınızın cihazlar arasında senkronizasyonu, hatırlatma bildirimlerinin zamanlanması, PDF hatıra kitabı oluşturma, büyüme grafiklerinin gösterimi ve ebeveyn paylaşımı senkronizasyonu. Ayrıca Bölüm 3.8’de açıklanan kapsamda, uygulamanın nasıl kullanıldığını ölçmek ve reklam kampanyalarımızın etkinliğini değerlendirmek için olay bazlı analitik verisi işlenir. Verileriniz <strong>hiçbir zaman satılmaz, size reklam hedeflemek amacıyla profilleme için kullanılmaz veya Bölüm 5’te listelenenler dışında paylaşılmaz.</strong></p>
     <hr />
     <h2 id="verilerin-aktarıldığı-taraflar">5. Verilerin Aktarıldığı Taraflar</h2>
     <p>Kişisel verileriniz aşağıdaki altyapı ve hizmet sağlayıcılarıyla <strong>yalnızca belirtilen amaçlar doğrultusunda</strong> paylaşılmaktadır:</p>
@@ -588,6 +713,12 @@
     <td>ABD</td>
     </tr>
     <tr>
+    <td><strong>Google LLC (Analytics for Firebase &amp; Google Ads)</strong></td>
+    <td>Olay kayıtları, uygulama örneği kimliği, kullanıcı kimliği, cihaz bilgisi, reklam tanımlayıcısı (rıza varsa)</td>
+    <td>Kullanım analitiği ve reklam kampanyası dönüşüm ölçümü</td>
+    <td>ABD</td>
+    </tr>
+    <tr>
     <td><strong>RevenueCat</strong></td>
     <td>Satın alma makbuzları, abonelik durumu, anonim kullanıcı kimliği</td>
     <td>Abonelik yönetimi ve yetkilendirme doğrulaması</td>
@@ -598,7 +729,7 @@
     <blockquote>
     <p><strong>KVKK m.9 uyarınca:</strong> Yurt dışına aktarım, Kişisel Verileri Koruma Kurulu’nun belirlediği güvenceler çerçevesinde gerçekleştirilmektedir.</p>
     </blockquote>
-    <p>Verileriniz <strong>veri aracıları, pazarlama şirketleri veya davranışsal profilleme amaçlı üçüncü taraflarla paylaşılmaz.</strong> AdMob haricinde reklam veya analitik takip SDK’sı bulunmamaktadır.</p>
+    <p>Verileriniz <strong>veri aracıları, pazarlama şirketleri veya davranışsal profilleme amaçlı üçüncü taraflarla paylaşılmaz.</strong> Yukarıdaki tabloda yer alan Google AdMob ve Google Analytics for Firebase dışında reklam veya analitik takip SDK’sı bulunmamaktadır.</p>
     <hr />
     <h2 id="hizmet-özellikleri-ve-veri-işleme-bağlamı">6. Hizmet Özellikleri ve Veri İşleme Bağlamı</h2>
     <p>Uygulamaya kaydettiğiniz veriler (fotoğraflar, günlük ve pano içerikleri, gelişim/sağlık kayıtları vb.) hesabınıza bağlı olarak Bölüm 5’te belirtilen güvenli bulut altyapımızda saklanır ve cihazlarınız arasında senkronize edilir; uyku sesleri ve uygulama ayarları gibi bazı içerikler yalnızca cihazınızda tutulur, PDF/görsel çıktıları ise yalnızca siz paylaştığınızda dışa aktarılır.</p>
@@ -640,6 +771,10 @@
     <td>AdMob reklam tanımlayıcısı</td>
     <td>Google’ın kendi saklama politikasına tabidir</td>
     </tr>
+    <tr>
+    <td>Analitik olay kayıtları</td>
+    <td>Google Analytics for Firebase saklama ayarına tabidir (kullanıcı düzeyinde en fazla 14 ay); toplu ve anonim raporlar süresiz saklanabilir</td>
+    </tr>
     </tbody>
     </table>
     <hr />
@@ -670,7 +805,7 @@
     <p>Başvurularınız <strong>30 gün</strong> içinde yanıtlanır.</p>
     <hr />
     <h2 id="çerezler-ve-takip">11. Çerezler ve Takip</h2>
-    <p>Uygulama web tabanlı çerez <strong>kullanmamaktadır.</strong> Davranışsal profilleme veya üçüncü taraf analitik SDK’sı bulunmamaktadır. Yalnızca ücretsiz katmanda Google AdMob reklam SDK’sı aktiftir (bkz. Bölüm 3.7).</p>
+    <p>Uygulama web tabanlı çerez <strong>kullanmamaktadır.</strong> Uygulamada iki Google SDK’sı bulunur: ücretsiz katmanda aktif olan Google AdMob reklam SDK’sı (bkz. Bölüm 3.7) ve kullanım ölçümü için Google Analytics for Firebase (bkz. Bölüm 3.8). Bunların dışında üçüncü taraf takip SDK’sı yoktur ve size reklam hedeflemek amacıyla davranışsal profil çıkarılmaz.</p>
     <hr />
     <h2 id="politika-değişiklikleri">12. Politika Değişiklikleri</h2>
     <p>Bu politika güncellendiğinde yeni versiyon uygulama içinde ve/veya web sitemizde yayınlanacaktır. Güncelleme sonrası uygulamayı kullanmaya devam etmeniz yeni politikayı kabul ettiğiniz anlamına gelir.</p>
@@ -699,8 +834,8 @@
     localStorage.setItem('mlbn-lang', lang);
     document.getElementById('page-title').textContent = lang === 'tr' ? 'Gizlilik Politikası' : 'Privacy Policy';
     document.getElementById('page-meta').textContent = lang === 'tr'
-      ? 'Son güncelleme: 26 Temmuz 2026 · Yürürlük: 26 Temmuz 2026'
-      : 'Last updated: July 26, 2026 · Effective: July 26, 2026';
+      ? 'Son güncelleme: 2 Ağustos 2026 · Yürürlük: 2 Ağustos 2026'
+      : 'Last updated: August 2, 2026 · Effective: August 2, 2026';
   }
   (function() {
     const saved = localStorage.getItem('mlbn-lang');
